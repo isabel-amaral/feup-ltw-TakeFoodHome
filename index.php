@@ -2,6 +2,7 @@
     require_once('php/draw-restaurants.php');
 ?>
 
+<!-- chamar função output_header() -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +27,7 @@
     output_restaurants()
   ?>
 
+<!-- chamar função output_footer() -->
   <footer>
     <p>&#169; Take Food Home, 2022</p>
   </footer>
