@@ -53,13 +53,54 @@ main {
 main section > header {
     background-color: var(--background-color);
     padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 main article {
     background-color: var(--background-color);
     padding: 1em;
     margin: 2em 0em;
+    width: auto;
+    overflow: auto;
+    word-break: break-all;
 }
+
+/*__________ retaurant _________________________*/
+
+#restaurant {
+    background-color: var(--background-color);
+    padding: 1em;
+    
+}
+
+#category-and-plates {
+    color: black;
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--background-color);
+    margin: 2em 0em;
+}
+
+#category-and-plates h3{
+    width:100%;
+}
+
+#category-and-plates article {
+    width: fit-content;
+    height: auto;
+    padding: 1em;
+    margin: 2em;
+}
+
+#category-and-plates article img{
+    width: 14em;
+}
+
 
 /*__________ footer _____________________________*/
 

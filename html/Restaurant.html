@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <title>TakeFoodHome</title>
 </head>
@@ -10,38 +11,71 @@
     <header>
         <h1>Take Food Home</h1>
         <form>
-            Username:<input type="text" , name="username"> <br>
-            Password:<input type="password" , name="pass">
-            <input type="submit" value="Login">
+            <span class="label">Username:</span><input type="text" name="username">
+            <span class="label">Password:</span><input type="password" name="pass">
+            <span id="login-buttons">
+                <a href="">Register</a>
+                <button type="submit">Login</button>
+            </span>
         </form>
-        <button>Register</button>
     </header>
-    <section id="restaurant">
-        <h2>Restaurant's Name</h2>
-        <p>Description:</p>
-    </section>
-    <section id="category and plates">
-        <h3>Category 1</h3>
-        <p>plate 1 <br />
-            plate 2<br />
-            plate 3<br />
-            plate 4</p>
-        <h3>Category 2</h3>
-        <p>plate 1<br />
-            plate 2<br />
-            plate 3<br />
-            plate 4</p>
-    </section>
-    <section id="reviews">
-        <h3>Reviews:</h3>
-        <p>User:...<br />
-            Comment:...<br />
-            Response:...</p>
-    </section>
+    <main>
+        <section id="restaurant">
+            <h2>Restaurant's Name</h2>
+            <p>Description:</p>
+        </section>
+        <!--adicionei a div categoria-->
+        <section id="category-and-plates">
+            <div class="category">
+                <h3>Category 1</h3>
+                <article>
+                    <p>plate1</p>
+                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                </article>
+                <article>
+                    <p>plate1</p>
+                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                </article>
+                <article>
+                    <p>plate1</p>
+                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                </article>
+                <article>
+                    <p>plate1</p>
+                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                </article>
+            </div>
+            <div class="category">
+                <h3>Category 2</h3>
+                <article>
+                    <p>plate1</p>
+                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                </article>
+                <article>
+                    <p>plate1</p>
+                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                </article>
+                <article>
+                    <p>plate1</p>
+                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                </article>
+                <article>
+                    <p>plate1</p>
+                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                </article>
+            </div>
+        </section>
+        <section id="reviews">
+            <h3>Reviews:</h3>
+            <p>User:...<br />
+                Comment:...<br />
+                Response:...</p>
+        </section>
 
-    <footer>
-        <p>Take Food Home, 2022</p>
-    </footer>
+        <footer>
+            <p>Take Food Home, 2022</p>
+        </footer>
+    </main>
 </body>
 
 </html>
