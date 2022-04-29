@@ -1,7 +1,7 @@
 <?php
     function getAllRestaurants($db) {
         $stmt = $db->prepare(
-            'SELECT * FROM Restaurants'
+            'SELECT * FROM Restaurant'
         );
         $stmt->execute();
         $restaurants = $stmt->fetchAll();
