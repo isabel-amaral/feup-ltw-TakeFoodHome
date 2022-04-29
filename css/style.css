@@ -88,6 +88,7 @@ main article {
 
 #category-and-plates h3{
     width:100%;
+    padding: 0.5em;
 }
 
 #category-and-plates article {
@@ -99,6 +100,15 @@ main article {
 
 #category-and-plates article img{
     width: 14em;
+}
+
+/*__________ reviews ____________________________*/
+
+#reviews{
+    background-color: var(--background-color);
+    color:black;
+    padding: 0.5em;
+    margin: 2em 0em;
 }
 
 
