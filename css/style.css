@@ -1,3 +1,70 @@
-header {
+body {
+    --main-color: #501B1D;
+    --background-color: #E5E5E5;
+    --secondary-color: #ADADAD;
+
+    width: 60em;
+    margin: 1em auto;
+    background-color: var(--main-color);
+}
+
+/*__________ header _________________________*/
+
+body > header {
     display: flex;
+    padding: 1em;
+    background-color: var(--secondary-color);
+}
+
+body > header * {
+    color: var(--main-color);
+}
+
+body > header h1 {
+    flex-grow: 1;
+}
+
+body > header form {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+body > header form input {
+    grid-column-end: span 2;
+}
+
+body > header form .label {
+    grid-column-end: span 2;
+}
+
+body > header form #login-buttons {
+    display: flex;
+    gap: 5em;
+    margin-top: 1em;
+}
+
+/*__________ retaurants ________________________*/
+
+main * {
+    background-color: var(--background-color); 
+    color: var(--main-color);
+}
+
+main section > header {
+    padding: 1em;
+}
+
+main article {
+    padding: 1em;
+}
+
+/*__________ footer _____________________________*/
+
+footer {
+    padding: 1em;
+    background-color: var(--secondary-color);
+}
+
+footer * {
+    color: var(--main-color);
 }
