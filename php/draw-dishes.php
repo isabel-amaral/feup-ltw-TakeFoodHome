@@ -17,7 +17,7 @@
                 <?php
                 } ?>
 
-                <article>
+                <article class="dish">
                     <header><h4><?=$dish['name']?></h4></header>
                     <p><?=$dish['description']?></p>
                     <!-- TODO: get picture from database -->

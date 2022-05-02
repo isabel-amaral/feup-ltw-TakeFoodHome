@@ -27,22 +27,22 @@
             <div class="category">
                 <h3>Category 1</h3>
                 <!-- Mudei a estrutura do article -->
-                <article>
+                <article class="dish">
                     <header><h4>plate1</h4></header>
                     <p>description</p>
                     <img src="https://picsum.photos/600/300?business" alt="dish">
                 </article>
-                <article>
+                <article class="dish">
                     <header><h4>plate1</h4></header>
                     <p>description</p>
                     <img src="https://picsum.photos/600/300?business" alt="dish">
                 </article>
-                <article>
+                <article class="dish">
                     <header><h4>plate1</h4></header>
                     <p>description</p>
                     <img src="https://picsum.photos/600/300?business" alt="dish">
                 </article>
-                <article>
+                <article class="dish">
                     <header><h4>plate1</h4></header>
                     <p>description</p>
                     <img src="https://picsum.photos/600/300?business" alt="dish">
@@ -50,33 +50,73 @@
             </div>
             <div class="category">
                 <h3>Category 2</h3>
-                <article>
+                <article class="dish">
                     <header><h4>plate1</h4></header>
                     <p>description</p>
                     <img src="https://picsum.photos/600/300?business" alt="dish">
                 </article>
-                <article>
+                <article class="dish">
                     <header><h4>plate1</h4></header>
                     <p>description</p>
                     <img src="https://picsum.photos/600/300?business" alt="dish">
                 </article>
-                <article>
+                <article class="dish">
                     <header><h4>plate1</h4></header>
                     <p>description</p>
                     <img src="https://picsum.photos/600/300?business" alt="dish">
                 </article>
-                <article>
+                <article class="dish">
                     <header><h4>plate1</h4></header>
                     <p>description</p>
                     <img src="https://picsum.photos/600/300?business" alt="dish">
                 </article>
             </div>
         </section>
+        <!-- Mudei a estrutura das reviews - não sei se há algumas coisas que podiam ser simplificadas -->
         <section id="reviews">
-            <h3>Reviews:</h3>
-            <p>User:...<br />
-                Comment:...<br />
-                Response:...</p>
+            <header><h3>2 Reviews:</h3></header>
+            <article class="review">
+                <header>
+                    <h4>
+                        <span class="user">User:...</span>
+                        <span class="date">Date:...</span>
+                    </h4>
+                </header>
+                <p>Comment:...</p>
+                <section class="review-responses">
+                    <header><h3>1 Responses:</h3></header>
+                    <article class="review-response">
+                        <h4>
+                            <span class="date">Date:...</span>
+                        </h4>
+                        <p>Response:...</p>
+                    </article>
+                </section>
+            </article>
+            <article class="review">
+                <header>
+                    <h4>
+                        <span class="user">User:...</span>
+                        <span class="date">Date:...</span>
+                    </h4>
+                </header>
+                <p>Comment:...</p>
+                <section class="review-responses">
+                    <header><h3>2 Responses:</h3></header>
+                    <article class="review-response">
+                        <h4>
+                            <span class="date">Date:...</span>
+                        </h4>
+                        <p>Response:...</p>
+                    </article>
+                    <article class="review-response">
+                        <h4>
+                            <span class="date">Date:...</span>
+                        </h4>
+                        <p>Response:...</p>
+                    </article>
+                </section>
+            </article>
         </section>
     </main>
 
