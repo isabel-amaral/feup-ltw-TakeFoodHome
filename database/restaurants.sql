@@ -49,7 +49,7 @@ CREATE TABLE Review(
     reviewID        INTEGER PRIMARY KEY,
     comment         TEXT NOT NULL,
     date            DATE NOT NULL,
-    custumerID      INTEGER REFERENCES User(userID),
+    customerID      INTEGER REFERENCES User(userID),
     restaurantID    INTEGER REFERENCES Restaurant(restaurantID)
 );
 
@@ -59,6 +59,7 @@ CREATE TABLE ReviewResponse(
     comment         TEXT NOT NULL,
     date            DATE NOT NULL,
     reviewID        INTEGER REFERENCES Review(reviewID),
+    --precisamos deste atributo?
     ownerID         INTEGER REFERENCES User(userID)
 );
 
@@ -171,7 +172,7 @@ INSERT INTO Restaurant VALUES(
 
 INSERT INTO Dish VALUES(
     1,
-    'Pizza',
+    'Neapolitan Pizza',
     'This is just a Pizza',
     22.50,
     'picture1.png',
@@ -197,6 +198,36 @@ INSERT INTO Dish VALUES(
     'picture3.png',
     'Burger',
     2
+);
+
+INSERT INTO Dish VALUES(
+    4,
+    'Cheese Pizza',
+    'This is just a Pizza',
+    22.50,
+    'picture4.png',
+    'Pizza',
+    1
+);
+
+INSERT INTO Dish VALUES(
+    5,
+    'Veggie Pizza',
+    'This is just a Pizza',
+    22.50,
+    'picture5.png',
+    'Pizza',
+    1
+);
+
+INSERT INTO Dish VALUES(
+    6,
+    'Pepperoni Pizza',
+    'This is just a Pizza',
+    22.50,
+    'picture6.png',
+    'Pizza',
+    1
 );
 
 --ORDERFOOD--------------------------------------------------------------
@@ -253,7 +284,7 @@ INSERT INTO Review VALUES(
 INSERT INTO ReviewResponse VALUES(
     1,
     "good review",
-    '2022-05-09',
+    '2022-05-11',
     1,
     2
 );
@@ -269,7 +300,7 @@ INSERT INTO ReviewResponse VALUES(
 INSERT INTO ReviewResponse VALUES(
     3,
     "good review",
-    '2022-05-09',
+    '2022-05-10',
     1,
     2
 );
