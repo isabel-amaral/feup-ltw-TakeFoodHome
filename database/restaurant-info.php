@@ -7,7 +7,7 @@
         );
         $stmt->bindParam(':id', $restaurant_id);
         $stmt->execute();
-        $restaurant_info = $stmt->fetchAll();
+        $restaurant_info = $stmt->fetch();
         return $restaurant_info;
     }
 ?>
