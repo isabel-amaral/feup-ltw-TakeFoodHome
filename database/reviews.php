@@ -4,8 +4,7 @@
             'SELECT Review.*, User.name
             FROM Review JOIN User ON Review.customerID = User.userID
             WHERE restaurantID = :id
-            -- TODO: add more inserts to see if order is right
-            ORDER BY date'
+            ORDER BY date DESC'
         );
         $stmt->bindParam(':id', $restaurant_id);
         $stmt->execute();
@@ -19,7 +18,7 @@
             FROM ReviewResponse, Review
             WHERE ReviewResponse.reviewID = Review.reviewID 
                 AND Review.reviewID = :id
-            ORDER BY date'
+            ORDER BY date DESC'
         );
         $stmt->bindParam(':id', $review_id);
         $stmt->execute();
