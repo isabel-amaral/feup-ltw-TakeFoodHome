@@ -9,10 +9,16 @@
             <section id="restaurants">
             <header><h2>Restaurants</h2></header>
             <?php
-            foreach ($restaurants as $restaurant) { ?>
+            foreach ($restaurants as $restaurant) { 
+            var_dump($restaurant);
+            echo $restaurant['restaurantID']; ?>
             <article class="restaurant">
                 <header class="restaurant-name">
-                    <h3><?=$restaurant['name']?></h3>
+                    <h3>
+                        <a href=<?='restaurant-page.php?id=' . $restaurant['restaurantID']?>>
+                            <?=$restaurant['name']?>
+                        </a>
+                    </h3>
                 </header>
                 <p class="restaurant-description"><?=$restaurant['description']?></p>
             </article>
