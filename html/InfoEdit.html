@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <title>TakeFoodHome</title>
 </head>
@@ -10,28 +11,31 @@
     <header>
         <h1>Take Food Home</h1>
         <form>
-            Username:<input type="text" , name="username"> <br>
-            Password:<input type="password" , name="pass">
-            <input type="submit" value="Login">
+            <span class="label">Username:</span><input type="text" name="username">
+            <span class="label">Password:</span><input type="password" name="pass">
+            <span id="login-buttons">
+                <a href="">Register</a>
+                <button type="submit">Login</button>
+            </span>
         </form>
-        <button>Register</button>
     </header>
-
-    <section id="InfoEdit">
-        <form>
-            Username: <input type="text" name="username" />
-            <br>
-            Email: <input type="text" name="email" />
-            <br>
-            Phone number: <input type="number" name="phone_number">
-            <br>
-            Address: <input type="text" name="address">
-            <br>
-            Password: <input type="password" name="password">
-            <br>
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+    <main>
+        <section id="InfoEdit">
+            <form>
+                <p>Username:</p> <input type="text" name="username" />
+                <br>
+                <p>Email:</p> <input type="text" name="email" />
+                <br>
+                <p>Phone number:</p> <input type="number" name="phone_number">
+                <br>
+                <p>Address:</p> <input type="text" name="address">
+                <br>
+                <p>Password:</p> <input type="password" name="password">
+                <br>
+                <input class="submit" type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>Take Food Home, 2022</p>

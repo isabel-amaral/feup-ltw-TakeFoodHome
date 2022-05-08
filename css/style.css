@@ -111,6 +111,30 @@ main article {
     margin: 2em 0em;
 }
 
+/*__________ form _______________________________*/
+
+main form {
+    background-color: var(--background-color);
+    padding: 1em;
+}
+main form p{
+    margin: 0.5em 0.1em;
+}
+
+main input{
+    width: 98%;
+    padding: 12px 20px;
+    margin: 0.7em 0.5em;
+    box-sizing: border-box;
+}
+
+.submit {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 0.7em 0.5em;
+    box-sizing: border-box;
+}
+
 
 /*__________ footer _____________________________*/
 
