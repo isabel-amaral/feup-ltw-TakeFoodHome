@@ -5,15 +5,20 @@
         $db = getDatabaseConnection();
         $dishes = getRestaurantDishes($db, $_GET['id']); ?>
 
-        <section id="dishes">
+        <section id="category-and-plates">
             <?php
-            $curr_category = NULL;
+            $curr_category = $dishes[0]['category']; ?>
+
+            <div class="category">
+                <h3><?=$curr_category?></h3>
+            <?php
             foreach ($dishes as $dish) {
-                if ($dish['category'] !== $curr_category) {
-                    if ($curr_category !== NULL) ?>
+                if ($dish['category'] !== $curr_category) { 
+                    $curr_category = $dish['category'];
+                    ?>
                         </div>
-                    <div class="category">
-                    <h3><?=$dish['category']?></h3>
+                        <div class="category">
+                        <h3><?=$dish['category']?></h3>
                 <?php
                 } ?>
 
