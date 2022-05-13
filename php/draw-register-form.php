@@ -1,5 +1,5 @@
 <?php
-    function drawRegisterForm() { ?>
+    function drawRegisterFormFields() { ?>
         <main>
             <section id="register">
                 <form>
@@ -8,6 +8,11 @@
                     Email:<input type="email" , name="email">
                     Phone Number: <input type="number" , name="phone">
                     Address: <input type="text" , name="address">
+    <?php
+    }
+
+    function drawRegisterForm() { 
+        drawRegisterFormFields(); ?>
                     <input class="submit" type="submit" value="Register">
                 </form>
             </section>
