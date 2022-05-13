@@ -2,10 +2,9 @@
     require_once('php/draw-user-edit-form.php');
 ?>
 
+<!-- chamar função output_header() -->
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- chamar função output_header() -->
 <head>
     <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
