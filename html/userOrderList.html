@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TakeFoodHome</title>
 </head>
+
 <body>
     <header>
         <h1>Take Food Home</h1>
         <form>
-            Username:<input type="text", name="username"> <br>
-            Password:<input type="password", name="pass">
-            <input type="submit" value="Login">
+            <span class="label">Username:</span><input type="text" name="username">
+            <span class="label">Password:</span><input type="password" name="pass">
+            <span id="login-buttons">
+                <a href="">Register</a>
+                <button type="submit">Login</button>
+            </span>
         </form>
-        <button>Register</button>
     </header>
-    <section id="orders">
-        <h2>Order Number</h2>
-        <h2>State</h2>
-        <ol>
-            <li>
-                <p>Ready</p>
-                
-            </li>
 
-            <li>
-                <p>Received</p>
-                
-            </li>
+    <main>
+        <section id="orders">
+            <h2>Order Number</h2>
+            <h2>State</h2>
 
-            <li>
-                <p>Preparing</p>
-                
-            </li>
+            <p id="orderNumber">1</p>
+            <p>Ready</p>
+            <p id="orderNumber">2</p>
+            <p>Received</p>
+            <p id="orderNumber">3</p>
+            <p>Preparing</p>
+            <p id="orderNumber">4</p>
+            <p>Ready</p>
+            
+        </section>
+    </main>
 
-            <li>
-                <p>Ready</p>
-                
-            </li>
-        </ol>
-    </section>
-    
     <footer>
         <p>Take Food Home, 2022</p>
     </footer>
 </body>
+
+>>>>>>> main
 </html>

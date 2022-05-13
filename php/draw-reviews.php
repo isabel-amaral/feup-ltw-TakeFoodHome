@@ -12,7 +12,7 @@
             foreach ($reviews as $review) { ?>
                 <article class="review">
                     <header><h4>
-                        <span class="user"><?=$review['name']?></span>
+                        <span class="user"><?=$review['name']?>,</span>
                         <span class="date"><?=$review['date']?></span>
                     </h4></header>
                     <p><?=$review['comment']?></p>

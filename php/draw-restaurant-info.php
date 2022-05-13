@@ -6,7 +6,7 @@
         $restaurant = getRestaurantInfo($db, $_GET['id']); ?>
 
         <!-- TODO: acrescentar mais informação relevante -->
-        <!-- not working -->
+        
         <section id="restaurant">
             <h2><?=$restaurant['name']?></h2>
             <p><?=$restaurant['description']?></p>
