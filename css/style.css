@@ -63,10 +63,14 @@ main {
 
 main section > header {
     background-color: var(--background-color);
-    padding: 1em;
+    padding: 0em 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+main section > header h2 {
+    align-self: flex-start;
 }
 
 main article {
