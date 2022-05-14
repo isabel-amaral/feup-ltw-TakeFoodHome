@@ -1,5 +1,5 @@
 <?php
-    require_once('php/draw-restaurants.php');
+    require_once('php/output-functions/draw-restaurants.php');
 ?>
 
 <!-- chamar função output_header() -->

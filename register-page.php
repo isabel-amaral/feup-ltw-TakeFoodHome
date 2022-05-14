@@ -1,5 +1,5 @@
 <?php
-    require_once('php/draw-register-form.php');
+    require_once('php/output-functions/draw-register-form.php');
 ?>
 
 <!-- chamar função output_header() -->
@@ -25,7 +25,7 @@
     </header>
 
     <?php
-        drawRegisterForm();
+        outputRegisterForm();
     ?>
 
     <!-- chamar função output_footer() -->

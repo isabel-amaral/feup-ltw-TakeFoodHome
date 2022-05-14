@@ -1,8 +1,8 @@
 <?php
-    require_once('php/draw-register-form.php');
+    require_once('php/output-functions/draw-register-form.php');
 
-    function drawUserEditForm() { 
-        drawRegisterFormFields(); ?>
+    function outputUserEditForm() { 
+        outputRegisterFormFields(); ?>
 
                     <input class="submit" type="submit" value="Submit">
                 </form>

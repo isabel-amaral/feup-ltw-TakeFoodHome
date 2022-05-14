@@ -1,5 +1,5 @@
 <?php
-    require_once('php/draw-user-edit-form.php');
+    require_once('php/output-functions/draw-user-edit-form.php');
 ?>
 
 <!-- chamar função output_header() -->
@@ -25,7 +25,7 @@
     </header>
 
     <?php
-        drawUserEditForm();
+        outputUserEditForm();
     ?>
 
     <!-- chamar função output_footer() -->

@@ -1,5 +1,5 @@
 <?php
-    function drawRestaurantEditForm() { ?>
+    function outputRestaurantEditForm() { ?>
         <main>
             <section id="restaurantInfo">
                 <form>

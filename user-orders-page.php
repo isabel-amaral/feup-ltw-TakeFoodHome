@@ -1,5 +1,5 @@
 <?php
-    require_once('php/draw-user-orders.php');
+    require_once('php/output-functions/draw-user-orders.php');
 ?>
 
 <!-- chamar função output_header() -->
@@ -26,7 +26,7 @@
     </header>
 
     <?php
-        drawUserOrders();
+        outputUserOrders();
     ?>
 
     <!-- chamar função output_footer() -->

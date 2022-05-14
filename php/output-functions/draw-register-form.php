@@ -1,5 +1,5 @@
 <?php
-    function drawRegisterFormFields() { ?>
+    function outputRegisterFormFields() { ?>
         <main>
             <section id="register">
                 <form>
@@ -11,8 +11,8 @@
     <?php
     }
 
-    function drawRegisterForm() { 
-        drawRegisterFormFields(); ?>
+    function outputRegisterForm() { 
+        outputRegisterFormFields(); ?>
                     <input class="submit" type="submit" value="Register">
                 </form>
             </section>

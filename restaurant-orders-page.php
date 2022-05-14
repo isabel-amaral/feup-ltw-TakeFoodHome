@@ -1,5 +1,5 @@
 <?php
-    require_once('php/draw-restaurant-orders.php');
+    require_once('php/output-functions/draw-restaurant-orders.php');
 ?>
 
 <!-- chamar função output_header() -->
@@ -26,7 +26,7 @@
     </header>
 
     <?php
-        drawRestaurantOrders();
+        outputRestaurantOrders();
     ?>
 
     <!-- chamar função output_footer() -->

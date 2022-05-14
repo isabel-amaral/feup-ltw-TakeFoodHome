@@ -1,5 +1,5 @@
 <?php
-    function drawUserOrders() { ?>
+    function outputUserOrders() { ?>
         <main>
             <section id="orders">
                 <h2>Order Number</h2>

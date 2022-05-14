@@ -1,7 +1,7 @@
 <?php
-    require_once('php/draw-restaurant-info.php');
-    require_once('php/draw-dishes.php');
-    require_once('php/draw-reviews.php');
+    require_once('php/output-functions/draw-restaurant-info.php');
+    require_once('php/output-functions/draw-dishes.php');
+    require_once('php/output-functions/draw-reviews.php');
 ?>
 
 <!-- chamar função output_header() -->

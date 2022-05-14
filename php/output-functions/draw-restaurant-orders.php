@@ -1,5 +1,5 @@
 <?php
-    function drawRestaurantOrders() { ?>
+    function outputRestaurantOrders() { ?>
         <main>
             <section id="ordersRestaurant">
                 <h2>Order Number</h2>

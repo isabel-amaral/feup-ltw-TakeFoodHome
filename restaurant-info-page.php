@@ -1,5 +1,5 @@
 <?php
-    require_once('php/draw-restaurant-edit-form.php');
+    require_once('php/output-functions/draw-restaurant-edit-form.php');
 ?>
 
 <!-- chamar função output_header() -->
@@ -25,7 +25,7 @@
     </header>
 
     <?php
-        drawRestaurantEditForm();
+        outputRestaurantEditForm();
     ?>
     
     <!-- chamar função output_footer() -->

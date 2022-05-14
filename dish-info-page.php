@@ -1,5 +1,5 @@
 <?php
-    require_once('php/draw-dish-edit-form.php');
+    require_once('php/output-functions/draw-dish-edit-form.php');
 ?>
 
 <!-- chamar função output_header() -->
@@ -25,7 +25,7 @@
     </header>
 
     <?php
-        drawDishEditForm();
+        outputDishEditForm();
     ?>
 
     <!-- chamar função output_footer() -->
