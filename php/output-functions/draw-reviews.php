@@ -1,7 +1,7 @@
 <?php
     function output_reviews() { 
         require_once('database/db-connection.php');
-        require_once('database/reviews.php');
+        require_once('database/data-fetching/reviews.php');
         $db = getDatabaseConnection();
         $reviews = getRestaurantReviews($db, $_GET['id']); ?>
         

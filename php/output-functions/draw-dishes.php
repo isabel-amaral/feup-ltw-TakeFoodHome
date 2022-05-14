@@ -1,7 +1,7 @@
 <?php
     function output_dishes() { 
         require_once('database/db-connection.php');
-        require_once('database/dishes.php');
+        require_once('database/data-fetching/dishes.php');
         $db = getDatabaseConnection();
         $dishes = getRestaurantDishes($db, $_GET['id']); ?>
 
