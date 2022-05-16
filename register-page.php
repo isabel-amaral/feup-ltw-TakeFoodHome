@@ -1,37 +1,9 @@
 <?php
     require_once('php/output-functions/draw-register-form.php');
+    require_once('php/output-functions/draw-header.php');
+    require_once('php/output-functions/draw-footer.php');
+
+    drawHeader();
+    outputRegisterForm();
+    drawFooter();
 ?>
-
-<!-- chamar função output_header() -->
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="../css/style.css">
-    <meta charset="UTF-8">
-    <title>TakeFoodHome</title>
-</head>
-
-<body>
-    <header>
-        <h1>Take Food Home</h1>
-        <form>
-            <span class="label">Username:</span><input type="text" name="username">
-            <span class="label">Password:</span><input type="password" name="pass">
-            <span id="login-buttons">
-                <a href="">Register</a>
-                <button type="submit">Login</button>
-            </span>
-        </form>
-    </header>
-
-    <?php
-        outputRegisterForm();
-    ?>
-
-    <!-- chamar função output_footer() -->
-    <footer>
-        <p>Take Food Home, 2022</p>
-    </footer>
-</body>
-
-</html>
