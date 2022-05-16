@@ -1,5 +1,6 @@
 <?php
     require_once('php/draw-restaurants.php');
+    require_once('php/draw-header.php');
 ?>
 
 <!-- chamar função output_header() -->
@@ -11,18 +12,10 @@
     <title>TakeFoodHome</title>
 </head>
 <body>
-  <header>
-    <h1>Take Food Home</h1>
-    <form>
-        <span class="label">Username:</span><input type="text" name="username">
-        <span class="label">Password:</span><input type="password" name="pass">
-        <span id="login-buttons">
-          <a href="">Register</a>
-          <button type="submit">Login</button>
-        </span>
-    </form>
-  </header>
-
+  
+  <?php
+    drawHeader()
+  ?>
   <?php
     output_restaurants()
   ?>
