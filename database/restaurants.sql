@@ -69,21 +69,21 @@ CREATE TABLE ReviewResponse(
 INSERT INTO User VALUES(
     1,
     'isabel123',
-    '6ADFB183A4A2C94A2F92DAB5ADE762A47889A5A1',
+    '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
     'Isabel Amaral'
 );
 
 INSERT INTO User VALUES(
     2,
     'firstowner',
-    '6ADFB183A4A2C94A2F92DAB5ADE762A47889A5A1',
+    '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
     'Mr. First Restaurant Owner'
 );
 
 INSERT INTO User VALUES(
     3,
     'secondowner',
-    '6ADFB183A4A2C94A2F92DAB5ADE762A47889A5A1',
+    '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
     'Mr. Second Restaurant Owner'
 );
 
