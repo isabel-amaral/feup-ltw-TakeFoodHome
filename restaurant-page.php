@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once('php/output-functions/draw-restaurant-info.php');
     require_once('php/output-functions/draw-dishes.php');
     require_once('php/output-functions/draw-reviews.php');

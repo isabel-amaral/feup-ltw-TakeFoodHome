@@ -10,9 +10,9 @@
         <body>
         <header>
             <h1>Take Food Home</h1>
-            <form>
+            <form action="../../php/actions/login.php" method="post">
                 <span class="label">Username:</span><input type="text" name="username">
-                <span class="label">Password:</span><input type="password" name="pass">
+                <span class="label">Password:</span><input type="password" name="password">
                 <span id="login-buttons">
                     <a href="">Register</a>
                     <button type="submit">Login</button>
