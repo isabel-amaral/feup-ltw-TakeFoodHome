@@ -37,12 +37,12 @@ CREATE TABLE Dish(
     restaurantID    INTEGER REFERENCES Restaurant(restaurantID)
 );
 
-CREATE TABLE OrderFood(
+CREATE TABLE FoodOrder(
     orderID         INTEGER PRIMARY KEY,
     date            DATE NOT NULL,
     state           VARCHAR(10) DEFAULT 'Received',
     restaurantID    INTEGER REFERENCES Restaurant(restaurantID),
-    userID          INTEGER REFERENCES User(userID)
+    customerID          INTEGER REFERENCES User(userID)
 );
 
 CREATE TABLE Review(
@@ -53,13 +53,11 @@ CREATE TABLE Review(
     restaurantID    INTEGER REFERENCES Restaurant(restaurantID)
 );
 
-
 CREATE TABLE ReviewResponse(
     reviewresponseID INTEGER PRIMARY KEY,
     comment         TEXT NOT NULL,
     date            DATE NOT NULL,
     reviewID        INTEGER REFERENCES Review(reviewID),
-    --precisamos deste atributo?
     ownerID         INTEGER REFERENCES User(userID)
 );
 
@@ -230,25 +228,28 @@ INSERT INTO Dish VALUES(
     1
 );
 
---ORDERFOOD--------------------------------------------------------------
+--FOODORDER--------------------------------------------------------------
 
-INSERT INTO OrderFood(orderID,date,restaurantID,userID) VALUES(
+INSERT INTO FoodOrder VALUES(
     1,
     '2022-11-05',
+    'Received',
     1,
     1
 );
 
-INSERT INTO OrderFood(orderID,date,restaurantID,userID) VALUES(
+INSERT INTO FoodOrder VALUES(
     2,
     '2022-06-20',
+    'Received',
     1,
     3
 );
 
-INSERT INTO OrderFood(orderID,date,restaurantID,userID) VALUES(
+INSERT INTO FoodOrder VALUES(
     3,
     '2022-08-16',
+    'Ready',
     4,
     2
 );
