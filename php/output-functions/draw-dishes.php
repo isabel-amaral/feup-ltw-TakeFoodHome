@@ -2,7 +2,7 @@
     function output_dishes() { 
         require_once('database/db-connection.php');
         require_once('database/data-fetching/dishes.php');
-        $db = getDatabaseConnection();
+        $db = getDatabaseConnection('database/restaurants.db');
         $dishes = getRestaurantDishes($db, $_GET['id']); ?>
 
         <section id="category-and-plates">

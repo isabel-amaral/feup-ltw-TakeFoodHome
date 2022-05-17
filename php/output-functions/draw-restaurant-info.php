@@ -2,7 +2,7 @@
     function output_restaurant_info() { 
         require_once('database/db-connection.php');
         require_once('database/data-fetching/restaurants.php');
-        $db = getDatabaseConnection();
+        $db = getDatabaseConnection('database/restaurants.db');
         $restaurant = getRestaurantInfo($db, $_GET['id']); ?>
 
         <!-- TODO: acrescentar mais informação relevante -->

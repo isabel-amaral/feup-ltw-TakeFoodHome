@@ -2,7 +2,7 @@
     function output_restaurants() {
         require_once('database/db-connection.php');
         require_once('database/data-fetching/restaurants.php');
-        $db = getDatabaseConnection();
+        $db = getDatabaseConnection('database/restaurants.db');
         $restaurants = getAllRestaurants($db); ?>
 
         <main>

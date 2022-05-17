@@ -2,7 +2,7 @@
     function output_reviews() { 
         require_once('database/db-connection.php');
         require_once('database/data-fetching/reviews.php');
-        $db = getDatabaseConnection();
+        $db = getDatabaseConnection('database/restaurants.db');
         $reviews = getRestaurantReviews($db, $_GET['id']); ?>
         
         <section id="reviews">
