@@ -1,24 +1,20 @@
 <?php
-    function outputRestaurantOrders() { ?>
+    function outputRestaurantOrders() { 
+        require_once('database/db-connection.php');
+        require_once('database/data-fetching/restaurant-orders.php');
+        $db = getDatabaseConnection('database/restaurants.db');
+        $orders = getRestaurantOrders($db, $_GET['id']); ?>
         <main>
             <section id="ordersRestaurant">
                 <h2>Order Number</h2>
                 <h2>State</h2>
-                <p></p>
 
-                <p id="orderNumber">1</p>
-                <p>Ready</p>
-                <button class="button">Change State</button>
-                <p id="orderNumber">2</p>
-                <p>Received</p>
-                <button class="button">Change State</button>
-                <p id="orderNumber">3</p>
-                <p>Preparing</p>
-                <button class="button">Change State</button>
-                <p id="orderNumber">4</p>
-                <p>Ready</p>
-                <button class="button">Change State</button>
-                
+                <?php foreach($orders as $order) { ?>
+                    <p id="orderNumber"><?=$order['orderID']?></p>
+                    <p id="orderState"><?=$order['state']?></p>
+                    <button class="button">Change State</button>  <!-- TODO: mudar para dropdown  -->
+                <?php
+                } ?>                
             </section>
         </main>
     <?php

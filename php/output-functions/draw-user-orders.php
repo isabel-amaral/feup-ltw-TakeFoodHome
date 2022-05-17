@@ -14,8 +14,7 @@
                     <p id="orderNumber"><?=$order['orderID']?></p>
                     <p id="orderState"><?=$order['state']?></p>
                 <?php
-                } 
-                ?>                
+                } ?>                
             </section>
         </main>
     <?php
