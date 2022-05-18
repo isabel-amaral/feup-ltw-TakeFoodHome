@@ -1,5 +1,5 @@
 <?php
-    function output_restaurant_info() { 
+    function outputRestaurantInfo() { 
         require_once('database/db-connection.php');
         require_once('database/data-fetching/restaurants.php');
         $db = getDatabaseConnection('database/restaurants.db');

@@ -5,7 +5,7 @@
     require_once('php/output-functions/draw-footer.php');
 
     drawHeader();
-    output_restaurants();
+    outputRestaurants();
     drawFooter();
 ?>
 

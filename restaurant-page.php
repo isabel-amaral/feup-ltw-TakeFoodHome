@@ -7,8 +7,8 @@
     require_once('php/output-functions/draw-footer.php');
 
     drawHeader();
-    output_restaurant_info();
-    output_dishes();
-    output_reviews();
+    outputRestaurantInfo();
+    outputDishes();
+    outputReviews();
     drawFooter();
 ?>

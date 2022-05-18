@@ -1,5 +1,5 @@
 <?php
-    function output_reviews() { 
+    function outputReviews() { 
         require_once('database/db-connection.php');
         require_once('database/data-fetching/reviews.php');
         $db = getDatabaseConnection('database/restaurants.db');
