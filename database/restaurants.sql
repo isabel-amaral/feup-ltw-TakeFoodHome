@@ -3,7 +3,7 @@ PRAGMA foreign_keys = ON;
 
 DROP TABLE if EXISTS ReviewResponse;
 DROP TABLE if EXISTS Review;
-DROP TABLE if EXISTS OrderFood;
+DROP TABLE if EXISTS FoodOrder;
 DROP TABLE if EXISTS Dish;
 DROP TABLE if EXISTS Restaurant;
 DROP TABLE if EXISTS User;
@@ -13,7 +13,9 @@ CREATE TABLE User(
     userID          INTEGER PRIMARY KEY,
     username        VARCHAR(16) UNIQUE NOT NULL,
     password        VARCHAR(40) NOT NULL,
-    name            VARCHAR(32) NOT NULL
+    name            VARCHAR(32) NOT NULL,
+    owner           BOOLEAN DEFAULT FALSE,
+    courier         BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE Restaurant(
@@ -64,21 +66,21 @@ CREATE TABLE ReviewResponse(
 --INSERTS-------------------------------------------------------------
 
 --USERS---------------------------------------------------------------
-INSERT INTO User VALUES(
+INSERT INTO User (userID,username,password,name) VALUES(
     1,
     'isabel123',
     '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
     'Isabel Amaral'
 );
 
-INSERT INTO User VALUES(
+INSERT INTO User (userID,username,password,name) VALUES(
     2,
     'firstowner',
     '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
     'Mr. First Restaurant Owner'
 );
 
-INSERT INTO User VALUES(
+INSERT INTO User (userID,username,password,name) VALUES(
     3,
     'secondowner',
     '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld

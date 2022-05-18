@@ -8,6 +8,8 @@
                     Email:<input type="email" , name="email">
                     Phone Number: <input type="number" , name="phone">
                     Address: <input type="text" , name="address">
+                    Owner: <input type="checkbox" , name="owner">
+                    Courier: <input type="checkbox" , name="courier" >
     <?php
     }
 
