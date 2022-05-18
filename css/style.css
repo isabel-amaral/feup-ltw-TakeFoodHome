@@ -54,6 +54,10 @@ body > header form #login-buttons {
     margin-top: 1em;
 }
 
+body > header form button {
+    grid-column-end: span 2;
+}
+
 /*__________ retaurants ________________________*/
 
 main {
