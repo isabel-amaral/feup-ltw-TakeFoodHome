@@ -198,6 +198,10 @@ main input{
 
 }
 
+#ordersRestaurant :nth-child(2) {
+    grid-column-end:span 2 ;
+}
+
 #orderNumber {
     padding: 0em 5em;
 }
