@@ -206,6 +206,14 @@ main input{
     padding: 0em 5em;
 }
 
+/*__________ userInfo ___________________________*/
+
+#userinfo {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--background-color);
+    margin: 2em 0em;
+}
 
 
 /*__________ footer _____________________________*/

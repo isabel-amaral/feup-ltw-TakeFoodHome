@@ -14,7 +14,7 @@
         }
         else { ?>
             <section id="user-session">
-                <h3><a href=""><?=$_SESSION['name']?></a></h3>
+                <h3><a href="user-info-page.php/?id="><?=$_SESSION['name']?></a></h3>
                 <form action="../../php/actions/logout.php">
                     <button type="submit">Logout</button>
                 </form>

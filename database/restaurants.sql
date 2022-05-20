@@ -14,6 +14,9 @@ CREATE TABLE User(
     username        VARCHAR(16) UNIQUE NOT NULL,
     password        VARCHAR(40) NOT NULL,
     name            VARCHAR(32) NOT NULL,
+    email           TEXT NOT NULL,
+    phoneNumber     CHAR(9) NOT NULL,
+    address         TEXT NOT NULL,
     owner           BOOLEAN DEFAULT FALSE,
     courier         BOOLEAN DEFAULT FALSE
 );
@@ -66,25 +69,34 @@ CREATE TABLE ReviewResponse(
 --INSERTS-------------------------------------------------------------
 
 --USERS---------------------------------------------------------------
-INSERT INTO User (userID,username,password,name) VALUES(
+INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUES(
     1,
     'isabel123',
     '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
-    'Isabel Amaral'
+    'Isabel Amaral',
+    'email@email.com',
+    '987654321',
+    'stree 9'
 );
 
-INSERT INTO User (userID,username,password,name) VALUES(
+INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUES(
     2,
     'firstowner',
     '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
-    'Mr. First Restaurant Owner'
+    'Mr. First Restaurant Owner',
+    'email@email.com',
+    '987654321',
+    'stree 9'
 );
 
-INSERT INTO User (userID,username,password,name) VALUES(
+INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUES(
     3,
     'secondowner',
     '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
-    'Mr. Second Restaurant Owner'
+    'Mr. Second Restaurant Owner',
+    'email@email.com',
+    '987654321',
+    'stree 9'
 );
 
 --RESTAURANTS---------------------------------------------------------

@@ -13,4 +13,15 @@
         $user = $stmt->fetch();
         return $user;
     }
+
+    function getUserbyID($db,$id){
+        $stmt = $db->prepare(
+            'SELECT * FROM User
+            WHERE userID = :id'
+        );
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+        $user =$stmt->fetch();
+        return $user;
+    }
 ?>
