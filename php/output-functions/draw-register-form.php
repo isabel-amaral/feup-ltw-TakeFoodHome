@@ -2,12 +2,13 @@
     function outputRegisterFormFields() { ?>
         <main>
             <section id="register">
-                <form>
-                    Username:<input type="text" , name="username">
-                    Password:<input type="password" , name="pass">
+                <form action="../../php/actions/create-new-user.php" method="post">
+                    Username:<input type="text", name="username">
+                    Name:<input type="text", name="name">
                     Email:<input type="email" , name="email">
                     Phone Number: <input type="number" , name="phone">
                     Address: <input type="text" , name="address">
+                    Password:<input type="password" , name="password">
                     Owner: <input type="checkbox" , name="owner">
                     Courier: <input type="checkbox" , name="courier" >
     <?php
