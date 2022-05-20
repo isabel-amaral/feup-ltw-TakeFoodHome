@@ -33,7 +33,7 @@
         </head>
         <body>
         <header>
-            <h1>Take Food Home</h1>
+            <h1><a href="index.php">Take Food Home</a></h1>
             <?php drawLoginForm(); ?>
         </header>
     <?php
