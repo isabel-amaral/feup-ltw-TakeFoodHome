@@ -2,7 +2,7 @@
     function outputRegisterFormFields() { ?>
         <main>
             <section id="register">
-                <form action="../../php/actions/create-new-user.php" method="post">
+                <form action="../../php/actions/signup-user.php" method="post">
                     Username:<input type="text", name="username">
                     Name:<input type="text", name="name">
                     Email:<input type="email" , name="email">

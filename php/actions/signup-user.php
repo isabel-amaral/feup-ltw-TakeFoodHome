@@ -1,6 +1,7 @@
 <?php
     require_once('../../database/db-connection.php');
-    require_once('../../database/data-insertion/create-new-user.php');
+    require_once('../../database/data-insertion/add-new-user.php');
+    require_once('login.php');
 
     $db = getDatabaseConnection('../../database/restaurants.db');
     $username = $_POST['username'];
@@ -12,6 +13,14 @@
     $isOwner = isset($_POST['owner']);
     $isCourier = isset($_POST['courier']);
 
+    echo "\n";
+    echo $username;
+    echo "\n";
+    echo $name;
+    echo "\n";
+    echo $password;
+    echo "\n";
+
     addUserToDatabase($db, $username, $name, $email, $phone, $address, $password, $isOwner, $isCourier);
-    header('Location: login.php');
+    initiateSession($username, $password);
 ?>
