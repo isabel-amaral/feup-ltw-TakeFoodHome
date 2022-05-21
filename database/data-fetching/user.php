@@ -14,7 +14,7 @@
         return $user;
     }
 
-    function getUserbyID($db,$id){
+    function getUserbyID($db, $id) {
         $stmt = $db->prepare(
             'SELECT * FROM User
             WHERE userID = :id'
