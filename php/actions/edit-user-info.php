@@ -10,6 +10,7 @@
     $phone = $_POST['phone'];
     $address = $_POST['address'];
 
-    updateUserInfo($db, $username, $name, $email, $phone, $address);
+    session_start();
+    updateUserInfo($db, $_SESSION['userID'], $username, $name, $email, $phone, $address);
     updateSessionInfo($username, $name);
 ?>
