@@ -1,4 +1,12 @@
 <?php
+    function updateSessionInfo($username, $name) {
+        session_start();
+        $_SESSION['username'] = $username;
+        $_SESSION['name'] = $name;
+
+        header('Location: ../../user-info-page.php');
+    }
+
     function initiateSession($username, $password) {
         require_once('../../database/db-connection.php');
         require_once('../../database/data-fetching/user.php');
