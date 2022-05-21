@@ -10,7 +10,15 @@
     $phone = $_POST['phone'];
     $address = $_POST['address'];
 
+    $isOwner = 0; $isCourier = 0;
+    foreach ($_POST['user-type'] as $value) {
+        if ($value === 'owner')
+            $isOwner = 1;
+        if ($value === 'courier')
+            $isCourier = 1;
+    }
+
     session_start();
-    updateUserInfo($db, $_SESSION['userID'], $username, $name, $email, $phone, $address);
+    updateUserInfo($db, $_SESSION['userID'], $username, $name, $email, $phone, $address, $isOwner, $isCourier);
     updateSessionInfo($username, $name);
 ?>
