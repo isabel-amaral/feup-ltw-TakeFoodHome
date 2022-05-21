@@ -1,6 +1,6 @@
 <?php
     require_once('../../database/db-connection.php');
-    require_once('../../database/data-insertion/add-new-user.php');
+    require_once('../../database/data-insertion/insert-new-user.php');
     require_once('login.php');
 
     $db = getDatabaseConnection('../../database/restaurants.db');
