@@ -9,8 +9,8 @@
                     Phone Number: <input type="number" , name="phone">
                     Address: <input type="text" , name="address">
                     Password:<input type="password" , name="password">
-                    Owner: <input type="checkbox" , name="owner">
-                    Courier: <input type="checkbox" , name="courier" >
+                    Owner: <input type="checkbox" , name="user-type[]", value="owner">
+                    Courier: <input type="checkbox" , name="user-type[]", value="courier">
     <?php
     }
 

@@ -10,16 +10,14 @@
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $password = sha1($_POST['password']);
-    $isOwner = isset($_POST['owner']);
-    $isCourier = isset($_POST['courier']);
 
-    echo "\n";
-    echo $username;
-    echo "\n";
-    echo $name;
-    echo "\n";
-    echo $password;
-    echo "\n";
+    $isOwner = 0; $isCourier = 0;
+    foreach ($_POST['user-type'] as $value) {
+        if ($value === 'owner')
+            $isOwner = 1;
+        if ($value === 'courier')
+            $isCourier = 1;
+    }
 
     addUserToDatabase($db, $username, $name, $email, $phone, $address, $password, $isOwner, $isCourier);
     initiateSession($username, $password);
