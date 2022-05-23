@@ -4,7 +4,7 @@
         require_once('database/data-fetching/user.php');
         require_once('database/data-fetching/restaurants.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $user = getUserbyId($db,$_GET['id']);
+        $user = getUserbyId($db,$_SESSION['userID']);
         ?>
         <main>
             <section id="userInfo">
@@ -17,23 +17,29 @@
                 <p>Address:</p>
                 <p><?=$user['address']?></p>
 
-                <button class="button" type="button">Edit info</button>
+                <button class="button" type="button" onclick="location.href='../user-info-edit-page.php'">Edit info</button>
             </section>
 
+            <section id="restaurants">
+            <article>
+                <h2>Your Restaurants</h2>
+                <ul>
             <?php 
                 if($user['owner'] === 1){
-                    ?> <section id = restaurants> <?php
-                    $restaurants = getRestaurantbyOwner($db,$_GET['id']);
+                    $restaurants = getRestaurantbyOwner($db,$_SESSION['userID']);
                     foreach ($restaurants as $restaurant){
                     ?>
-                        <article>
-                            <h3><a href="restaurant-page.php?id=1"><?=$restaurant['name']?></h3>
-                        </article>
+                        
+                        <li><a href="../restaurant-page.php?id=<?=$restaurant['restaurantID']?>"><?=$restaurant['name']?></a></li>
+                        
                     
                     <?php
                     }
                 }
             ?>
+            <ul>
+            </article>
+            </section>
         </main>
 
 

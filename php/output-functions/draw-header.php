@@ -14,7 +14,7 @@
         }
         else { ?>
             <section id="user-session">
-                <h3><a href="user-info-page.php/?id="><?=$_SESSION['name']?></a></h3>
+                <h3><a href="user-info-page.php"><?=$_SESSION['name']?></a></h3>
                 <form action="../../php/actions/logout.php">
                     <button type="submit">Logout</button>
                 </form>
@@ -28,6 +28,7 @@
         <html lang="en">
         <head>
             <link rel="stylesheet" href="../css/style.css">
+            <script type="text/javascript" src="javascript/script.js"></script>
             <meta charset="UTF-8">
             <title>TakeFoodHome</title>
         </head>
