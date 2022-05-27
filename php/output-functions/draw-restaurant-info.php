@@ -10,6 +10,10 @@
         <section id="restaurant">
             <h2><?=$restaurant['name']?></h2>
             <p><?=$restaurant['description']?></p>
+            <p><?=$restaurant['address']?></p>
+            <p><?=$restaurant['email']?></p>
+            <p><?=$restaurant['phoneNumber']?></p>
+            <p><?=$restaurant['category']?></p>
         </section>
     <?php
     }
