@@ -1,5 +1,5 @@
 <?php
-    function outputRegisterFormFields() { ?>
+    function outputRegisterForm() { ?>
         <main>
             <section id="register">
                 <form action="../../php/actions/signup-user.php" method="post">
@@ -11,11 +11,6 @@
                     Password: <input type="password" , name="password">
                     Owner: <input type="checkbox" , name="user-type[]", value="owner">
                     Courier: <input type="checkbox" , name="user-type[]", value="courier">
-    <?php
-    }
-
-    function outputRegisterForm() { 
-        outputRegisterFormFields(); ?>
                     <input class="submit" type="submit" value="Register">
                 </form>
             </section>
