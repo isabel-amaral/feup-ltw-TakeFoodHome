@@ -19,4 +19,16 @@
         $restaurant_info = $stmt->fetch();
         return $restaurant_info;
     }
+
+    function getRestaurantbyOwner($db,$onwer_id){
+        $stmt = $db->prepare(
+            'SELECT *
+            FROM Restaurant
+            WHERE ownerID = :id'
+        );
+        $stmt ->bindParam(':id',$onwer_id);
+        $stmt->execute();
+        $restaurants = $stmt->fetchall();
+        return $restaurants;
+    }
 ?>

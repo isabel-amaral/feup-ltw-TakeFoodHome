@@ -10,8 +10,8 @@
                 <h2>State</h2>
 
                 <?php foreach($orders as $order) { ?>
-                    <p id="orderNumber"><?=$order['orderID']?></p>
-                    <p id="orderState"><?=$order['state']?></p>
+                    <p class="orderNumber"><?=$order['orderID']?></p>
+                    <p class="orderState"><?=$order['state']?></p>
                     <button class="button">Change State</button>  <!-- TODO: mudar para dropdown  -->
                 <?php
                 } ?>                

@@ -79,24 +79,26 @@ INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUE
     'street 9'
 );
 
-INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUES(
+INSERT INTO User (userID,username,password,name,email,phoneNumber,address,owner) VALUES(
     2,
     'firstowner',
     '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
     'Mr. First Restaurant Owner',
     'email@email.com',
     '987654321',
-    'street 9'
+    'street 9',
+    TRUE
 );
 
-INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUES(
+INSERT INTO User (userID,username,password,name,email,phoneNumber,address,owner) VALUES(
     3,
     'secondowner',
     '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
     'Mr. Second Restaurant Owner',
     'email@email.com',
     '987654321',
-    'street 9'
+    'street 9',
+    TRUE
 );
 
 --RESTAURANTS---------------------------------------------------------

@@ -86,6 +86,11 @@ main article {
     word-break: break-all;
 }
 
+#restaurants li {
+    padding: 0.3em;
+
+}
+
 /*__________ retaurant _________________________*/
 
 #restaurant {
@@ -182,7 +187,7 @@ main input{
 
 }
 
-#orderNumber {
+.orderNumber {
     padding: 0em 5em;
 }
 
@@ -208,11 +213,12 @@ main input{
 
 /*__________ userInfo ___________________________*/
 
-#userinfo {
-    display: flex;
-    flex-wrap: wrap;
+#userInfo {
+    display: grid;
+    grid-template-columns: 20% auto;
     background-color: var(--background-color);
     margin: 2em 0em;
+    padding: 1em;
 }
 
 
