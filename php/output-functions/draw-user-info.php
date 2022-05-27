@@ -20,12 +20,15 @@
                 <button class="button" type="button" onclick="location.href='../user-info-edit-page.php'">Edit info</button>
             </section>
 
-            <section id="restaurants">
-            <article>
-                <h2>Your Restaurants</h2>
-                <ul>
+            
             <?php 
                 if($user['owner'] === 1){
+                    ?>
+                    <section id="restaurants">
+                    <article>
+                    <h2>Your Restaurants</h2>
+                    <ul>
+                    <?php
                     $restaurants = getRestaurantbyOwner($db,$_SESSION['userID']);
                     foreach ($restaurants as $restaurant){
                     ?>
@@ -35,7 +38,13 @@
                     
                     <?php
                     }
+                    ?>
+                    <ul>
+                    </article>
+                    </section>
+                    <?php
                 }
+                
             ?>
             <ul>
             </article>
