@@ -1,7 +1,8 @@
 <?php
     function getAllRestaurants($db) {
         $stmt = $db->prepare(
-            'SELECT * FROM Restaurant'
+            'SELECT * FROM Restaurant
+            ORDER BY name'
         );
         $stmt->execute();
         $restaurants = $stmt->fetchAll();
@@ -24,7 +25,8 @@
         $stmt = $db->prepare(
             'SELECT *
             FROM Restaurant
-            WHERE ownerID = :id'
+            WHERE ownerID = :id
+            ORDER BY name'
         );
         $stmt ->bindParam(':id',$onwer_id);
         $stmt->execute();
