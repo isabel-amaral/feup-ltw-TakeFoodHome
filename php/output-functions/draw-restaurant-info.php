@@ -5,6 +5,10 @@
         $db = getDatabaseConnection('database/restaurants.db');
         $restaurant = getRestaurantInfo($db, $_GET['id']); ?>
 
+        <script src="../javascript/script.js" defer></script>
+
+        <button class="button" type="button" id="cart">cart</button>
+
         <!-- TODO: acrescentar mais informação relevante -->
         
         <section id="restaurant">
