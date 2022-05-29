@@ -13,12 +13,12 @@
         <main>
             <section id="restaurantInfo">
                 <form action="../../php/actions/edit-user-info.php" method='post'>
-                    Restaurant's Name:<input type="text" name="username" value=<?=$current_restaurant_info['name']?>>
-                    Restaurant's Description:<input type="text" name="description" value=<?=$current_restaurant_info['description']?>>
-                    Category:<input type="text" name="category" value=<?=$current_restaurant_info['category']?>>
+                    Restaurant's Name:<input type="text" name="username" value="<?=$current_restaurant_info['name']?>">
+                    Restaurant's Description:<input type="text" name="description" value="<?=$current_restaurant_info['description']?>">
+                    Category:<input type="text" name="category" value="<?=$current_restaurant_info['category']?>">
                     Email:<input type="email"  name="email" value=<?=$current_restaurant_info['email']?>>
                     Phone Number: <input type="number"  name="phone" value=<?=$current_restaurant_info['phoneNumber']?>>
-                    Address: <input type="text"  name="address" value=<?=$current_restaurant_info['address']?>>
+                    Address: <input type="text"  name="address" value="<?=$current_restaurant_info['address']?>">
                     <input class="submit" type="submit" value="Submit">
                 </form>
             </section>

@@ -12,10 +12,10 @@
             <section id="register">
                 <form action="../../php/actions/edit-user-info.php" method="post">
                     Username: <input type="text", name="username", value=<?=$current_user_info['username']?>>
-                    Name: <input type="text", name="name", value=<?=$current_user_info['name']?>>
+                    Name: <input type="text", name="name", value="<?=$current_user_info['name']?>">
                     Email: <input type="email" , name="email", value=<?=$current_user_info['email']?>>
                     Phone Number: <input type="number" , name="phone", value=<?=$current_user_info['phoneNumber']?>>
-                    Address: <input type="text" , name="address", value=<?=$current_user_info['address']?>>
+                    Address: <input type="text" , name="address", value="<?=$current_user_info['address']?>">
                     Password: <input type="password" , name="password", value=<?=$current_user_info['password']?>>
                     <?php
                     if ($isOwner === 0) { ?>
