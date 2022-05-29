@@ -4,8 +4,6 @@
         require_once('database/data-fetching/restaurants.php');
         $db = getDatabaseConnection('database/restaurants.db');
         $restaurant = getRestaurantInfo($db, $_GET['id']); ?>
-
-        <!-- TODO: acrescentar mais informação relevante -->
         
         <section id="restaurant">
             <header>
