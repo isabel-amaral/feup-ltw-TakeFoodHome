@@ -8,12 +8,15 @@
         <!-- TODO: acrescentar mais informação relevante -->
         
         <section id="restaurant">
-            <h2><?=$restaurant['name']?></h2>
+            <header>
+                <h2><?=$restaurant['name']?></h2>
+            </header>
             <p><?=$restaurant['description']?></p>
-            <p><?=$restaurant['address']?></p>
-            <p><?=$restaurant['email']?></p>
-            <p><?=$restaurant['phoneNumber']?></p>
-            <p><?=$restaurant['category']?></p>
+            <footer>
+                <p><?=$restaurant['address']?></p>
+                <p><?=$restaurant['email']?></p>
+                <p><?=$restaurant['phoneNumber']?></p>
+            </footer>
         </section>
     <?php
     }

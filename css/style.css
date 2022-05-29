@@ -99,6 +99,14 @@ main article {
     
 }
 
+#restaurant footer {
+    margin-top: 2em;
+}
+
+#restaurant footer * {
+    color: black;
+}
+
 #category-and-plates {
     color: black;
 }
