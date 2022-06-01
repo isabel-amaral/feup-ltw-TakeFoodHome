@@ -26,13 +26,14 @@
                     <section id="restaurants">
                     <article>
                     <h2>Your Restaurants</h2>
+                    <ul>
                     <?php
                     $restaurants = getRestaurantbyOwner($db,$_SESSION['userID']);
                     foreach ($restaurants as $restaurant) { ?>
-                        <p><a href="../restaurant-page.php?id=<?=$restaurant['restaurantID']?>"><?=$restaurant['name']?></a></p>
+                        <li><a href="../restaurant-page.php?id=<?=$restaurant['restaurantID']?>"><?=$restaurant['name']?></a></li>
                     <?php
-                    }
-                    ?>
+                    } ?>
+                    </ul>
                     <button class="button" type="button" onclick="location.href='../restaurant-register-page.php'">Add Restaurant</button>
                     </article>
                     </section>
