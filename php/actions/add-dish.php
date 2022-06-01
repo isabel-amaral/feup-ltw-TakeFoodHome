@@ -22,8 +22,6 @@
     $picture = $_POST['picture'];
     $restaurantID = $_GET['restaurantID'];
 
-    echo $picture;
-
     addDishToDatabase($db, $name, $description, $price, $picture, $category, $restaurantID);
     header('Location: ../../restaurant-page.php?id=' . $restaurantID);
 ?>

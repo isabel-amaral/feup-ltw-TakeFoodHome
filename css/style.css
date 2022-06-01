@@ -18,6 +18,7 @@ body {
     text-align: center;
     margin-top: 1em;
     min-width: 20%;
+    max-height: 3.5em;
 }
 
 /*__________ header _________________________*/
@@ -97,7 +98,43 @@ main article {
 #restaurant {
     background-color: var(--background-color);
     padding: 1em;
-    
+    display: grid;
+    grid-template-columns: auto 20%;
+}
+
+#restaurant header {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#restaurant p {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#restaurant #edit-restaurant {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#restaurant #add-dish {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#restaurant footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
 }
 
 #restaurant footer {
