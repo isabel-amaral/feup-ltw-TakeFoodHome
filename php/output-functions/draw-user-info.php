@@ -38,6 +38,7 @@
                     <?php
                     }
                     ?>
+                    <button class="button" type="button" onclick="location.href='../restaurant-register-page.php'">Add Restaurant</button>
                     </article>
                     </section>
                     <?php

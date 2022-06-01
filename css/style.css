@@ -17,7 +17,8 @@ body {
     padding: 1em 0em;
     text-align: center;
     margin-top: 1em;
-  }
+    min-width: 20%;
+}
 
 /*__________ header _________________________*/
 
