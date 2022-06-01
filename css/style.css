@@ -13,10 +13,10 @@ body {
 .button {
     background-color: var(--secondary-color);
     color: black;
-    border: 2px solid #501B1D;
+    border: 2px solid var(--main-color);
     padding: 1em 0em;
     text-align: center;
-    margin: 1em;
+    margin-top: 1em;
   }
 
 /*__________ header _________________________*/
@@ -227,6 +227,12 @@ main input{
     background-color: var(--background-color);
     margin: 2em 0em;
     padding: 1em;
+}
+
+#userRestaurants {
+    display: grid;
+    grid-template-columns: 20% 20%;
+    align-items: center;
 }
 
 

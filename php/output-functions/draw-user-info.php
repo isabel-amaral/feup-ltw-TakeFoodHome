@@ -22,31 +22,28 @@
 
             
             <?php 
-                if($user['owner'] === 1){
-                    ?>
+                if($user['owner'] === 1) { ?>
                     <section id="restaurants">
                     <article>
                     <h2>Your Restaurants</h2>
-                    <ul>
                     <?php
                     $restaurants = getRestaurantbyOwner($db,$_SESSION['userID']);
-                    foreach ($restaurants as $restaurant){
-                    ?>
-                        
-                        <li><a href="../restaurant-page.php?id=<?=$restaurant['restaurantID']?>"><?=$restaurant['name']?></a></li>
-                        
-                    
+                    foreach ($restaurants as $restaurant) { ?>
+                        <div id="userRestaurants">
+                            <p><a href="../restaurant-page.php?id=<?=$restaurant['restaurantID']?>"><?=$restaurant['name']?></a></p>
+                            <button class="button" type="button" onclick="location.href='../restaurant-info-edit-page.php?id=<?=$restaurant['restaurantID']?>'">
+                                Edit info
+                            </button>
+                        </div>
                     <?php
                     }
                     ?>
-                    <ul>
                     </article>
                     </section>
                     <?php
                 }
                 
             ?>
-            <ul>
             </article>
             </section>
         </main>
