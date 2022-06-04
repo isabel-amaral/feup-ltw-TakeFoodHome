@@ -18,7 +18,7 @@
         } ?>
         <main>
             <section id="dishInfo">
-                <form action="../../php/actions/add-dish.php?restaurantID=<?=$_GET['restaurantID']?>" method="post">
+                <form action="../../php/actions/edit-dish-info.php?restaurantID=<?=$_GET['restaurantID']?>&dishID=<?=$_GET['dishID']?>" method="post">
                     Name: <input type="text" name="name" value="<?=$dish_info['name']?>">
                     Description: <input type="text" name="description" value="<?=$dish_info['description']?>">
                     Price: <input type="number" name="price" value="<?=$dish_info['price']?>">
