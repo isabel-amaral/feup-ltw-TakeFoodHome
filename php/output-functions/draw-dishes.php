@@ -1,8 +1,10 @@
 <?php
-    function outputDishes() { 
+    function outputDishes() {
         require_once('database/db-connection.php');
+        require_once('database/data-fetching/user.php');
         require_once('database/data-fetching/dishes.php');
         $db = getDatabaseConnection('database/restaurants.db');
+        $restaurant = getRestaurantInfo($db, $_GET['id']);
         $dishes = getRestaurantDishes($db, $_GET['id']); ?>
 
         <section id="category-and-plates">
@@ -13,7 +15,7 @@
                 <h3><?=$curr_category?></h3>
             <?php
             foreach ($dishes as $dish) {
-                if ($dish['category'] !== $curr_category) { 
+                if ($dish['category'] !== $curr_category) {
                     $curr_category = $dish['category'];
                     ?>
                         </div>
@@ -27,6 +29,13 @@
                     <p><?=$dish['description']?></p>
                     <!-- TODO: get picture from database -->
                     <img src="https://picsum.photos/600/300?business" alt="dish">
+                    <?php if ($restaurant['ownerID'] === $_SESSION['userID']) { ?>
+                        <button class="button" type="button"
+                        onclick="location.href='../dish-info-edit-page.php?restaurantID=<?=$_GET['id']?>&dishID=<?=$dish['dishID']?>'">
+                            Edit info
+                        </button>
+                    <?php
+                    } ?>
                 </article>
 
             <?php

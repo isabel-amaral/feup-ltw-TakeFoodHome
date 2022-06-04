@@ -63,7 +63,7 @@ body > header form button {
 /*__________ retaurants ________________________*/
 
 main {
-    background-color: var(--main-color); 
+    background-color: var(--main-color);
     color: var(--main-color);
 }
 
@@ -145,15 +145,15 @@ main article {
     color: black;
 }
 
-#category-and-plates {
-    color: black;
-}
-
 .category {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--background-color);
     margin: 2em 0em;
+}
+
+#category-and-plates {
+    color: black;
 }
 
 #category-and-plates h3{
@@ -163,7 +163,7 @@ main article {
 }
 
 #category-and-plates article {
-    width: fit-content;
+    width: 14em;
     height: auto;
     padding: 1em;
     margin: 0em 2em;
@@ -175,6 +175,10 @@ main article {
 
 #category-and-plates article img{
     width: 14em;
+}
+
+.category .button {
+    width: 100%;
 }
 
 /*__________ reviews ____________________________*/
