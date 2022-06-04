@@ -24,6 +24,10 @@
     $category = $_POST['category'];
     $picture = $_POST['picture'];
 
+    if ($picture === '') {
+        $picture = $dish_info['picture'];
+    }
+
     updateDishInfo($db, $_GET['dishID'], $name, $description, $price, $category, $picture);
     header('Location: ../../restaurant-page.php?id=' . $_GET['restaurantID']);
 ?>
