@@ -19,7 +19,7 @@
                 <form action="../../php/actions/add-dish.php?restaurantID=<?=$_GET['restaurantID']?>" method="post">
                     Name: <input type="text" name="name">
                     Description: <input type="text" name="description">
-                    Price: <input type="number" name="price">
+                    Price: <input type="number" name="price" step="0.01">
                     Category: <input type="text" name="category">
                     Image: <input type="file" , name="picture">
                     <input class="submit" type="submit" value="Submit">
