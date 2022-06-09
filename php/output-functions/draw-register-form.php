@@ -1,20 +1,16 @@
 <?php
-    function outputRegisterFormFields() { ?>
+    function outputRegisterForm() { ?>
         <main>
             <section id="register">
-                <form>
-                    Username:<input type="text"  name="username">
-                    Password:<input type="password"  name="pass">
-                    Email:<input type="email"  name="email">
-                    Phone Number: <input type="number" ,name="phone">
-                    Address: <input type="text"  name="address">
-                    Owner: <input type="checkbox"  name="owner">
-                    Courier: <input type="checkbox"  name="courier" >
-    <?php
-    }
-
-    function outputRegisterForm() { 
-        outputRegisterFormFields(); ?>
+                <form action="../../php/actions/signup-user.php" method="post">
+                    Username: <input type="text", name="username">
+                    Name: <input type="text", name="name">
+                    Email: <input type="email" , name="email">
+                    Phone Number: <input type="number" , name="phone">
+                    Address: <input type="text" , name="address">
+                    Password: <input type="password" , name="password">
+                    Owner: <input type="checkbox" , name="user-type[]", value="owner">
+                    Courier: <input type="checkbox" , name="user-type[]", value="courier">
                     <input class="submit" type="submit" value="Register">
                 </form>
             </section>

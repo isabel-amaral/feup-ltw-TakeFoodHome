@@ -13,11 +13,13 @@ body {
 .button {
     background-color: var(--secondary-color);
     color: black;
-    border: 2px solid #501B1D;
+    border: 2px solid var(--main-color);
     padding: 1em 0em;
     text-align: center;
-    margin: 1em;
-  }
+    margin-top: 1em;
+    min-width: 20%;
+    max-height: 3.5em;
+}
 
 /*__________ header _________________________*/
 
@@ -61,7 +63,7 @@ body > header form button {
 /*__________ retaurants ________________________*/
 
 main {
-    background-color: var(--main-color); 
+    background-color: var(--main-color);
     color: var(--main-color);
 }
 
@@ -96,10 +98,50 @@ main article {
 #restaurant {
     background-color: var(--background-color);
     padding: 1em;
-    
+    display: grid;
+    grid-template-columns: auto 20%;
 }
 
-#category-and-plates {
+#restaurant header {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#restaurant p {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#restaurant #edit-restaurant {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#restaurant #add-dish {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#restaurant footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#restaurant footer {
+    margin-top: 2em;
+}
+
+#restaurant footer * {
     color: black;
 }
 
@@ -110,6 +152,10 @@ main article {
     margin: 2em 0em;
 }
 
+#category-and-plates {
+    color: black;
+}
+
 #category-and-plates h3{
     width:100%;
     padding: 0.5em;
@@ -117,7 +163,7 @@ main article {
 }
 
 #category-and-plates article {
-    width: fit-content;
+    width: 14em;
     height: auto;
     padding: 1em;
     margin: 0em 2em;
@@ -129,6 +175,10 @@ main article {
 
 #category-and-plates article img{
     width: 14em;
+}
+
+.category .button {
+    width: 100%;
 }
 
 /*__________ reviews ____________________________*/
@@ -220,7 +270,6 @@ main input{
     margin: 2em 0em;
     padding: 1em;
 }
-
 
 /*__________ footer _____________________________*/
 

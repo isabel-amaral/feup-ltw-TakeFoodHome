@@ -17,8 +17,8 @@ CREATE TABLE User(
     email           TEXT NOT NULL,
     phoneNumber     CHAR(9) NOT NULL,
     address         TEXT NOT NULL,
-    owner           BOOLEAN DEFAULT FALSE,
-    courier         BOOLEAN DEFAULT FALSE
+    owner           BOOLEAN DEFAULT 0,
+    courier         BOOLEAN DEFAULT 0
 );
 
 CREATE TABLE Restaurant(
@@ -76,7 +76,7 @@ INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUE
     'Isabel Amaral',
     'email@email.com',
     '987654321',
-    'stree 9'
+    'street 9'
 );
 
 INSERT INTO User (userID,username,password,name,email,phoneNumber,address,owner) VALUES(
@@ -86,7 +86,7 @@ INSERT INTO User (userID,username,password,name,email,phoneNumber,address,owner)
     'Mr. First Restaurant Owner',
     'email@email.com',
     '987654321',
-    'stree 9',
+    'street 9',
     TRUE
 );
 
@@ -97,7 +97,7 @@ INSERT INTO User (userID,username,password,name,email,phoneNumber,address,owner)
     'Mr. Second Restaurant Owner',
     'email@email.com',
     '987654321',
-    'stree 9',
+    'street 9',
     TRUE
 );
 

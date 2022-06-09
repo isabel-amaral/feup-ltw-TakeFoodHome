@@ -1,13 +1,11 @@
 <?php
-    function outputDishEditForm() {
+    function outputDishRegisterForm() { 
         require_once('database/db-connection.php');
         require_once('database/data-fetching/user.php');
-        require_once('database/data-fetching/dishes.php');
         require_once('database/data-fetching/restaurants.php');
 
         $db = getDatabaseConnection('database/restaurants.db');
         $user_info = getUserbyID($db, $_SESSION['userID']);
-        $dish_info = getDishInfo($db, $_GET['dishID']);
         $restaurant_info = getRestaurantInfo($db, $_GET['restaurantID']);
         $ownerID = $restaurant_info['ownerID'];
     
@@ -18,11 +16,11 @@
         } ?>
         <main>
             <section id="dishInfo">
-                <form action="../../php/actions/edit-dish-info.php?restaurantID=<?=$_GET['restaurantID']?>&dishID=<?=$_GET['dishID']?>" method="post">
-                    Name: <input type="text" name="name" value="<?=$dish_info['name']?>">
-                    Description: <input type="text" name="description" value="<?=$dish_info['description']?>">
-                    Price: <input type="number" name="price" step="0.01" value="<?=$dish_info['price']?>">
-                    Category: <input type="text" name="category" value="<?=$dish_info['category']?>">
+                <form action="../../php/actions/add-dish.php?restaurantID=<?=$_GET['restaurantID']?>" method="post">
+                    Name: <input type="text" name="name">
+                    Description: <input type="text" name="description">
+                    Price: <input type="number" name="price" step="0.01">
+                    Category: <input type="text" name="category">
                     Image: <input type="file" , name="picture">
                     <input class="submit" type="submit" value="Submit">
                 </form>
