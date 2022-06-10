@@ -181,6 +181,10 @@ main article {
     width: 100%;
 }
 
+#popCart {
+    display: none;
+}
+
 /*__________ reviews ____________________________*/
 
 #reviews{

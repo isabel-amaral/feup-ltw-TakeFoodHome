@@ -5,9 +5,13 @@
         $db = getDatabaseConnection('database/restaurants.db');
         $restaurant = getRestaurantInfo($db, $_GET['id']); ?>
 
-        <script src="../javascript/script.js" defer></script>
 
         <button class="button" type="button" id="cart">cart</button>
+        <button class="button" type="button" id="add">add</button>
+
+        <section id="popCart">
+            <p>This is the cart </p>
+        </section>
 
         <!-- TODO: acrescentar mais informação relevante -->
         

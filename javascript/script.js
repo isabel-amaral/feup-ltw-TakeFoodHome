@@ -1,40 +1,45 @@
 var path = "http://localhost:9000";
+var button = document.getElementById("cart");
+var add = document.getElementById("add");
+var b = false;
+var popCart = document.getElementById("popCart");
 
-function init(){
-  var button = document.getElementById("cart");
-  button.addEventListener("click",showCart());
-}
-
-window.onload = function() {
-  init();
-}
-
-function showCart(){
-  var newp = document.createElement("p");
-  newp.textContent ="yes yes";
-  document.body.appendChild(newp);
-  /*
-  const request = new XMLHttpRequest()
-  request.addEventListener("load", transferComplete)
-  request.open("get", path +"/database/data-fetching/js.php", true)
-  request.send()
-  */
-}
-
-function transferComplete() {
-  console.log(this.response)
-}
-
-async function getData(){
-  fetch(path +"/database/data-fetching/js.php");
-}
-
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200){
-    console.log(this.responseText)
+add.addEventListener("click", function(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      popCart.appendChild(document.createTextNode(this.responseText));
+    }
   }
-}
 
-xhttp.open("GET", path +"/database/data-fetching/js.php", true);
-xhttp.send();
+  xhttp.open("GET", path + "/database/data-fetching/js.php", true);
+  xhttp.send();
+})
+
+/*
+button.addEventListener("click", function(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var newp = document.createElement("p");
+      newp.appendChild(document.createTextNode(this.responseText));
+      button.appendChild(newp);
+    }
+  }
+
+  xhttp.open("GET", path + "/database/data-fetching/js.php", true);
+  xhttp.send();
+
+  console.log("yes");
+});
+*/
+
+button.addEventListener("click", function(){
+  if (b){
+    popCart.style.display = "none";
+    b = false;
+  }else{
+    popCart.style.display = "flex";
+    b = true;
+  }
+})
