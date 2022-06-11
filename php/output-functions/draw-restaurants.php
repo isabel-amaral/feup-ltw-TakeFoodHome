@@ -3,13 +3,25 @@
         require_once('database/db-connection.php');
         require_once('database/data-fetching/restaurants.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $restaurants = getAllRestaurants($db); ?>
+        $restaurants = getAllRestaurants($db);
+        $categories = getAllCategories($db); ?>
 
         <main>
             <header>
                 <h2>Restaurants</h2>
-                <input id="search-restaurant" type="text" placeholder="search">
+                <div id="search-form">
+                    <input id="search-restaurant" type="text" placeholder="search">
+                    <select id="search-categories" name="search-categories">
+                        <option value="all" selected>All Categories</option>
+                    <?php foreach($categories as $category) { 
+                        $category_value = $category['category']; ?>
+                        <option value="<?=$category_value?>"><?=$category_value?></option>
+                    <?php
+                    } ?>
+                    </select>
+                </div>
             </header>
+
             <section id="restaurants">
             <?php
             foreach ($restaurants as $restaurant) { ?>

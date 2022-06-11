@@ -78,20 +78,35 @@ main {
 main header {
     background-color: var(--background-color);
     padding: 0em 1em;
+    height: 6em;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 main header h2 {
-    align-self: flex-start;
+    align-self: center;
+    flex-grow: 1;
 }
 
-main header #search-restaurant {
+main header div#search-form {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 11.5em;
+    grid-template-rows: 1.5em 2em;
+    gap: 0.5em
+}
+
+main header div#search-form #search-restaurant {
     align-self: center;
-    max-width: 13em;
-    max-height: 2em;
     padding: 0.5em;
+    margin: 0em;
+}
+
+main header div#search-form #search-categories {
+    align-self: center;
+    padding: 0.5em;
+    margin: 0em;
 }
 
 main article {
