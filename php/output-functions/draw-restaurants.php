@@ -7,7 +7,10 @@
 
         <main>
             <section id="restaurants">
-            <header><h2>Restaurants</h2></header>
+            <header>
+                <h2>Restaurants</h2>
+                <input id="search-restaurant" type="text" placeholder="search">
+            </header>
             <?php
             foreach ($restaurants as $restaurant) { ?>
                 <article class="restaurant">
