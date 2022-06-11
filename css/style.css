@@ -75,7 +75,7 @@ main {
     color: var(--main-color);
 }
 
-main section > header {
+main header {
     background-color: var(--background-color);
     padding: 0em 1em;
     display: flex;
@@ -83,11 +83,11 @@ main section > header {
     align-items: center;
 }
 
-main section > header h2 {
+main header h2 {
     align-self: flex-start;
 }
 
-main section > header #search-restaurant {
+main header #search-restaurant {
     align-self: center;
     max-width: 13em;
     max-height: 2em;
@@ -105,7 +105,6 @@ main article {
 
 #restaurants li {
     padding: 0.3em;
-
 }
 
 /*__________ retaurant _________________________*/

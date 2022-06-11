@@ -6,11 +6,11 @@
         $restaurants = getAllRestaurants($db); ?>
 
         <main>
-            <section id="restaurants">
             <header>
                 <h2>Restaurants</h2>
                 <input id="search-restaurant" type="text" placeholder="search">
             </header>
+            <section id="restaurants">
             <?php
             foreach ($restaurants as $restaurant) { ?>
                 <article class="restaurant">
