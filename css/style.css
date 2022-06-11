@@ -46,6 +46,14 @@ body > header form input {
     grid-column-end: span 2;
 }
 
+body > header form input#username-input {
+    padding: 0.25em 0.5em;
+}
+
+body > header form input#password-input {
+    padding: 0.25em 0.5em;
+}
+
 body > header form .label {
     grid-column-end: span 2;
 }
