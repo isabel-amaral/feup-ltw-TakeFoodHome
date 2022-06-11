@@ -31,6 +31,24 @@
         return $categories;
     }
 
+    function searchByCategory($db, $category) {
+        $stmt;
+        if ($category === 'all') {
+            $stmt = $db->prepare(
+                'SELECT * FROM Restaurant'
+            );
+        } else {
+            $stmt = $db->prepare(
+                'SELECT * FROM Restaurant
+                WHERE category = :category'
+            );
+            $stmt->bindParam(':category', $category);
+        }
+        $stmt->execute();
+        $restaurants = $stmt->fetchAll();
+        return $restaurants;
+    }
+
     function getRestaurantInfo($db, $restaurant_id) {
         $stmt = $db->prepare(
             'SELECT *
