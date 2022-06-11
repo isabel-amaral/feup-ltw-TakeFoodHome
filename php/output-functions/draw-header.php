@@ -3,8 +3,8 @@
         session_start();
         if ($_SESSION['username'] === NULL) { ?>
             <form action="../../php/actions/login.php" method="post">
-                <span class="label">Username:</span><input type="text" name="username">
-                <span class="label">Password:</span><input type="password" name="password">
+                <span class="label">Username:</span><input id="username-input" type="text" name="username">
+                <span class="label">Password:</span><input id="password-input" type="password" name="password">
                 <span id="login-buttons">
                     <a href="register-page.php">Register</a>
                     <button type="submit">Login</button>
@@ -12,6 +12,7 @@
             </form>
         <?php
         }
+
         else { ?>
             <section id="user-session">
                 <h3><a href="user-info-page.php"><?=$_SESSION['name']?></a></h3>
@@ -29,6 +30,8 @@
         <head>
             <link rel="stylesheet" href="../css/style.css">
             <script type="text/javascript" src="javascript/script.js" defer></script>
+            <script type="text/javascript" src="../../javascript/search-restaurant.js" defer></script>
+            <script type="text/javascript" src="../../javascript/search-category.js" defer></script>
             <meta charset="UTF-8">
             <title>TakeFoodHome</title>
         </head>

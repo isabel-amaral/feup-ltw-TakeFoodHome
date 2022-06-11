@@ -46,6 +46,14 @@ body > header form input {
     grid-column-end: span 2;
 }
 
+body > header form input#username-input {
+    padding: 0.25em 0.5em;
+}
+
+body > header form input#password-input {
+    padding: 0.25em 0.5em;
+}
+
 body > header form .label {
     grid-column-end: span 2;
 }
@@ -67,16 +75,38 @@ main {
     color: var(--main-color);
 }
 
-main section > header {
+main header {
     background-color: var(--background-color);
     padding: 0em 1em;
+    height: 6em;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-main section > header h2 {
-    align-self: flex-start;
+main header h2 {
+    align-self: center;
+    flex-grow: 1;
+}
+
+main header div#search-form {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 11.5em;
+    grid-template-rows: 1.5em 2em;
+    gap: 0.5em
+}
+
+main header div#search-form #search-restaurant {
+    align-self: center;
+    padding: 0.5em;
+    margin: 0em;
+}
+
+main header div#search-form #search-category {
+    align-self: center;
+    padding: 0.5em;
+    margin: 0em;
 }
 
 main article {
@@ -90,7 +120,6 @@ main article {
 
 #restaurants li {
     padding: 0.3em;
-
 }
 
 /*__________ retaurant _________________________*/

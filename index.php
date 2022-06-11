@@ -8,4 +8,3 @@
     outputRestaurants();
     drawFooter();
 ?>
-
