@@ -9,6 +9,28 @@
         return $restaurants;
     }
 
+    function searchRestaurants($db, $search) {
+        $stmt = $db->prepare(
+            'SELECT * FROM Restaurant
+            WHERE name LIKE :name'
+        );
+        $stmt->bindParam(':name', $search);
+        $stmt->execute();
+        $restaurants = $stmt->fetchAll();
+        return $restaurants;
+    }
+
+    function getAllCategories($db) {
+        $stmt = $db->prepare(
+            'SELECT DISTINCT category 
+            From Restaurant
+            Order by category'
+        );
+        $stmt->execute();
+        $categories = $stmt->fetchAll();
+        return $categories;
+    }
+
     function getRestaurantInfo($db, $restaurant_id) {
         $stmt = $db->prepare(
             'SELECT *
@@ -31,17 +53,6 @@
         $stmt ->bindParam(':id',$onwer_id);
         $stmt->execute();
         $restaurants = $stmt->fetchall();
-        return $restaurants;
-    }
-
-    function searchRestaurants($db, $search) {
-        $stmt = $db->prepare(
-            'SELECT * FROM Restaurant
-            WHERE name LIKE :name'
-        );
-        $stmt->bindParam(':name', $search);
-        $stmt->execute();
-        $restaurants = $stmt->fetchAll();
         return $restaurants;
     }
 ?>
