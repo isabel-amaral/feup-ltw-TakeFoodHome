@@ -66,6 +66,11 @@ CREATE TABLE ReviewResponse(
     ownerID         INTEGER REFERENCES User(userID)
 );
 
+CREATE TABLE Dish-FoodOrder(
+    orderID         INTEGER REFERENCES FoodOrder(orderID),
+    dishID          INTEGER REFERENCES Dish(dishID)
+);
+
 --INSERTS-------------------------------------------------------------
 
 --USERS---------------------------------------------------------------
