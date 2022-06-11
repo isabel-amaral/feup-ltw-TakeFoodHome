@@ -11,7 +11,7 @@
                 <h2>Restaurants</h2>
                 <div id="search-form">
                     <input id="search-restaurant" type="text" placeholder="search">
-                    <select id="search-categories" name="search-categories">
+                    <select id="search-category" name="search-category">
                         <option value="all" selected>All Categories</option>
                     <?php foreach($categories as $category) { 
                         $category_value = $category['category']; ?>

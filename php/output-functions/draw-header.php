@@ -29,7 +29,7 @@
         <html lang="en">
         <head>
             <link rel="stylesheet" href="../css/style.css">
-            <script type="text/javascript" src="../../javascript/search.js" defer></script>
+            <script type="text/javascript" src="../../javascript/search-restaurant.js" defer></script>
             <meta charset="UTF-8">
             <title>TakeFoodHome</title>
         </head>

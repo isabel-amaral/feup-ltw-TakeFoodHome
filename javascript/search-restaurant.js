@@ -1,7 +1,6 @@
 function processSearchInput() {
     if (searchRestaurant) {
         searchRestaurant.addEventListener('input', async function() {
-            console.log(this.value)
             const response = await fetch('../database/data-fetching/api-restaurants.php?search=' + this.value)
             const restaurants = await response.json()
             
