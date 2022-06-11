@@ -15,21 +15,10 @@
                     <input class="item-quantity" type="number" value="1">
                     <button class="button remove">Remove</button>
                 </div>
-                <div class="cart-row">
-                    <p>Item name</p>
-                    <p class="item-price">9.99</p>
-                    <input class="item-quantity" type="number" value="1">
-                    <button class="button remove">Remove</button>
-                </div>
-                <div class="cart-row">
-                    <p>Item name</p>
-                    <p class="item-price">9.99</p>
-                    <input class="item-quantity" type="number" value="1">
-                    <button class="button remove">Remove</button>
-                </div>
             </div>
             <div class="cart-total">
-                <p id="cart-total-price">57359</p>
+                <p id="cart-total-price">0</p>
+                <button class="button" id="clear">clear</button>
             </div>
         </section>
 
