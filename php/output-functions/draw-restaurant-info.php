@@ -6,11 +6,31 @@
         $restaurant = getRestaurantInfo($db, $_GET['id']); ?>
 
 
-        <button class="button" type="button" id="cart">cart</button>
-        <button class="button" type="button" id="add">add</button>
-
-        <section id="popCart">
-            <p>This is the cart </p>
+        <button class="button" type="button" id="cartbutton">cart</button>
+        <section id="cart">
+            <div id="cart-rows">
+                <div class="cart-row">
+                    <p>Item name</p>
+                    <p class="item-price">9.99</p>
+                    <input class="item-quantity" type="number" value="1">
+                    <button class="button remove">Remove</button>
+                </div>
+                <div class="cart-row">
+                    <p>Item name</p>
+                    <p class="item-price">9.99</p>
+                    <input class="item-quantity" type="number" value="1">
+                    <button class="button remove">Remove</button>
+                </div>
+                <div class="cart-row">
+                    <p>Item name</p>
+                    <p class="item-price">9.99</p>
+                    <input class="item-quantity" type="number" value="1">
+                    <button class="button remove">Remove</button>
+                </div>
+            </div>
+            <div class="cart-total">
+                <p id="cart-total-price">57359</p>
+            </div>
         </section>
 
         <!-- TODO: acrescentar mais informação relevante -->

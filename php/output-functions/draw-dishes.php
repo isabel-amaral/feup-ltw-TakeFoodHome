@@ -25,10 +25,12 @@
                 } ?>
 
                 <article class="dish">
-                    <header><h4><?=$dish['name']?></h4></header>
+                    <header><h4 class="dish-name"><?=$dish['name']?></h4></header>
                     <p><?=$dish['description']?></p>
+                    <p class ="dish-price"><?=$dish['price']?></p>
                     <!-- TODO: get picture from database -->
                     <img src="https://picsum.photos/600/300?business" alt="dish">
+                    <button class="button add">Buy</button>
                     <?php if ($restaurant['ownerID'] === $_SESSION['userID']) { ?>
                         <button class="button" type="button"
                         onclick="location.href='../dish-info-edit-page.php?restaurantID=<?=$_GET['id']?>&dishID=<?=$dish['dishID']?>'">
