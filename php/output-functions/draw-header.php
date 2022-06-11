@@ -12,6 +12,7 @@
             </form>
         <?php
         }
+
         else { ?>
             <section id="user-session">
                 <h3><a href="user-info-page.php"><?=$_SESSION['name']?></a></h3>
@@ -28,7 +29,7 @@
         <html lang="en">
         <head>
             <link rel="stylesheet" href="../css/style.css">
-            <script type="text/javascript" src="javascript/script.js"></script>
+            <script type="text/javascript" src="../../javascript/search.js" defer></script>
             <meta charset="UTF-8">
             <title>TakeFoodHome</title>
         </head>

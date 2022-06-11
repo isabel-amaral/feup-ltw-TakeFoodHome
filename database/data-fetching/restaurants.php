@@ -33,4 +33,15 @@
         $restaurants = $stmt->fetchall();
         return $restaurants;
     }
+
+    function searchRestaurants($db, $search) {
+        $stmt = $db->prepare(
+            'SELECT * FROM Restaurant
+            WHERE name LIKE :name'
+        );
+        $stmt->bindParam(':name', $search);
+        $stmt->execute();
+        $restaurants = $stmt->fetchAll();
+        return $restaurants;
+    }
 ?>
