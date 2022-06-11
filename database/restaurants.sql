@@ -47,7 +47,7 @@ CREATE TABLE FoodOrder(
     date            DATE NOT NULL,
     state           VARCHAR(10) DEFAULT 'Received',
     restaurantID    INTEGER REFERENCES Restaurant(restaurantID),
-    customerID          INTEGER REFERENCES User(userID)
+    customerID      INTEGER REFERENCES User(userID)
 );
 
 CREATE TABLE Review(
@@ -66,9 +66,10 @@ CREATE TABLE ReviewResponse(
     ownerID         INTEGER REFERENCES User(userID)
 );
 
-CREATE TABLE Dish-FoodOrder(
-    orderID         INTEGER REFERENCES FoodOrder(orderID),
-    dishID          INTEGER REFERENCES Dish(dishID)
+CREATE TABLE DishFoodOrder(
+    dishID          INTEGER REFERENCES Dish(dishID),
+    orderID         INTEGER REFERENCES FoodOrder(orderID)
+    
 );
 
 --INSERTS-------------------------------------------------------------
@@ -327,3 +328,20 @@ INSERT INTO ReviewResponse VALUES(
     2
 );
 
+
+--Dish-FoodOrder--------------------------------------------------------------
+
+INSERT INTO DishFoodOrder VALUES(
+    1,
+    1
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    2,
+    1
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    4,
+    1
+)
