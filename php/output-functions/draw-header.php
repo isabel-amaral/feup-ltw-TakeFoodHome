@@ -29,7 +29,7 @@
         <html lang="en">
         <head>
             <link rel="stylesheet" href="../css/style.css">
-            <script type="text/javascript" src="javascript/script.js" defer></script>
+            <script type="text/javascript" src="javascript/cart-script.js" defer></script>
             <script type="text/javascript" src="../../javascript/search-restaurant.js" defer></script>
             <script type="text/javascript" src="../../javascript/search-category.js" defer></script>
             <meta charset="UTF-8">
