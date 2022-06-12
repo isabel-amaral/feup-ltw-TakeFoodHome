@@ -19,6 +19,7 @@
                 <form action="../../php/actions/logout.php">
                     <button type="submit">Logout</button>
                 </form>
+                <h4><a href="../user-orders-page.php">My orders</a></h4>
             </section>
         <?php
         }
