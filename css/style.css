@@ -236,7 +236,7 @@ main article {
     margin: 1em 0em;
 }
 
-.review-responsec{
+.review-response {
     margin: 0em;
     padding: 0em 1em;
 }
@@ -247,17 +247,10 @@ main article {
 
 #add-comment-form {
     display: grid;
-    grid-template-columns: 25% 50%;
 }
 
 #add-comment-form textarea {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-
-#add-comment-form button {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    width: 75%;
 }
 
 /*__________ form _______________________________*/
