@@ -209,7 +209,7 @@ main article {
     margin: 0em;
 }
 
-#category-and-plates article img{
+#category-and-plates article img {
     width: 14em;
 }
 
@@ -223,7 +223,7 @@ main article {
 
 /*__________ reviews ____________________________*/
 
-#reviews{
+#reviews {
     background-color: var(--background-color);
     color:black;
     padding: 0.5em;
@@ -236,9 +236,28 @@ main article {
     margin: 1em 0em;
 }
 
-.review-response{
+.review-responsec{
     margin: 0em;
     padding: 0em 1em;
+}
+
+#add-comment {
+    margin-top: 3em;
+}
+
+#add-comment-form {
+    display: grid;
+    grid-template-columns: 25% 50%;
+}
+
+#add-comment-form textarea {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#add-comment-form button {
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 
 /*__________ form _______________________________*/

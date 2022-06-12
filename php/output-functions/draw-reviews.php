@@ -34,6 +34,14 @@
                 </article>
             <?php
             } ?>
+
+            <article id="add-comment">
+                <header><h3>Add your review</h3></header>
+                <form id="add-comment-form">
+                    <textarea name="comment" cols="30" rows="10"></textarea>
+                    <button class="button" type="button">Submit</button>
+                </form>
+            </article>
         </section>
     <?php
     }
