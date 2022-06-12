@@ -282,12 +282,8 @@ main input{
     padding: 0.5em;
     margin: 2em 0em;
     display: grid;
-    grid-template-columns: 40% 40% 20%;
+    grid-template-columns: 25% 25% 25% 25%;
 
-}
-
-#ordersRestaurant :nth-child(2) {
-    grid-column-end:span 2 ;
 }
 
 #orderNumber {
