@@ -37,9 +37,9 @@
 
             <article id="add-comment">
                 <header><h3>Add your review</h3></header>
-                <form id="add-comment-form">
+                <form id="add-comment-form" action="php/actions/add-comment.php?restaurantID=<?=$_GET['id']?>" method="post">
                     <textarea name="comment" cols="30" rows="10"></textarea>
-                    <button class="button" type="button">Submit</button>
+                    <input class="submit" type="submit" value="Submit">
                 </form>
             </article>
         </section>
