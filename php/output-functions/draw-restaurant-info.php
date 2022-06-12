@@ -19,11 +19,14 @@
             </div>
             <div class="cart-total">
                 <p id="cart-total-price">0</p>
+                <p id ="item-number">0<p>
                 <button class="button" id="clear">clear</button>
             </div>
+            
             <form action="php/actions/add-order.php" method="post">
-                <input type="hidden" value="<?=$_GET['id']?>" ,name="restaurantID" >
-                <input type="hidden" value="<?=$_SESSION['userID'] ?>",name="userID">
+                <input type="hidden" value="<?=$_GET['id']?>" name="restaurantID" >
+                <input type="hidden" value="<?=$_SESSION['userID'] ?>"name="userID">
+                <input type="hidden" values="" name="foodList">
                 <input class="button" type="submit" value="Purchase" ></input>
             </form>
             

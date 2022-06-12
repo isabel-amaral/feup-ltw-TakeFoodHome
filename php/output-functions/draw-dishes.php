@@ -31,6 +31,7 @@
                     <!-- TODO: get picture from database -->
                     <img src="https://picsum.photos/600/300?business" alt="dish">
                     <button class="button add">Buy</button>
+                    <p class="dishID"><?=$dish['dishID']?></p>
                     <?php if ($restaurant['ownerID'] === $_SESSION['userID']) { ?>
                         <button class="button" type="button"
                         onclick="location.href='../dish-info-edit-page.php?restaurantID=<?=$_GET['id']?>&dishID=<?=$dish['dishID']?>'">

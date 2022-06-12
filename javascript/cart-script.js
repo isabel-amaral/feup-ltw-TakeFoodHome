@@ -36,14 +36,16 @@ function addItem(event){
   var item = button.parentElement
   var name = item.getElementsByClassName("dish-name")[0].innerText
   var price = parseFloat(item.getElementsByClassName("dish-price")[0].innerText)
+  var id = item.getElementsByClassName("dishID").innerText
   //add image if necessary
   var cartRow = document.createElement('div')
   cartRow.classList.add("cart-row")
   cartRow.innerHTML = `
-    <p>${name}</p>
+    <p class ="dishName">${name}</p>
     <p class="item-price">${price}</p>
     <input class="item-quantity" type="number" value="1">
     <button class="button remove">Remove</button>
+    <p class="dishID> ${id}</p> 
   `
   var cartItems = document.getElementById("cart-rows")
   cartItems.append(cartRow)
@@ -51,11 +53,11 @@ function addItem(event){
 
   cartRow.getElementsByClassName("remove")[0].addEventListener("click", removeItem)
   cartRow.getElementsByClassName("item-quantity")[0].addEventListener("change",quantityChange)
-
 }
 
 //update cart total
 function updateCartTotal() {
+  var totalQuantity =0
   var cart = document.getElementById("cart")
   var cartRows = cart.getElementsByClassName("cart-row")
   var totalPrice = 0;
@@ -64,12 +66,14 @@ function updateCartTotal() {
     var priceElement =  cartRow.getElementsByClassName("item-price")[0]
     var quantityElemente = cartRow.getElementsByClassName("item-quantity")[0]
     var price = parseFloat(priceElement.innerText.replace("$",""))
-    var quantity = quantityElemente.value
+    var quantity = parseInt(quantityElemente.value)
     totalPrice += price*quantity
+    totalQuantity += quantity
   }
 
   totalPrice = Math.round(totalPrice *100) /100
   document.getElementById("cart-total-price").innerText = totalPrice
+  document.getElementById("item-number").innerHTML = parseInt(totalQuantity)
 }
 
 
