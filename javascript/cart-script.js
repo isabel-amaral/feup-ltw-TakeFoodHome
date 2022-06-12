@@ -101,3 +101,14 @@ function clearCart(){
 }
 
 window.addEventListener("load", clearCart)
+
+
+//purcahse button
+/*
+var purcahse = document.getElementById("purchase")
+purcahse.addEventListener("click", purcahseItems)
+function purcahseItems(){
+  post('../database/data-insertion/inser-new-order.php', {date: "2022-05-05", restaurantID: 1 ,customerID: 1}, function(){})
+}
+*/
+

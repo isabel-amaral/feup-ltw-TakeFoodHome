@@ -3,7 +3,8 @@
         require_once('database/db-connection.php');
         require_once('database/data-fetching/restaurants.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $restaurant = getRestaurantInfo($db, $_GET['id']); ?>
+        $restaurant = getRestaurantInfo($db, $_GET['id']); 
+        ?>
 
 
         <button class="button" type="button" id="cartbutton">cart</button>
@@ -20,6 +21,12 @@
                 <p id="cart-total-price">0</p>
                 <button class="button" id="clear">clear</button>
             </div>
+            <form action="php/actions/add-order.php" method="post">
+                <input type="hidden" value="<?=$_GET['id']?>" ,name="restaurantID" >
+                <input type="hidden" value="<?=$_SESSION['userID'] ?>",name="userID">
+                <input class="button" type="submit" value="Purchase" ></input>
+            </form>
+            
         </section>
 
         <!-- TODO: acrescentar mais informação relevante -->
