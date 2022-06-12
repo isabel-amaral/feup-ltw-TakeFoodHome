@@ -36,6 +36,9 @@
             <button class="button" id="add-dish" type="button" onclick="location.href='dish-register-page.php?restaurantID=<?=$_GET['id']?>'">
                 Add Dish
             </button>
+            <button class="button" id="orders-button" type="button" onclick="location.href='restaurant-orders-page.php?restaurantID=<?=$_GET['id']?>'">
+                See orders
+            </button>
             <?php
             } ?>
             <footer>

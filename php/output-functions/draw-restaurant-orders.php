@@ -4,7 +4,7 @@
         require_once('database/data-fetching/restaurant-orders.php');
         require_once('database/data-fetching/dishes.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $orders = getRestaurantOrders($db, $_GET['id']); ?>
+        $orders = getRestaurantOrders($db, $_GET['restaurantID']); ?>
         <main>
             <section id="ordersRestaurant">
                 <h2>Order Number</h2>
