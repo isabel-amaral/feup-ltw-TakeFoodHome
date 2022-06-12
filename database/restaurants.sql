@@ -1,6 +1,6 @@
 PRAGMA foreign_keys = ON;
 
-
+DROP TABLE if EXISTS DishFoodOrder;
 DROP TABLE if EXISTS ReviewResponse;
 DROP TABLE if EXISTS Review;
 DROP TABLE if EXISTS FoodOrder;
@@ -47,7 +47,7 @@ CREATE TABLE FoodOrder(
     date            DATE NOT NULL,
     state           VARCHAR(10) DEFAULT 'Received',
     restaurantID    INTEGER REFERENCES Restaurant(restaurantID),
-    customerID          INTEGER REFERENCES User(userID)
+    customerID      INTEGER REFERENCES User(userID)
 );
 
 CREATE TABLE Review(
@@ -64,6 +64,12 @@ CREATE TABLE ReviewResponse(
     date            DATE NOT NULL,
     reviewID        INTEGER REFERENCES Review(reviewID),
     ownerID         INTEGER REFERENCES User(userID)
+);
+
+CREATE TABLE DishFoodOrder(
+    dishID          INTEGER REFERENCES Dish(dishID),
+    orderID         INTEGER REFERENCES FoodOrder(orderID)
+    
 );
 
 --INSERTS-------------------------------------------------------------
@@ -270,6 +276,15 @@ INSERT INTO FoodOrder VALUES(
     2
 );
 
+INSERT INTO FoodOrder VALUES(
+    4,
+    '2022-11-05',
+    'Received',
+    1,
+    1
+);
+
+
 --REVIEW--------------------------------------------------------------
 
 INSERT INTO Review VALUES(
@@ -322,3 +337,35 @@ INSERT INTO ReviewResponse VALUES(
     2
 );
 
+
+--Dish-FoodOrder--------------------------------------------------------------
+
+INSERT INTO DishFoodOrder VALUES(
+    1,
+    1
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    2,
+    1
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    4,
+    1
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    1,
+    4
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    2,
+    4
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    4,
+    4
+)

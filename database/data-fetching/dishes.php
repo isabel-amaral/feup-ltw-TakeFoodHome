@@ -22,4 +22,15 @@
         $dish = $stmt->fetch();
         return $dish;
     }
+
+    function getDishsByOrder($db, $orderid){
+        $stmt = $db ->prepare(
+            'SELECT dishID FROM DishFoodOrder
+            WHERE orderID = :id'
+        );
+        $stmt->bindParam(':id' , $orderid);
+        $stmt->execute();
+        $dishes = $stmt->fetchAll();
+        return $dishes;
+    }
 ?>
