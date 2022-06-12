@@ -1,7 +1,3 @@
-var button = document.getElementById("cartbutton");
-var b = false
-
-
 //remove item from cart
 var removeButtons = document.getElementsByClassName("remove")
 for (var i =0;i< removeButtons.length; i++){
@@ -78,6 +74,8 @@ function updateCartTotal() {
 
 
 //show/hide cart
+var button = document.getElementById("cartbutton");
+var b = false
 button.addEventListener("click", function(){
   var cart = document.getElementById("cart");
   if (b){

@@ -1,6 +1,6 @@
 PRAGMA foreign_keys = ON;
 
-
+DROP TABLE if EXISTS DishFoodOrder;
 DROP TABLE if EXISTS ReviewResponse;
 DROP TABLE if EXISTS Review;
 DROP TABLE if EXISTS FoodOrder;
@@ -276,6 +276,15 @@ INSERT INTO FoodOrder VALUES(
     2
 );
 
+INSERT INTO FoodOrder VALUES(
+    4,
+    '2022-11-05',
+    'Received',
+    1,
+    1
+);
+
+
 --REVIEW--------------------------------------------------------------
 
 INSERT INTO Review VALUES(
@@ -344,4 +353,19 @@ INSERT INTO DishFoodOrder VALUES(
 INSERT INTO DishFoodOrder VALUES(
     4,
     1
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    1,
+    4
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    2,
+    4
+);
+
+INSERT INTO DishFoodOrder VALUES(
+    4,
+    4
 )
