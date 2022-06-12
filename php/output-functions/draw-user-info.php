@@ -18,6 +18,7 @@
                 <p><?=$user['address']?></p>
 
                 <button class="button" type="button" onclick="location.href='../user-info-edit-page.php'">Edit info</button>
+                <button class="button" id="user-order-button" type="button" onclick="location.href='../user-orders-page.php'">My orders</button>
             </section>
 
             
