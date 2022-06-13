@@ -33,4 +33,13 @@
         $dishes = $stmt->fetchAll();
         return $dishes;
     }
+
+    function getDishes($db){
+        $stmt = $db ->prepare(
+            'SELECT dishID FROM Dish'
+        );
+        $stmt->execute();
+        $dishes = $stmt->fetchAll();
+        return $dishes;
+    }
 ?>

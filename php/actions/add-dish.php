@@ -3,7 +3,11 @@
     require_once('../../database/data-fetching/user.php');
     require_once('../../database/data-fetching/restaurants.php');
     require_once('../../database/data-insertion/insert-new-dish.php');
-    
+    require_once('img-insertion.php');
+    require_once('../../database/data-fetching/dishes.php');
+    require_once('../../database/data-insertion/update-dish-info.php');
+    session_start();
+
     $db = getDatabaseConnection('../../database/restaurants.db');
     $user_info = getUserbyID($db, $_SESSION['userID']);
     $restaurant_info = getRestaurantInfo($db, $_GET['restaurantID']);
@@ -19,9 +23,15 @@
     $description = $_POST['description'];
     $price = $_POST['price'];
     $category = $_POST['category'];
-    $picture = $_POST['picture'];
+    $picture = "picture1";
     $restaurantID = $_GET['restaurantID'];
 
     addDishToDatabase($db, $name, $description, $price, $picture, $category, $restaurantID);
+    $dishID =count(getDishes($db));
+    $dish_info = getDishInfo($db, $dishID);
+    var_dump($_FILES["picture"]["name"]);
+    $picture = insertImage(basename($_FILES["picture"]["name"]),getimagesize($_FILES["picture"]["tmp_name"]),$dish_info);
+    updateDishInfo($db, $dishID, $name, $description, $price, $category, $picture);
+
     header('Location: ../../restaurant-page.php?id=' . $restaurantID);
 ?>
