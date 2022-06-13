@@ -29,7 +29,16 @@
                     ?>
                     </div>
                     <p class="orderState"><?=$order['state']?></p>
-                    <button class="button">Change State</button>  <!-- TODO: mudar para dropdown  -->
+                    <form action="php/actions/edit-order-state.php" methode="get">
+                        <select name="state">
+                            <option value="Received">Received</option>
+                            <option value="Preparing">Preparing</option>
+                            <option value="Ready">Ready</option>
+                        </select>
+                        <input type="hidden" value="<?=$order['orderID']?>" name="orderID">
+                        <input type="hidden" value="<?=$_GET['restaurantID']?>" name="restaurantID">
+                        <input class="button" type="submit" value="Change State">
+                    </form>
                 <?php
                 } ?>                
             </section>
