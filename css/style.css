@@ -221,6 +221,13 @@ main article {
     display: none;
 }
 
+#item-number {
+    display: none;
+}
+.dishID {
+    display: none;
+}
+
 /*__________ reviews ____________________________*/
 
 #reviews{

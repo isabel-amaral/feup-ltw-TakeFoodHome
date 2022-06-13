@@ -67,6 +67,7 @@ CREATE TABLE ReviewResponse(
 );
 
 CREATE TABLE DishFoodOrder(
+    dishfoodorderID INTEGER PRIMARY KEY,
     dishID          INTEGER REFERENCES Dish(dishID),
     orderID         INTEGER REFERENCES FoodOrder(orderID)
     
@@ -340,32 +341,32 @@ INSERT INTO ReviewResponse VALUES(
 
 --Dish-FoodOrder--------------------------------------------------------------
 
-INSERT INTO DishFoodOrder VALUES(
+INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
     1,
     1
 );
 
-INSERT INTO DishFoodOrder VALUES(
+INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
     2,
     1
 );
 
-INSERT INTO DishFoodOrder VALUES(
+INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
     4,
     1
 );
 
-INSERT INTO DishFoodOrder VALUES(
+INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
     1,
     4
 );
 
-INSERT INTO DishFoodOrder VALUES(
+INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
     2,
     4
 );
 
-INSERT INTO DishFoodOrder VALUES(
+INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
     4,
     4
 )
