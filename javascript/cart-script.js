@@ -1,13 +1,25 @@
+const ids = new Map()
+
 //remove item from cart
 var removeButtons = document.getElementsByClassName("remove")
 for (var i =0;i< removeButtons.length; i++){
   var add = removeButtons[i]
   add.addEventListener("click", removeItem)
-  function removeItem(event){
-    var buttonClicked = event.target
-    buttonClicked.parentElement.remove()
-    updateCartTotal()
+}
+function removeItem(event){
+  var buttonClicked = event.target
+  var id = parseInt(buttonClicked.parentElement.getElementsByClassName("dishID")[0].innerText)
+  buttonClicked.parentElement.remove()
+  
+  for (var i =0;i<ids.length;i++){
+    if (ids[i] == id && !b2){
+      b2 = true;
+    }else {
+      ids2.push(ids[i]);
+    }
   }
+  ids.delete(id)
+  updateCartTotal()
 }
 
 //update quantity
@@ -21,6 +33,8 @@ function quantityChange(event){
   if (isNaN(input.value) || input.value <= 0){
     input.value = 1
   }
+  var id = parseInt(input.parentElement.getElementsByClassName("dishID")[0].innerText)
+  ids.set(id,parseInt(input.value))
   updateCartTotal()
 }
 
@@ -36,7 +50,15 @@ function addItem(event){
   var item = button.parentElement
   var name = item.getElementsByClassName("dish-name")[0].innerText
   var price = parseFloat(item.getElementsByClassName("dish-price")[0].innerText)
-  var id = item.getElementsByClassName("dishID").innerText
+  var id = item.getElementsByClassName("dishID")[0].innerText
+  var idint = parseInt(id)
+  for (var [key, value] of ids.entries()) {
+    if(key == idint){
+      alert("item already added")
+      return
+    }
+  }
+  ids.set(idint,1)
   //add image if necessary
   var cartRow = document.createElement('div')
   cartRow.classList.add("cart-row")
@@ -45,7 +67,7 @@ function addItem(event){
     <p class="item-price">${price}</p>
     <input class="item-quantity" type="number" value="1">
     <button class="button remove">Remove</button>
-    <p class="dishID> ${id}</p> 
+    <p class="dishID"> ${id}</p> 
   `
   var cartItems = document.getElementById("cart-rows")
   cartItems.append(cartRow)
@@ -53,6 +75,7 @@ function addItem(event){
 
   cartRow.getElementsByClassName("remove")[0].addEventListener("click", removeItem)
   cartRow.getElementsByClassName("item-quantity")[0].addEventListener("change",quantityChange)
+  
 }
 
 //update cart total
@@ -74,6 +97,17 @@ function updateCartTotal() {
   totalPrice = Math.round(totalPrice *100) /100
   document.getElementById("cart-total-price").innerText = totalPrice
   document.getElementById("item-number").innerHTML = parseInt(totalQuantity)
+
+  var keys = {}
+  var values = {}
+
+  for (var [key, value] of ids.entries()) {
+    keys +=" "+key
+    values +=" "+value
+  }
+  console.log(keys,values)
+  document.getElementById("foodList").innerText =keys
+  document.getElementById("foodListNum").innerText =values
 }
 
 
@@ -101,18 +135,8 @@ function clearCart(){
   }
 
   updateCartTotal()
-  
 }
 
 window.addEventListener("load", clearCart)
 
-
-//purcahse button
-/*
-var purcahse = document.getElementById("purchase")
-purcahse.addEventListener("click", purcahseItems)
-function purcahseItems(){
-  post('../database/data-insertion/inser-new-order.php', {date: "2022-05-05", restaurantID: 1 ,customerID: 1}, function(){})
-}
-*/
 
