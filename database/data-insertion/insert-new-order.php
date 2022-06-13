@@ -15,18 +15,15 @@
         
     }
 
-    function addDishFoodOrder($db,$orderID,$foodList){
-      foreach ($foodList as $food){
+    function addDishFoodOrder($db,$orderID,$foodID){
         $stmt = $db->prepare(
-          'INSERT INTO DishFoorOrder VALUES(
+          'INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
             :dishID,
             :orderID
           );'
         );
-        $stmt->bindParam(':dishID',$food);
-      $stmt->bindParam(':orderID', $orderID);
-      }
-      
-
+        $stmt->bindParam(':dishID',$foodID);
+        $stmt->bindParam(':orderID', $orderID);
+        $stmt->execute();
     }
 ?>

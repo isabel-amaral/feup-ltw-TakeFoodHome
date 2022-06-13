@@ -110,9 +110,8 @@ function updateCartTotal() {
     keys +=" "+key
     values +=" "+value
   }
-  console.log(keys,values)
-  document.getElementById("foodList").innerText =keys
-  document.getElementById("foodListNum").innerText =values
+  document.getElementById("foodList").value =keys
+  document.getElementById("foodListNum").value =values
 }
 
 
