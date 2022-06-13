@@ -95,6 +95,11 @@ function updateCartTotal() {
   }
 
   totalPrice = Math.round(totalPrice *100) /100
+  if (totalPrice == 0){
+    document.getElementById("purchase").style.display = "none"
+  }else{
+    document.getElementById("purchase").style.display = "flex"
+  }
   document.getElementById("cart-total-price").innerText = totalPrice
   document.getElementById("item-number").innerHTML = parseInt(totalQuantity)
 

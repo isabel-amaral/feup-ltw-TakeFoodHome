@@ -30,7 +30,7 @@
                 <input type="hidden" value="<?=$_SESSION['userID'] ?>"name="userID">
                 <input id="foodList" type="hidden" values="" name="foodList">
                 <input id="foodListNum" type="hidden" values="" name="foodListNum">
-                <input class="button" type="submit" value="Purchase" ></input>
+                <input id="purchase" class="button" type="submit" value="Purchase" ></input>
             </form>
             
         </section>
