@@ -37,7 +37,7 @@ CREATE TABLE Dish(
     name            VARCHAR(32) NOT NULL,
     description     TEXT NOT NULL,
     price           FLOAT NOT NULL,
-    picture         TEXT NOT NULL,
+    picture        TEXT NOT NULL,
     category        VARCHAR(32) NOT NULL,
     restaurantID    INTEGER REFERENCES Restaurant(restaurantID)
 );
@@ -196,7 +196,7 @@ INSERT INTO Dish VALUES(
     'Neapolitan Pizza',
     'This is just a Pizza',
     22.50,
-    'picture1.png',
+    'dish1.png',
     'Pizza',
     1
 );
@@ -206,7 +206,7 @@ INSERT INTO Dish VALUES(
     'Pasta',
     'Pasta',
     5.60,
-    'picture2.png',
+    'dish2.png',
     'Pasta',
     1
 );
@@ -216,7 +216,7 @@ INSERT INTO Dish VALUES(
     'Burger',
     'Burger',
     22.50,
-    'picture3.png',
+    'dish3.png',
     'Burger',
     2
 );
@@ -226,7 +226,7 @@ INSERT INTO Dish VALUES(
     'Cheese Pizza',
     'This is just a Pizza',
     22.50,
-    'picture4.png',
+    'dish4.png',
     'Pizza',
     1
 );
@@ -236,7 +236,7 @@ INSERT INTO Dish VALUES(
     'Veggie Pizza',
     'This is just a Pizza',
     22.50,
-    'picture5.png',
+    'dish5.png',
     'Pizza',
     1
 );
@@ -246,7 +246,7 @@ INSERT INTO Dish VALUES(
     'Pepperoni Pizza',
     'This is just a Pizza',
     22.50,
-    'picture6.png',
+    'dish6.png',
     'Pizza',
     1
 );

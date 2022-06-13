@@ -29,7 +29,7 @@
                     <p><?=$dish['description']?></p>
                     <p class ="dish-price"><?=$dish['price']?></p>
                     <!-- TODO: get picture from database -->
-                    <img src="https://picsum.photos/600/300?business" alt="dish">
+                    <img src="../../img/<?=$dish['picture'] ?>" alt="dish">
                     <button class="button add">Buy</button>
                     <p class="dishID"><?=$dish['dishID']?></p>
                     <?php if ($restaurant['ownerID'] === $_SESSION['userID']) { ?>
