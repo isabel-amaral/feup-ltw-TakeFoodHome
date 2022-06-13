@@ -1,9 +1,12 @@
 <?php
     function outputReviews() { 
         require_once('database/db-connection.php');
+        require_once('database/data-fetching/restaurants.php');
         require_once('database/data-fetching/reviews.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $reviews = getRestaurantReviews($db, $_GET['id']); ?>
+        $reviews = getRestaurantReviews($db, $_GET['id']);
+        $restaurant_info = getRestaurantInfo($db, $_GET['id']);
+        $ownerID = $restaurant_info['ownerID']; ?>
         
         <section id="reviews">
             <h3><?=count($reviews)?> Reviews:</h3>
@@ -35,13 +38,16 @@
             <?php
             } ?>
 
-            <article id="add-comment">
-                <header><h3>Add your review</h3></header>
-                <form id="add-comment-form" action="php/actions/add-comment.php?restaurantID=<?=$_GET['id']?>" method="post">
-                    <textarea name="comment" cols="30" rows="10"></textarea>
-                    <input class="submit" type="submit" value="Submit">
-                </form>
-            </article>
+            <?php if ($ownerID !== $_SESSION['userID']) { ?>
+                <article id="add-comment">
+                    <header><h3>Add your review</h3></header>
+                    <form id="add-comment-form" action="php/actions/add-comment.php?restaurantID=<?=$_GET['id']?>" method="post">
+                        <textarea name="comment" cols="30" rows="10"></textarea>
+                        <input class="submit" type="submit" value="Submit">
+                    </form>
+                </article>            
+            <?php
+            } ?>
         </section>
     <?php
     }
