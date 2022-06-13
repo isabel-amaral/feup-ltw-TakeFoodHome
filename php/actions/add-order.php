@@ -13,9 +13,9 @@
 
   $foodArray = explode(' ',$_POST['foodList']);
   $foodNumArray = explode(' ',$_POST['foodListNum']);
-  $date = "2022-05-05";
+  $currentDate = new DateTime();
 
-  addOrderToDatabase($db,"2022-05-05",$_POST["restaurantID"],$_POST["userID"]);
+  addOrderToDatabase($db,$currentDate->format('Y-m-d'),$_POST["restaurantID"],$_POST["userID"]);
   $orderids = getOrder($db);
   $orderID =count($orderids);
   echo($orderID);
