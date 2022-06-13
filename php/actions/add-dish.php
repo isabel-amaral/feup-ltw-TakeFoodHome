@@ -29,8 +29,7 @@
     addDishToDatabase($db, $name, $description, $price, $picture, $category, $restaurantID);
     $dishID =count(getDishes($db));
     $dish_info = getDishInfo($db, $dishID);
-    var_dump($_FILES["picture"]["name"]);
-    $picture = insertImage(basename($_FILES["picture"]["name"]),getimagesize($_FILES["picture"]["tmp_name"]),$dish_info);
+    $picture = insertImage($dish_info);
     updateDishInfo($db, $dishID, $name, $description, $price, $category, $picture);
 
     header('Location: ../../restaurant-page.php?id=' . $restaurantID);

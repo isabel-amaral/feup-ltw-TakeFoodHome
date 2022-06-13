@@ -1,5 +1,5 @@
 <?php
-  function insertImage($dish_info){
+  function insertImageRestaurant($restaurant_info){
     $target_dir = "../../img/";
     $target_file = $target_dir . basename($_FILES["picture"]["name"]); 
     $uploadOk = 1;
@@ -16,10 +16,10 @@
         
     }
     if ($uploadOk == 0) {
-        $picture = $dish_info['picture'];
+        $picture = $restaurant_info['picture'];
       } else {
-        $picture = "dish".$dish_info['dishID'].".".$imageFileType;
-        move_uploaded_file($_FILES["picture"]["tmp_name"], $target_dir."dish".$dish_info['dishID'].".".$imageFileType); {
+        $picture = "restaurant".$restaurant_info['restaurantID'].".".$imageFileType;
+        move_uploaded_file($_FILES["picture"]["tmp_name"], $target_dir."restaurant".$restaurant_info['restaurantID'].".".$imageFileType); {
         }
       }
       return $picture;

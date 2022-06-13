@@ -14,13 +14,14 @@
 
         <main>
             <section id="restaurantInfo">
-                <form action="../../php/actions/add-restaurant.php"  method="post">
+                <form action="../../php/actions/add-restaurant.php"  method="post" enctype="multipart/form-data">
                     Restaurant's Name:<input type="text" name="name">
                     Restaurant's Description:<input type="text" name="description">
                     Category:<input type="text" name="category">
                     Email:<input type="email"  name="email">
                     Phone Number: <input type="number"  name="phone">
                     Address: <input type="text"  name="address">
+                    Image: <input type="file" , name="picture" id="picture">
                     <input class="submit" type="submit" value="Register">
                 </form>
             </section>

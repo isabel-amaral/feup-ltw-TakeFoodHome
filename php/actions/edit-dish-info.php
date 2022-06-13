@@ -25,7 +25,7 @@
     $category = $_POST['category'];
     $picture = $_POST['picture'];
 
-    $picture = insertImage(basename($_FILES["picture"]["name"]),getimagesize($_FILES["picture"]["tmp_name"]),$dish_info);
+    $picture = insertImage($dish_info);
 
     updateDishInfo($db, $_GET['dishID'], $name, $description, $price, $category, $picture);
     header('Location: ../../restaurant-page.php?id=' . $_GET['restaurantID']);
