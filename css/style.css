@@ -181,6 +181,11 @@ main article {
     color: black;
 }
 
+#restaurants img {
+    width: 40em;
+    height: 20em;
+}
+
 .category {
     display: flex;
     flex-wrap: wrap;

@@ -29,7 +29,8 @@ CREATE TABLE Restaurant(
     email           VARCHAR(32),
     phoneNumber     CHAR(9) NOT NULL,
     category        VARCHAR(16),
-    ownerID         INTEGER REFERENCES USER(userID)
+    ownerID         INTEGER REFERENCES USER(userID),
+    picture        TEXT NOT NULL
 );
 
 CREATE TABLE Dish(
@@ -117,7 +118,8 @@ INSERT INTO Restaurant VALUES(
     'bistrobazzaar@gmail.com',
     '225081401',
     'Family Style',
-    2
+    2,
+    'restaurant1.png'
 );
 
 INSERT INTO Restaurant VALUES(
@@ -128,7 +130,8 @@ INSERT INTO Restaurant VALUES(
     'grandmasweets@gmail.com',
     '225081402',
     'Desert',
-    2
+    2,
+    'restaurant2.png'
 );
 
 INSERT INTO Restaurant VALUES(
@@ -139,7 +142,8 @@ INSERT INTO Restaurant VALUES(
     'eateryhotspot@gmail.com',
     '225081403',
     'Family Style',
-    3
+    3,
+    'restaurant3.png'
 );
 
 INSERT INTO Restaurant VALUES(
@@ -151,7 +155,8 @@ INSERT INTO Restaurant VALUES(
     'saltysquid@gmail.com',
     '225081404',
     'Seafood',
-    2
+    2,
+    'restaurant4.png'
 );
 
 INSERT INTO Restaurant VALUES(
@@ -162,7 +167,8 @@ INSERT INTO Restaurant VALUES(
     'mediterraseafood@gmail.com',
     '225081405',
     'Seafood',
-    2
+    2,
+    'restaurant5.png'
 );
 
 INSERT INTO Restaurant VALUES(
@@ -174,7 +180,8 @@ INSERT INTO Restaurant VALUES(
     'veganicorner@gmail.com',
     '225081406',
     'Vegetarian',
-    3
+    3,
+    'restaurant6.png'
 );
 
 INSERT INTO Restaurant VALUES(
@@ -185,7 +192,8 @@ INSERT INTO Restaurant VALUES(
     'sweetescape@gmail.com',
     '225081402',
     'Desert',
-    2
+    2,
+    'restaurant7.png'
 );
 
 
