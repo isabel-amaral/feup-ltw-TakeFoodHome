@@ -34,7 +34,7 @@
                         </h3>
                     </header>
                     <p class="restaurant-description"><?=$restaurant['description']?></p>
-                    <img src="https://picsum.photos/600/300?business" alt="Restaurant's image">
+                    <img src="../../img/<?=$restaurant['picture'] ?>" alt="Restaurant's image">
                 </article>
             <?php
             } ?>

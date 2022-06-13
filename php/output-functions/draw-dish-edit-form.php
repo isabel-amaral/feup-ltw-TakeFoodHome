@@ -18,12 +18,12 @@
         } ?>
         <main>
             <section id="dishInfo">
-                <form action="../../php/actions/edit-dish-info.php?restaurantID=<?=$_GET['restaurantID']?>&dishID=<?=$_GET['dishID']?>" method="post">
+                <form action="../../php/actions/edit-dish-info.php?restaurantID=<?=$_GET['restaurantID']?>&dishID=<?=$_GET['dishID']?>" method="post" enctype="multipart/form-data">
                     Name: <input type="text" name="name" value="<?=$dish_info['name']?>">
                     Description: <input type="text" name="description" value="<?=$dish_info['description']?>">
                     Price: <input type="number" name="price" step="0.01" value="<?=$dish_info['price']?>">
                     Category: <input type="text" name="category" value="<?=$dish_info['category']?>">
-                    Image: <input type="file" , name="picture">
+                    Image: <input type="file" , name="picture" id="picture">
                     <input class="submit" type="submit" value="Submit">
                 </form>
             </section>

@@ -4,6 +4,7 @@
     require_once('../../database/data-fetching/dishes.php');
     require_once('../../database/data-fetching/restaurants.php'); 
     require_once('../../database/data-insertion/update-dish-info.php');
+    require_once('img-insertion.php');
 
     session_start();
     $db = getDatabaseConnection('../../database/restaurants.db');
@@ -24,9 +25,7 @@
     $category = $_POST['category'];
     $picture = $_POST['picture'];
 
-    if ($picture === '') {
-        $picture = $dish_info['picture'];
-    }
+    $picture = insertImage($dish_info);
 
     updateDishInfo($db, $_GET['dishID'], $name, $description, $price, $category, $picture);
     header('Location: ../../restaurant-page.php?id=' . $_GET['restaurantID']);
