@@ -15,4 +15,21 @@
 
         $stmt->execute();
     }
+
+    function addResponseToDatabase($db, $comment, $date, $reviewID, $ownerID) {
+        $stmt = $db->prepare(
+            'INSERT INTO ReviewResponse (comment, date, reviewID, ownerID) VALUES (
+                :comment,
+                :date,
+                :reviewID,
+                :ownerID
+            )'
+        );
+        $stmt->bindParam(':comment', $comment);
+        $stmt->bindParam(':date', $date);
+        $stmt->bindParam(':reviewID', $reviewID);
+        $stmt->bindParam(':ownerID', $ownerID);
+
+        $stmt->execute();
+    }
 ?>

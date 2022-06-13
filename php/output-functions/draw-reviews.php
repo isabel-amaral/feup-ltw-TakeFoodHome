@@ -37,7 +37,7 @@
                         <?php if ($ownerID === $_SESSION['userID']) { ?>
                             <article id="add-response">
                                 <header><h3>Add your response</h3></header>
-                                <form id="add-response-form" action="php/actions/add-response.php?restaurantID=<?=$_GET['id']?>" method="post">
+                                <form id="add-response-form" action="php/actions/add-response.php?reviewID=<?=$review['reviewID']?>&restaurantID=<?=$_GET['id']?>" method="post">
                                     <textarea name="response" cols="30" rows="10"></textarea>
                                     <input class="submit" type="submit" value="Submit">
                                 </form>
