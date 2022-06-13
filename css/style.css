@@ -253,6 +253,14 @@ main article {
     width: 75%;
 }
 
+#add-response-form {
+    display: grid;
+}
+
+#add-response-form textarea {
+    width: 75%;
+}
+
 /*__________ form _______________________________*/
 
 main form {

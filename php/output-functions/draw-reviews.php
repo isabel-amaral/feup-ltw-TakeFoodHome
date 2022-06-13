@@ -24,15 +24,26 @@
                     $responses = getReviewResponses($db, $review['reviewID']);
                     ?>
                     <section class="review-responses">
-                    <header><h3><?=count($responses)?> Responses:</h3></header>
-                    <?php
-                    foreach ($responses as $response) { ?>
-                        <article class="review-response">
-                            <h4><span class="date"><?=$response['date']?></span></h4>
-                            <p><?=$response['comment']?></p>
-                        </article>
-                    <?php
-                    } ?>
+                        <header><h3><?=count($responses)?> Responses:</h3></header>
+                        <?php
+                        foreach ($responses as $response) { ?>
+                            <article class="review-response">
+                                <h4><span class="date"><?=$response['date']?></span></h4>
+                                <p><?=$response['comment']?></p>
+                            </article>
+                        <?php
+                        } ?>
+
+                        <?php if ($ownerID === $_SESSION['userID']) { ?>
+                            <article id="add-response">
+                                <header><h3>Add your response</h3></header>
+                                <form id="add-response-form" action="php/actions/add-response.php?restaurantID=<?=$_GET['id']?>" method="post">
+                                    <textarea name="response" cols="30" rows="10"></textarea>
+                                    <input class="submit" type="submit" value="Submit">
+                                </form>
+                            </article>  
+                        <?php
+                        } ?>
                     </section>
                 </article>
             <?php
