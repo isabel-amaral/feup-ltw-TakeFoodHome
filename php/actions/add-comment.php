@@ -8,13 +8,15 @@
     if ($_SESSION['userID'] === NULL)
         die(header('Location: ../../register-page.php'));
     $db = getDatabaseConnection('../../database/restaurants.db');
-    if (!checkIfOrderExists($db, $_GET['restaurantID']))
-        die(header('Location: ../../restaurant-page.php?id=' . $_GET['restaurantID']));
+    $restaurantID = $_GET['restaurantID'];
+    $restaurant_info = getRestaurantInfo($db, $restaurantID);
+    $ownerID = $restaurant_info['ownerID'];
+    if (!checkIfOrderExists($db, $restaurantID) || $ownerID !=== $_SESSION['userID'])
+        die(header('Location: ../../restaurant-page.php?id=' . $restaurantID));
 
     $comment = $_POST['comment'];
     $date = date('Y-m-d');
     $customerID = $_SESSION['userID'];
-    $restaurantID = $_GET['restaurantID'];
 
     addCommentToDatabase($db, $comment, $date, $customerID, $restaurantID);
     header('Location: ../../restaurant-page.php?id=' . $restaurantID);
