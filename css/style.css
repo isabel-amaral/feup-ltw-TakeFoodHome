@@ -21,6 +21,10 @@ body {
     max-height: 3.5em;
 }
 
+p{
+    word-break: normal;
+}
+
 /*__________ header _________________________*/
 
 body > header {
