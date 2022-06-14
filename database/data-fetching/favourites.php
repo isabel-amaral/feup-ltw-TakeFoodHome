@@ -1,8 +1,8 @@
 <?php
-    function getAllFavourites($db, $userID) {
+    function getAllFavouriteRestaurants($db, $userID) {
         $stmt = $db->prepare(
             'SELECT Restaurant.restaurantID, name
-            FROM Favourite JOIN Restaurant ON Favourite.restaurantID = Restaurant.restaurantID
+            FROM FavouriteRestaurant JOIN Restaurant ON FavouriteRestaurant.restaurantID = Restaurant.restaurantID
             WHERE userID = :userID
             ORDER BY name'
         );
@@ -12,9 +12,9 @@
         return $favourites;
     }
 
-    function checkIfFavourite($db, $userID, $restaurantID) {
+    function checkIfFavouriteRestaurant($db, $userID, $restaurantID) {
         $stmt = $db->prepare(
-            'SELECT * FROM Favourite
+            'SELECT * FROM FavouriteRestaurant
             WHERE userID = :userID
             AND restaurantID = :restaurantID'
         );
@@ -26,5 +26,21 @@
         if (sizeof($favourites) === 0)
             return false;
         return true;
+    }
+
+    function checkIfFavouriteDish($db, $userID, $dishID) {
+        $stmt = $db->prepare(
+            'SELECT * FROM FavouriteDish
+            WHERE userID = :userID
+            AND dishID = :dishID'
+        );
+        $stmt->bindParam(':userID', $userID);
+        $stmt->bindParam(':dishID', $dishID);
+        $stmt->execute();
+        $favourites = $stmt->fetchAll();
+
+        if (sizeof($favourites) === 0)
+            return false;
+        return true;        
     }
 ?>

@@ -3,7 +3,7 @@
         require_once('database/db-connection.php');
         require_once('database/data-fetching/favourites.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $favourites = getAllFavourites($db, $_SESSION['userID']); ?>
+        $favourites = getAllFavouriteRestaurants($db, $_SESSION['userID']); ?>
         <section id="favourite-restaurants">
             <article>
                 <h2>Your Favourite Restaurants</h2>
