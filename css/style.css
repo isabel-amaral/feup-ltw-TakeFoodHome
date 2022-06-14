@@ -274,7 +274,7 @@ main article {
 
 .dish header .button{
     width: auto !important;
-    margin: 0;
+    margin-left: 0 !important;
 }
 
 /*__________ reviews ____________________________*/
