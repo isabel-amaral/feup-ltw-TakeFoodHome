@@ -2,40 +2,10 @@
     function outputRestaurantInfo() { 
         require_once('database/db-connection.php');
         require_once('database/data-fetching/restaurants.php');
+        require_once('database/data-fetching/favourites.php');
         $db = getDatabaseConnection('database/restaurants.db');
         $restaurant = getRestaurantInfo($db, $_GET['id']); 
         ?>
-
-
-        <button class="button" type="button" id="cartbutton">cart</button>
-        <section id="cart">
-            <div id="cart-rows">
-                <div class="cart-row">
-                    <p>Item name</p>
-                    <p class="item-price">9.99</p>
-                    <input class="item-quantity" type="number" value="1">
-                    <button class="button remove">Remove</button>
-                </div>
-            </div>
-            <div class="cart-total">
-                <p id="cart-total-price">0</p>
-                <p id ="item-number">0<p>
-                <button class="button" id="clear">clear</button>
-            </div>
-            <?php 
-                
-            ?>
-            <form action="php/actions/add-order.php" method="post">
-                <input type="hidden" value="<?=$_GET['id']?>" name="restaurantID" >
-                <input type="hidden" value="<?=$_SESSION['userID'] ?>"name="userID">
-                <input id="foodList" type="hidden" values="" name="foodList">
-                <input id="foodListNum" type="hidden" values="" name="foodListNum">
-                <input id="purchase" class="button" type="submit" value="Purchase" ></input>
-            </form>
-            
-        </section>
-
-        <!-- TODO: acrescentar mais informação relevante -->
         
         <section id="restaurant">
             <header>
@@ -53,7 +23,18 @@
                 See orders
             </button>
             <?php
+            } else if (!checkIfFavourite($db, $_SESSION['userID'], $_GET['id'])) { ?>
+                <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/add-to-favourites.php?restaurantID=<?=$_GET['id']?>'">
+                    <ion-icon name="star-outline"></ion-icon>
+                </button>
+            <?php
+            } else if (checkIfFavourite($db, $_SESSION['userID'], $_GET['id'])) { ?>
+                <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/remove-from-favourites.php?restaurantID=<?=$_GET['id']?>'">
+                        <ion-icon name="star"></ion-icon>
+                </button>            
+            <?php
             } ?>
+
             <footer>
                 <p><?=$restaurant['address']?></p>
                 <p><?=$restaurant['email']?></p>
