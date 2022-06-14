@@ -51,7 +51,7 @@
             </button>
             <?php
             } else { ?>
-                <button type="button" class="button" id="add-to-favourites">
+                <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/add-to-favourites.php?restaurantID=<?=$_GET['id']?>'">
                     <ion-icon name="star-outline"></ion-icon>
                 </button>
             <?php
