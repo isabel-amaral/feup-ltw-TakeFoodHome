@@ -40,6 +40,7 @@
                                 <header><h3>Add your response</h3></header>
                                 <form id="add-response-form" action="php/actions/add-response.php?reviewID=<?=$review['reviewID']?>&restaurantID=<?=$restaurantID?>" method="post">
                                     <textarea name="response" cols="30" rows="10"></textarea>
+                                    <p class="error"> <?=$_SESSION['errors'] ?> </p>
                                     <input class="submit" type="submit" value="Submit">
                                 </form>
                             </article>  
@@ -55,6 +56,7 @@
                     <header><h3>Add your review</h3></header>
                     <form id="add-comment-form" action="php/actions/add-comment.php?restaurantID=<?=$restaurantID?>" method="post">
                         <textarea name="comment" cols="30" rows="10"></textarea>
+                        <p class="error"> <?=$_SESSION['errors'] ?> </p>
                         <input class="submit" type="submit" value="Submit">
                     </form>
                 </article>            

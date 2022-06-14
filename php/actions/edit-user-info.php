@@ -12,6 +12,34 @@
     $address = preg_replace("/[^a-zA-Z0-9\s]/", '', $_POST['address']);
 
     session_start();
+    $_SESSION['errors'] = "";
+    if($username == ""){
+        $_SESSION['errors']= "Username can´t be empty";
+        header('Location: ../../user-info-edit-page.php');
+        return;
+    } 
+    if($name == ""){
+        $_SESSION['errors']= "Name can´t be empty";
+        header('Location: ../../user-info-edit-page.php');
+        return;
+    } 
+    if($email == ""){
+        $_SESSION['errors']= "Email can´t be empty";
+        header('Location: ../../user-info-edit-page.php');
+        return;
+    } 
+    if($phone == ""){
+        $_SESSION['errors']= "Phone can´t be empty";
+        header('Location: ../../user-info-edit-page.php');
+        return;
+    } 
+    if($address == ""){
+        $_SESSION['errors']= "Adress can´t be empty";
+        header('Location: ../../user-info-edit-page.php');
+        return;
+    } 
+
+
     $current_user_info = getUserbyID($db, $_SESSION['userID']);
 
     // A user who is already a restaurant owner or a courier can't stop being one

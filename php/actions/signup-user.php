@@ -12,6 +12,37 @@
     $address = $_POST['address'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT, $options);
 
+    if($username == ""){
+        $_SESSION['errors']= "Username can´t be empty";
+        header('Location: ../../register-page.php');
+        return;
+    } 
+    if($name == ""){
+        $_SESSION['errors']= "name can´t be empty";
+        header('Location: ../../register-page.php');
+        return;
+    } 
+    if($email == ""){
+        $_SESSION['errors']= "email can´t be empty";
+        header('Location: ../../register-page.php');
+        return;
+    } 
+    if($phone == ""){
+        $_SESSION['errors']= "phone can´t be empty";
+        header('Location: ../../register-page.php');
+        return;
+    } 
+    if($address == ""){
+        $_SESSION['errors']= "address can´t be empty";
+        header('Location: ../../register-page.php');
+        return;
+    } 
+    if($password == ""){
+        $_SESSION['errors']= "password can´t be empty";
+        header('Location: ../../register-page.php');
+        return;
+    } 
+
     $isOwner = 0; $isCourier = 0;
     foreach ($_POST['user-type'] as $value) {
         if ($value === 'owner')

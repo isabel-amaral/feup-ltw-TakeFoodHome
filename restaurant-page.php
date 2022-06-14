@@ -13,4 +13,5 @@
     outputDishes();
     outputReviews();
     drawFooter();
+    $_SESSION['errors'] = "";
 ?>

@@ -5,6 +5,7 @@
     require_once('../../database/data-insertion/insert-new-comment.php');
 
     session_start();
+    $_SESSION['errors'] = "";
     if ($_SESSION['userID'] === NULL)
         die(header('Location: ../../register-page.php'));
     $db = getDatabaseConnection('../../database/restaurants.db');
@@ -17,6 +18,12 @@
     $comment = preg_replace("/[^a-zA-Z0-9,.?!\s]/", '', $_POST['comment']);
     $date = date('Y-m-d');
     $customerID = $_SESSION['userID'];
+
+    if (empty($comment) ||  empty($customerID)){
+        $_SESSION['errors'] = ("Comment can't be empty");
+        header('Location: ../../restaurant-page.php?id=' . $restaurantID);
+        return;
+    }
 
     addCommentToDatabase($db, $comment, $date, $customerID, $restaurantID);
     header('Location: ../../restaurant-page.php?id=' . $restaurantID);

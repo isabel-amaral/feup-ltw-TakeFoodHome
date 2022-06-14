@@ -16,6 +16,7 @@
             <section id="restaurantInfo">
                 <form action="../../php/actions/add-restaurant.php"  method="post" enctype="multipart/form-data">
                     Restaurant's Name:<input type="text" name="name">
+                    <p class="error"><?=$_SESSION['errors'] ?></p>
                     Restaurant's Description:<input type="text" name="description">
                     Category:<input type="text" name="category">
                     Email:<input type="email"  name="email">

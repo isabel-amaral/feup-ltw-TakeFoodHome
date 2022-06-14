@@ -24,7 +24,34 @@
     $description = preg_replace("/[^a-zA-Z,.?!\s]/", '', $_POST['description']);
     $price = $_POST['price'];
     $category = preg_replace("/[^a-zA-Z\s]/", '', $_POST['category']);
-    $picture = "picture1";
+    $picture = $_FILES['picture']['name'];
+    $restaurantID = $_GET['restaurantID'];
+
+    if($name == ""){
+        $_SESSION['errors']= "name can´t be empty";
+        header('Location: ../../dish-register-page.php?restaurantID='.$restaurantID);
+        return;
+    } 
+    if($description == ""){
+        $_SESSION['errors']= "description can´t be empty";
+        header('Location: ../../dish-register-page.php?restaurantID='.$restaurantID);
+        return;
+    } 
+    if($category == ""){
+        $_SESSION['errors']= "category can´t be empty";
+        header('Location: ../../dish-register-page.php?restaurantID='.$restaurantID);
+        return;
+    } 
+    if($price == ""){
+        $_SESSION['errors']= "price can´t be empty";
+        header('Location: ../../dish-register-page.php?restaurantID='.$restaurantID);
+        return;
+    } 
+    if($picture == ""){
+        $_SESSION['errors']= "picture can´t be empty";
+        header('Location: ../../dish-register-page.php?restaurantID='.$restaurantID);
+        return;
+    } 
 
     addDishToDatabase($db, $name, $description, $price, $picture, $category, $restaurantID);
     $dishID = count(getDishes($db));

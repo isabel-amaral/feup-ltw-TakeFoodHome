@@ -21,7 +21,43 @@
     $email = preg_replace("/[^a-zA-Z0-9@._\s]/", '', $_POST['email']);
     $phone = $_POST['phone'];
     $address = preg_replace("/[^a-zA-Z0-9\s]/", '', $_POST['address']);
-    $picture = "picture1";
+    $picture = $_FILES['picture']['name'];
+
+    if($name == ""){
+        $_SESSION['errors']= "name can´t be empty";
+        header('Location: ../../restaurant-register-page.php');
+        return;
+    } 
+    if($description == ""){
+        $_SESSION['errors']= "description can´t be empty";
+        header('Location: ../../restaurant-register-page.php');
+        return;
+    } 
+    if($category == ""){
+        $_SESSION['errors']= "category can´t be empty";
+        header('Location: ../../restaurant-register-page.php');
+        return;
+    } 
+    if($email == ""){
+        $_SESSION['errors']= "email can´t be empty";
+        header('Location: ../../restaurant-register-page.php');
+        return;
+    } 
+    if($phone == ""){
+        $_SESSION['errors']= "phone can´t be empty";
+        header('Location: ../../restaurant-register-page.php');
+        return;
+    } 
+    if($address == ""){
+        $_SESSION['errors']= "address can´t be empty";
+        header('Location: ../../restaurant-register-page.php');
+        return;
+    } 
+    if($picture == ""){
+        $_SESSION['errors']= "picture can´t be empty";
+        header('Location: ../../restaurant-register-page.php');
+        return;
+    } 
 
     addRestaurantToDatabase($db, $name, $description, $category, $email, $phone, $address, $_SESSION['userID'], $picture);
     $restaurantID = count(getAllRestaurants($db));

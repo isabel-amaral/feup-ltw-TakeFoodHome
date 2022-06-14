@@ -7,4 +7,5 @@
     drawHeader();
     outputRegisterForm();
     drawFooter();
+    $_SESSION['errors'] = "";
 ?>

@@ -12,6 +12,7 @@
             <section id="register">
                 <form action="../../php/actions/edit-user-info.php" method="post">
                     Username: <input type="text", name="username", value=<?=$current_user_info['username']?>>
+                    <p class="error"><?=$_SESSION['errors'] ?></p>
                     Name: <input type="text", name="name", value="<?=$current_user_info['name']?>">
                     Email: <input type="email" , name="email", value=<?=$current_user_info['email']?>>
                     Phone Number: <input type="number" , name="phone", value=<?=$current_user_info['phoneNumber']?>>
@@ -31,5 +32,5 @@
             </section>
         </main>
     <?php
-    }
+    } 
 ?>

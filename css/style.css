@@ -25,6 +25,10 @@ p{
     word-break: normal;
 }
 
+.error {
+    color: red;
+}
+
 /*__________ header _________________________*/
 
 body > header {

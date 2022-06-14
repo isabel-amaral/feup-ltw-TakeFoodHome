@@ -17,6 +17,7 @@
             <section id="restaurantInfo">
                 <form action=<?=$action_link?>  method='post' enctype="multipart/form-data">
                     Restaurant's Name:<input type="text" name="name" value="<?=$current_restaurant_info['name']?>">
+                    <p class="error"><?=$_SESSION['errors'] ?></p>
                     Restaurant's Description:<input type="text" name="description" value="<?=$current_restaurant_info['description']?>">
                     Category:<input type="text" name="category" value="<?=$current_restaurant_info['category']?>">
                     Email:<input type="email"  name="email" value=<?=$current_restaurant_info['email']?>>

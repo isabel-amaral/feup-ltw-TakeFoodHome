@@ -25,7 +25,33 @@
     $description = preg_replace("/[^a-zA-Z,.?!\s]/", '', $_POST['description']);
     $price = $_POST['price'];
     $category = preg_replace("/[^a-zA-Z\s]/", '', $_POST['category']);
-    $picture = $_POST['picture'];
+    $picture = $_FILES['picture']['name'];
+
+    if($name == ""){
+        $_SESSION['errors']= "name can´t be empty";
+        header('Location: ../../dish-info-edit-page.php?restaurantID='.$_GET['restaurantID'].'&dishID='.$_GET['dishID']);
+        return;
+    } 
+    if($description == ""){
+        $_SESSION['errors']= "description can´t be empty";
+        header('Location: ../../dish-info-edit-page.php?restaurantID='.$_GET['restaurantID'].'&dishID='.$_GET['dishID']);
+        return;
+    } 
+    if($category == ""){
+        $_SESSION['errors']= "category can´t be empty";
+        header('Location: ../../dish-info-edit-page.php?restaurantID='.$_GET['restaurantID'].'&dishID='.$_GET['dishID']);
+        return;
+    } 
+    if($price == ""){
+        $_SESSION['errors']= "price can´t be empty";
+        header('Location: ../../dish-info-edit-page.php?restaurantID='.$_GET['restaurantID'].'&dishID='.$_GET['dishID']);
+        return;
+    } 
+    if($picture == ""){
+        $_SESSION['errors']= "picture can´t be empty";
+        header('Location: ../../dish-info-edit-page.php?restaurantID='.$_GET['restaurantID'].'&dishID='.$_GET['dishID']);
+        return;
+    } 
 
     $picture = insertImage($dish_info);
 

@@ -7,4 +7,5 @@
     drawHeader();
     outputUserInfo();
     drawFooter();
+    $_SESSION['errors'] = "";
 ?>

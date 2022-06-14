@@ -22,6 +22,7 @@
             <section id="dishInfo">
                 <form action="../../php/actions/edit-dish-info.php?restaurantID=<?=$restaurantID?>&dishID=<?=$dishID?>" method="post" enctype="multipart/form-data">
                     Name: <input type="text" name="name" value="<?=$dish_info['name']?>">
+                    <p class="error"><?=$_SESSION['errors'] ?></p>
                     Description: <input type="text" name="description" value="<?=$dish_info['description']?>">
                     Price: <input type="number" name="price" step="0.01" value="<?=$dish_info['price']?>">
                     Category: <input type="text" name="category" value="<?=$dish_info['category']?>">
