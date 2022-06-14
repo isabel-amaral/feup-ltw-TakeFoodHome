@@ -350,20 +350,38 @@ main input{
     box-sizing: border-box;
 }
 
-/*__________ orders _____________________________*/
+/*__________ ordersUser _____________________________*/
 
 #orders{
     background-color: var(--background-color);
     color:black;
     padding: 0.5em;
     margin: 2em 0em;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 
-.orderNumber {
-    padding: 0em 5em;
+#orders h2 {
+    width: 33%;
+    text-align: center;
+}
+
+.order {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border: solid var(--main-color);
+    margin: 1em 0;
+}
+
+.order #orderNumber {
+    margin-left: 1em;
+}
+
+.order .order-list {
+    margin-left: 3em;
 }
 
 #user-order-button {
@@ -380,10 +398,6 @@ main input{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
 
-}
-
-#orderNumber {
-    padding: 0em 5em;
 }
 
 /*__________ userInfo ___________________________*/

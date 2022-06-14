@@ -276,30 +276,6 @@ INSERT INTO FoodOrder VALUES(
     1
 );
 
-INSERT INTO FoodOrder VALUES(
-    2,
-    '2022-06-20',
-    'Received',
-    1,
-    3
-);
-
-INSERT INTO FoodOrder VALUES(
-    3,
-    '2022-08-16',
-    'Ready',
-    4,
-    2
-);
-
-INSERT INTO FoodOrder VALUES(
-    4,
-    '2022-11-05',
-    'Received',
-    1,
-    1
-);
-
 
 --REVIEW--------------------------------------------------------------
 
@@ -370,18 +346,3 @@ INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
     4,
     1
 );
-
-INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
-    1,
-    4
-);
-
-INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
-    2,
-    4
-);
-
-INSERT INTO DishFoodOrder (dishID,orderID) VALUES(
-    4,
-    4
-)

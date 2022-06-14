@@ -13,22 +13,24 @@
                 <h2>State</h2>
 
                 <?php foreach($orders as $order) { ?>
-                    <p id="orderNumber"><?=$order['orderID']?></p>
-                    <div class="order-list">
-                    <?php 
-                        $dishesids = getDishsByOrder($db,$order['orderID']);
-                        foreach($dishesids as $dish){ 
-                            $i = getDishInfo($db,$dish['dishID']);
-                            ?>
-                            <div class="item-dish">
-                                <p><?=$i['name']?></p>
-                                <p><?=$i['price']?></p>
-                            </div>
-                            <?php
-                        }
-                    ?>
+                    <div class="order">
+                        <p id="orderNumber"><?=$order['orderID']?></p>
+                        <div class="order-list">
+                        <?php 
+                            $dishesids = getDishsByOrder($db,$order['orderID']);
+                            foreach($dishesids as $dish){ 
+                                $i = getDishInfo($db,$dish['dishID']);
+                                ?>
+                                <div class="item-dish">
+                                    <p><?=$i['name']?></p>
+                                    <p><?=$i['price']?></p>
+                                </div>
+                                <?php
+                            }
+                        ?>
                     </div>
                     <p id="orderState"><?=$order['state']?></p>
+                    </div>
                 <?php
                 } ?>                
             </section>
