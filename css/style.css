@@ -21,6 +21,10 @@ body {
     max-height: 3.5em;
 }
 
+p{
+    word-break: normal;
+}
+
 /*__________ header _________________________*/
 
 body > header {
@@ -101,12 +105,14 @@ main header div#search-form #search-restaurant {
     align-self: center;
     padding: 0.5em;
     margin: 0em;
+    width: auto;
 }
 
 main header div#search-form #search-category {
     align-self: center;
     padding: 0.5em;
     margin: 0em;
+    width: auto;
 }
 
 main article {
@@ -120,11 +126,17 @@ main article {
 
 /*__________ retaurant _________________________*/
 
+#main-restaurants {
+    display: flex;
+    flex-direction: column;
+}
+
 #restaurant {
     background-color: var(--background-color);
     padding: 1em;
     display: grid;
     grid-template-columns: auto 20%;
+    margin-top: 5em;
 }
 
 #restaurant header {
@@ -169,6 +181,10 @@ main article {
     grid-row-end: 3;
 }
 
+#restaurant #edit-info{
+    align-self: end;
+}
+
 #restaurant #orders-button {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -211,6 +227,7 @@ main article {
     width:100%;
     padding: 0.5em;
     margin: 0em;
+    font-size: 1.5em;
 }
 
 #category-and-plates article {
@@ -222,6 +239,7 @@ main article {
 
 #category-and-plates article h4 {
     margin: 0em;
+    font-size: 1.2em;
 }
 
 #category-and-plates article img {
@@ -232,9 +250,6 @@ main article {
     width: 100%;
 }
 
-#cart {
-    display: none;
-}
 
 #item-number {
     display: none;
@@ -242,6 +257,17 @@ main article {
 
 .dishID {
     display: none;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+}
+
+.dish header {
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 /*__________ reviews ____________________________*/
@@ -254,14 +280,32 @@ main article {
 }
 
 .review {
-    margin: 0em;
     padding: 0em 1em;
     margin: 1em 0em;
+    border: solid var(--main-color);
+}
+
+.review header {
+    height: 3em;
+    padding: 0;
+}
+
+.review header h4{
+    padding: 0;
+    margin: 0;
+}
+
+.review p {
+    margin-left: 2em;
 }
 
 .review-response {
     margin: 0em;
     padding: 0em 1em;
+}
+
+.add-response {
+    padding: 0;
 }
 
 #add-comment {
@@ -276,11 +320,15 @@ main article {
     width: 75%;
 }
 
-#add-response-form {
+.add-response-form {
     display: grid;
 }
 
-#add-response-form textarea {
+.add-response-form .submit {
+    margin: 1em 0;
+}
+
+.add-response-form textarea {
     width: 75%;
 }
 
@@ -308,20 +356,38 @@ main input{
     box-sizing: border-box;
 }
 
-/*__________ orders _____________________________*/
+/*__________ ordersUser _____________________________*/
 
 #orders{
     background-color: var(--background-color);
     color:black;
     padding: 0.5em;
     margin: 2em 0em;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 
-.orderNumber {
-    padding: 0em 5em;
+#orders h2 {
+    width: 33%;
+    text-align: center;
+}
+
+.order {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border: solid var(--main-color);
+    margin: 1em 0;
+}
+
+.order .orderNumber {
+    margin-left: 1em;
+}
+
+.order .order-list {
+    margin-left: 3em;
 }
 
 #user-order-button {
@@ -335,13 +401,31 @@ main input{
     color:black;
     padding: 0.5em;
     margin: 2em 0em;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 
-#orderNumber {
-    padding: 0em 5em;
+#ordersRestaurant .order {
+    justify-content: space-between;
+}
+
+#ordersRestaurant h2 {
+    width: 25%;
+    text-align: center;
+}
+
+#ordersRestaurant .order p {
+    margin-left: 6em;
+}
+
+#ordersRestaurant .order .orderState {
+    margin-right: 4em;
+}
+
+#ordersRestaurant .order form .button {
+    margin: 1em 0;
 }
 
 /*__________ userInfo ___________________________*/
@@ -371,4 +455,202 @@ footer {
 
 footer * {
     color: var(--main-color);
+}
+
+/*__________ cart _______________________________*/
+
+#cart {
+    display: none;
+    background-color: var(--background-color);
+    border: solid var(--main-color);
+    grid-row: 2;
+    grid-template-columns: auto auto;
+    z-index: 999;
+}
+
+#cartbutton {
+    width: 10em;
+    grid-row: 1;
+}
+
+#cart-div {
+    align-self: flex-end;
+    display: grid;
+    position: absolute;
+    justify-items: end;
+    
+}
+
+#cart-rows {
+    grid-column: 1;
+    grid-row: 1/200;
+    margin: 0.5em;
+}
+
+#cart-total {
+    grid-column: 2;
+}
+
+#cart form {
+    grid-column: 2;
+}
+.cart-row {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.dishName {
+    grid-column: 1/ span 2;
+}
+
+.item-price {
+    grid-column: 1/ span 2;
+}
+
+.item-quantity {
+    width: 60%;
+}
+
+#clear {
+    width: 8em;
+    padding: 1em;
+    margin: 1em;
+}
+
+#purchase {
+    width: 8em;
+    display: flex;
+    justify-content: center;
+}
+
+#cart form {
+    padding: 0;
+    margin-left: 0.4em;
+}
+
+/*__________ media queries _______________________________*/
+
+@media (max-width: 768px) {  
+    #restaurants img {
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    body {
+        width: 35em;
+    }
+
+    .category {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .category h3 {
+        grid-column: 1/ span 2;
+    }
+
+    .category .dish {
+        width: auto !important;
+    }
+
+    .category .dish * {
+        width: auto !important;
+    }
+
+    .order {
+        width: 40em;
+        justify-content: space-around;
+    }
+
+    .order * {
+        width: 5em;
+        margin: 0 0 0 0 !important;
+    }
+
+    .order p {
+        text-align: center;
+        align-self: center;
+    }
+
+    .item-dish {
+        margin-top: 1em !important;
+    }
+
+    .order input {
+        width: 7em;
+    }
+
+    .order select {
+        width: 7em;
+    }
+
+    .order form {
+        padding-right: 1.5em;
+    }
+
+}
+
+
+@media (min-width:768px ) and (max-width:1020px){
+    #restaurants img {
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    body {
+        width: 50em;
+    }
+
+    .category {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .category h3 {
+        grid-column: 1/ span 2;
+    }
+
+    .category .dish {
+        width: auto !important;
+    }
+
+    .category .dish * {
+        width: auto !important;
+    }
+
+    .order {
+        width: 40em;
+        justify-content: space-around;
+    }
+
+    .order * {
+        width: 5em;
+        margin: 0 0 0 0 !important;
+    }
+
+    .order p {
+        text-align: center;
+        align-self: center;
+    }
+
+    .item-dish {
+        margin-top: 1em !important;
+    }
+
+    .order input {
+        width: 7em;
+    }
+
+    .order select {
+        width: 7em;
+    }
+
+    .order form {
+        padding-right: 1.5em;
+    }
 }

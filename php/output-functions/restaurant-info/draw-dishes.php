@@ -28,7 +28,7 @@
                 <article class="dish">
                     <header><h4 class="dish-name"><?=$dish['name']?></h4></header>
                     <p><?=$dish['description']?></p>
-                    <p class ="dish-price"><?=$dish['price']?></p>
+                    <p class ="dish-price">Price: <?=$dish['price']?> €</p>
                     <img src="../../img/<?=$dish['picture'] ?>" alt="dish">
                     <button class="button add">Buy</button>
                     <p class="dishID"><?=$dish['dishID']?></p>
