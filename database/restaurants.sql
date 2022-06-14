@@ -86,7 +86,7 @@ CREATE TABLE Favourite(
 INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUES(
     1,
     'isabel123',
-    '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
+    '$2y$12$1VF4g0RDRE89czgn8X7JN.le0tiLrVr2vBJj9f/LqUGsofFJ9/u1u', --helloworld
     'Isabel Amaral',
     'email@email.com',
     '987654321',
@@ -96,7 +96,7 @@ INSERT INTO User (userID,username,password,name,email,phoneNumber,address) VALUE
 INSERT INTO User (userID,username,password,name,email,phoneNumber,address,owner) VALUES(
     2,
     'firstowner',
-    '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
+    '$2y$12$1VF4g0RDRE89czgn8X7JN.le0tiLrVr2vBJj9f/LqUGsofFJ9/u1u', --helloworld
     'Mr. First Restaurant Owner',
     'email@email.com',
     '987654321',
@@ -107,7 +107,7 @@ INSERT INTO User (userID,username,password,name,email,phoneNumber,address,owner)
 INSERT INTO User (userID,username,password,name,email,phoneNumber,address,owner) VALUES(
     3,
     'secondowner',
-    '6adfb183a4a2c94a2f92dab5ade762a47889a5a1', --helloworld
+    '$2y$12$1VF4g0RDRE89czgn8X7JN.le0tiLrVr2vBJj9f/LqUGsofFJ9/u1u', --helloworld
     'Mr. Second Restaurant Owner',
     'email@email.com',
     '987654321',
