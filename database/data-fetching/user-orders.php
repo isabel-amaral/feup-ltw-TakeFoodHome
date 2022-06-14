@@ -13,16 +13,13 @@
         return $orders;
     }
 
-    function checkIfOrderExists($db, $restaurantID) {
-        session_start();
-        $id = $_SESSION['userID'];
-
+    function checkIfOrderExists($db, $userID, $restaurantID) {
         $stmt = $db->prepare(
             'SELECT * FROM FoodOrder
             WHERE customerID = :customerID
             AND restaurantID = :restaurantID'
         );
-        $stmt->bindParam(':customerID', $id);
+        $stmt->bindParam(':customerID', $userID);
         $stmt->bindParam(':restaurantID', $restaurantID);
         $stmt->execute();
         $orders = $stmt->fetchAll();

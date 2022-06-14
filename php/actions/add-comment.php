@@ -11,7 +11,7 @@
     $restaurantID = $_GET['restaurantID'];
     $restaurant_info = getRestaurantInfo($db, $restaurantID);
     $ownerID = $restaurant_info['ownerID'];
-    if (!checkIfOrderExists($db, $restaurantID) || $ownerID === $_SESSION['userID'])
+    if (!checkIfOrderExists($db, $_SESSION['userID'], $restaurantID) || $ownerID === $_SESSION['userID'])
         die(header('Location: ../../restaurant-page.php?id=' . $restaurantID));
 
     $comment = $_POST['comment'];
