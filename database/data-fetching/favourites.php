@@ -28,6 +28,19 @@
         return true;
     }
 
+    function getAllFavouriteDishes($db, $userID) {
+        $stmt = $db->prepare(
+            'SELECT Dish.dishID, name, restaurantID
+            FROM FavouriteDish JOIN Dish ON FavouriteDish.dishID = Dish.dishID
+            WHERE userID = :userID
+            ORDER BY name'            
+        );
+        $stmt->bindParam(':userID', $userID);
+        $stmt->execute();
+        $favourites = $stmt->fetchAll();
+        return $favourites;
+    }
+
     function checkIfFavouriteDish($db, $userID, $dishID) {
         $stmt = $db->prepare(
             'SELECT * FROM FavouriteDish

@@ -453,6 +453,10 @@ main input{
     padding: 0.3em
 }
 
+#favourite-dishes li {
+    padding: 0.3em
+}
+
 /*__________ footer _____________________________*/
 
 footer {
