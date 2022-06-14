@@ -274,14 +274,32 @@ main article {
 }
 
 .review {
-    margin: 0em;
     padding: 0em 1em;
     margin: 1em 0em;
+    border: solid var(--main-color);
+}
+
+.review header {
+    height: 3em;
+    padding: 0;
+}
+
+.review header h4{
+    padding: 0;
+    margin: 0;
+}
+
+.review p {
+    margin-left: 2em;
 }
 
 .review-response {
     margin: 0em;
     padding: 0em 1em;
+}
+
+.add-response {
+    padding: 0;
 }
 
 #add-comment {
@@ -296,11 +314,15 @@ main article {
     width: 75%;
 }
 
-#add-response-form {
+.add-response-form {
     display: grid;
 }
 
-#add-response-form textarea {
+.add-response-form .submit {
+    margin: 1em 0;
+}
+
+.add-response-form textarea {
     width: 75%;
 }
 
