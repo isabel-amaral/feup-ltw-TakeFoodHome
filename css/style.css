@@ -459,6 +459,7 @@ footer * {
     border: solid var(--main-color);
     grid-row: 2;
     grid-template-columns: auto auto;
+    z-index: 999;
 }
 
 #cartbutton {
