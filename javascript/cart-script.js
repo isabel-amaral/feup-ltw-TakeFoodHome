@@ -142,6 +142,7 @@ function clearCart(){
   }
 
   updateCartTotal()
+  ids.clear()
 }
 
 window.addEventListener("load", clearCart)
