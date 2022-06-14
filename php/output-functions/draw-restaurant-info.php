@@ -32,10 +32,7 @@
                 <input id="foodListNum" type="hidden" values="" name="foodListNum">
                 <input id="purchase" class="button" type="submit" value="Purchase" ></input>
             </form>
-            
         </section>
-
-        <!-- TODO: acrescentar mais informação relevante -->
         
         <section id="restaurant">
             <header>
