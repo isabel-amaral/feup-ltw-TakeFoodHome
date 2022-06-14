@@ -74,6 +74,12 @@ CREATE TABLE DishFoodOrder(
     
 );
 
+CREATE TABLE Favourite(
+    userID          INTEGER REFERENCES User(userID),
+    restaurantID    INTEGER REFERENCES Restaurant(restaurantID),
+    PRIMARY KEY(userID, restaurantID)
+);
+
 --INSERTS-------------------------------------------------------------
 
 --USERS---------------------------------------------------------------
