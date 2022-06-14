@@ -418,6 +418,10 @@ main input{
     margin-right: 4em;
 }
 
+#ordersRestaurant .order form .button {
+    margin: 1em 0;
+}
+
 /*__________ userInfo ___________________________*/
 
 #userInfo {
