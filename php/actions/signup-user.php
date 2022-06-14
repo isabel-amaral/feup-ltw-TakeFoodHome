@@ -2,6 +2,7 @@
     require_once('../../database/db-connection.php');
     require_once('../../database/data-insertion/insert-new-user.php');
     require_once('login.php');
+    $options = ['cost' => 12];
 
     $db = getDatabaseConnection('../../database/restaurants.db');
     $username = preg_replace("/[^a-zA-Z0-9_\s]/", '', $_POST['username']);
@@ -9,7 +10,7 @@
     $email = preg_replace("/[^a-zA-Z0-9@._\s]/", '', $_POST['email']);
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    $password = sha1($_POST['password']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT, $options);
 
     $isOwner = 0; $isCourier = 0;
     foreach ($_POST['user-type'] as $value) {

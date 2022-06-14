@@ -15,16 +15,15 @@
         $user = getUser($db, $username, $password);
 
         session_start();
-        if ($user) {
+        if ($user && password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['username'];
             $_SESSION['userID'] = $user['userID'];
             $_SESSION['name'] = $user['name'];
         }
-    
         header('Location: ../../index.php');
     }
 
     $username = $_POST['username'];
-    $password = sha1($_POST['password']);
+    $password = $_POST['password'];
     initiateSession($username, $password);
 ?>

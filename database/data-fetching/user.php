@@ -1,14 +1,10 @@
 <?php
-    function getUser($db, $username, $password) {
-        echo $username;
-        echo $password;
+    function getUser($db, $username) {
         $stmt = $db->prepare(
             'SELECT * FROM User
-            WHERE username = :username
-            AND password = :password'
+            WHERE username = :username'
         );
         $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
         $stmt->execute();
         $user = $stmt->fetch();
         return $user;
