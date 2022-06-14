@@ -51,16 +51,15 @@
                 See orders
             </button>
             <?php
-            } else { ?>
+            } else if (!checkIfFavourite($db, $_SESSION['userID'], $_GET['id'])) { ?>
                 <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/add-to-favourites.php?restaurantID=<?=$_GET['id']?>'">
-                    <?php if (checkIfFavourite($db, $_SESSION['userID'], $_GET['id'])) { ?>
-                        <ion-icon name="star"></ion-icon>
-                    <?php
-                    } else { ?>
-                        <ion-icon name="star-outline"></ion-icon>
-                    <?php
-                    } ?>
+                    <ion-icon name="star-outline"></ion-icon>
                 </button>
+            <?php
+            } else if (checkIfFavourite($db, $_SESSION['userID'], $_GET['id'])) { ?>
+                <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/remove-from-favourites.php?restaurantID=<?=$_GET['id']?>'">
+                        <ion-icon name="star"></ion-icon>
+                </button>            
             <?php
             } ?>
 
