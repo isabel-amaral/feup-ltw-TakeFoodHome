@@ -2,6 +2,7 @@
     function outputRestaurantInfo() { 
         require_once('database/db-connection.php');
         require_once('database/data-fetching/restaurants.php');
+        require_once('database/data-fetching/favourites.php');
         $db = getDatabaseConnection('database/restaurants.db');
         $restaurant = getRestaurantInfo($db, $_GET['id']); 
         ?>
@@ -52,7 +53,13 @@
             <?php
             } else { ?>
                 <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/add-to-favourites.php?restaurantID=<?=$_GET['id']?>'">
-                    <ion-icon name="star-outline"></ion-icon>
+                    <?php if (checkIfFavourite($db, $_SESSION['userID'], $_GET['id'])) { ?>
+                        <ion-icon name="star"></ion-icon>
+                    <?php
+                    } else { ?>
+                        <ion-icon name="star-outline"></ion-icon>
+                    <?php
+                    } ?>
                 </button>
             <?php
             } ?>
