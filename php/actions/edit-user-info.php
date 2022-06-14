@@ -5,9 +5,9 @@
     require_once('login.php');
 
     $db = getDatabaseConnection('../../database/restaurants.db');
-    $username = preg_replace("/[^a-zA-Z0-9_-\s]/", '', $_POST['username']);
+    $username = preg_replace("/[^a-zA-Z0-9_\s]/", '', $_POST['username']);
     $name = preg_replace("/[^a-zA-Z\s]/", '', $_POST['name']);
-    $email = preg_replace("/[^a-zA-Z0-9@._-\s]/", '', $_POST['email']);
+    $email = preg_replace("/[^a-zA-Z0-9@._\s]/", '', $_POST['email']);
     $phone = $_POST['phone'];
     $address = preg_replace("/[^a-zA-Z0-9\s]/", '', $_POST['address']);
 

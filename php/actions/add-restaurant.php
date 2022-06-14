@@ -18,7 +18,7 @@
     $name = preg_replace("/[^a-zA-Z\s]/", '', $_POST['name']);
     $description = preg_replace("/[^a-zA-Z,.?!\s]/", '', $_POST['description']);
     $category = preg_replace("/[^a-zA-Z\s]/", '', $_POST['category']);
-    $email = preg_replace("/[^a-zA-Z0-9@._-\s]/", '', $_POST['email']);
+    $email = preg_replace("/[^a-zA-Z0-9@._\s]/", '', $_POST['email']);
     $phone = $_POST['phone'];
     $address = preg_replace("/[^a-zA-Z0-9\s]/", '', $_POST['address']);
     $picture = "picture1";
