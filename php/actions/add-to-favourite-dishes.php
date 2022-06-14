@@ -1,4 +1,4 @@
-2<?php
+<?php
     require_once('../../database/db-connection.php');
     require_once('../../database/data-insertion/update-favourite-status.php');
 
@@ -8,6 +8,7 @@
 
     $db = getDatabaseConnection('../../database/restaurants.db');
     $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['restaurantID']);
-    addToFavourties($db, $_SESSION['userID'], $restaurantID);
+    $dishID = preg_replace("/[^0-9\s]/", '', $_GET['dishID']);
+    addToFavouriteDishes($db, $_SESSION['userID'], $dishID);
     header('Location: ../../restaurant-page.php?id=' . $restaurantID);
 ?>

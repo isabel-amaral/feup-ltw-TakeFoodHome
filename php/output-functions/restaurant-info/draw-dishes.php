@@ -26,7 +26,20 @@
                 } ?>
 
                 <article class="dish">
-                    <header><h4 class="dish-name"><?=$dish['name']?></h4></header>
+                    <header>
+                        <h4 class="dish-name"><?=$dish['name']?></h4>
+                        <?php if (!checkIfFavouriteDish($db, $_SESSION['userID'], $dish['dishID'])) { ?>
+                            <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/add-to-favourite-dishes.php?restaurantID=<?=$restaurantID?>&dishID=<?=$dish['dishID']?>'">
+                                <ion-icon name="star-outline"></ion-icon>
+                            </button>                        
+                        <?php
+                        } else { ?>
+                            <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/remove-from-favourite-dishes.php?restaurantID=<?=$restaurantID?>&dishID=<?=$dish['dishID']?>'">
+                                <ion-icon name="star"></ion-icon>
+                            </button>                           
+                        <?php
+                        } ?>
+                    </header>
                     <p><?=$dish['description']?></p>
                     <p class ="dish-price">Price: <?=$dish['price']?> €</p>
                     <img src="../../img/<?=$dish['picture'] ?>" alt="dish">
