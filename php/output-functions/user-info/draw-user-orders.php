@@ -14,7 +14,7 @@
 
                 <?php foreach($orders as $order) { ?>
                     <div class="order">
-                        <p id="orderNumber"><?=$order['orderID']?></p>
+                        <p class="orderNumber"><?=$order['orderID']?></p>
                         <div class="order-list">
                         <?php 
                             $dishesids = getDishsByOrder($db,$order['orderID']);

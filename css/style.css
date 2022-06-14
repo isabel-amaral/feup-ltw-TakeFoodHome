@@ -376,7 +376,7 @@ main input{
     margin: 1em 0;
 }
 
-.order #orderNumber {
+.order .orderNumber {
     margin-left: 1em;
 }
 
@@ -395,9 +395,27 @@ main input{
     color:black;
     padding: 0.5em;
     margin: 2em 0em;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
+}
+
+#ordersRestaurant .order {
+    justify-content: space-between;
+}
+
+#ordersRestaurant h2 {
+    width: 25%;
+    text-align: center;
+}
+
+#ordersRestaurant .order p {
+    margin-left: 6em;
+}
+
+#ordersRestaurant .order .orderState {
+    margin-right: 4em;
 }
 
 /*__________ userInfo ___________________________*/
