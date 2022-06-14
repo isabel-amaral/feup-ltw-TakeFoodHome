@@ -21,5 +21,5 @@
     }
 
     addUserToDatabase($db, $username, $name, $email, $phone, $address, $password, $isOwner, $isCourier);
-    initiateSession($username, $password);
+    initiateSession($username, $_POST['password']);
 ?>

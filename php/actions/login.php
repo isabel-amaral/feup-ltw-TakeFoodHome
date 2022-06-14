@@ -12,7 +12,7 @@
         require_once('../../database/data-fetching/user.php');
 
         $db = getDatabaseConnection('../../database/restaurants.db');
-        $user = getUser($db, $username, $password);
+        $user = getUser($db, $username);
 
         session_start();
         if ($user && password_verify($password, $user['password'])) {

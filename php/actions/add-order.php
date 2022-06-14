@@ -18,8 +18,6 @@
   addOrderToDatabase($db,$currentDate->format('Y-m-d'),$_POST["restaurantID"],$_POST["userID"]);
   $orderids = getOrder($db);
   $orderID =count($orderids);
-  echo($orderID);
-  echo(count($orderids));
   for($i = 2; $i< count($foodArray);$i++){
     for ($j = 0;$j< $foodNumArray[$i];$j++){
       addDishFoodOrder($db,$orderID,$foodArray[$i]);
