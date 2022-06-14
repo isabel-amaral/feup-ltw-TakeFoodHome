@@ -35,6 +35,7 @@
             <?php
             } ?>
         </section>
+        </main>
     <?php
     }
 ?>

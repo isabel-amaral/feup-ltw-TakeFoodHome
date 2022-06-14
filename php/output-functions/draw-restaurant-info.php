@@ -6,7 +6,8 @@
         $restaurant = getRestaurantInfo($db, $_GET['id']); 
         ?>
 
-
+        <main id="main-restaurants">
+        <div id="cart-div">
         <button class="button" type="button" id="cartbutton">cart</button>
         <section id="cart">
             <div id="cart-rows">
@@ -34,6 +35,7 @@
             </form>
             
         </section>
+    </div>
 
         <!-- TODO: acrescentar mais informação relevante -->
         

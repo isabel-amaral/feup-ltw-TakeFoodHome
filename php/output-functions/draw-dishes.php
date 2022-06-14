@@ -6,7 +6,7 @@
         $db = getDatabaseConnection('database/restaurants.db');
         $restaurant = getRestaurantInfo($db, $_GET['id']);
         $dishes = getRestaurantDishes($db, $_GET['id']); ?>
-
+        
         <section id="category-and-plates">
             <?php
             $curr_category = $dishes[0]['category']; ?>
@@ -27,8 +27,7 @@
                 <article class="dish">
                     <header><h4 class="dish-name"><?=$dish['name']?></h4></header>
                     <p><?=$dish['description']?></p>
-                    <p class ="dish-price"><?=$dish['price']?></p>
-                    <!-- TODO: get picture from database -->
+                    <p class ="dish-price">Price: <?=$dish['price']?> €</p>
                     <img src="../../img/<?=$dish['picture'] ?>" alt="dish">
                     <button class="button add">Buy</button>
                     <p class="dishID"><?=$dish['dishID']?></p>

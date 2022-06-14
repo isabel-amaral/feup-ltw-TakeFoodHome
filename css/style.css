@@ -124,11 +124,17 @@ main article {
 
 /*__________ retaurant _________________________*/
 
+#main-restaurants {
+    display: flex;
+    flex-direction: column;
+}
+
 #restaurant {
     background-color: var(--background-color);
     padding: 1em;
     display: grid;
     grid-template-columns: auto 20%;
+    margin-top: 5em;
 }
 
 #restaurant header {
@@ -201,6 +207,7 @@ main article {
     width:100%;
     padding: 0.5em;
     margin: 0em;
+    font-size: 1.5em;
 }
 
 #category-and-plates article {
@@ -212,6 +219,7 @@ main article {
 
 #category-and-plates article h4 {
     margin: 0em;
+    font-size: 1.2em;
 }
 
 #category-and-plates article img{
@@ -222,9 +230,6 @@ main article {
     width: 100%;
 }
 
-#cart {
-    display: none;
-}
 
 #item-number {
     display: none;
@@ -332,4 +337,70 @@ footer {
 
 footer * {
     color: var(--main-color);
+}
+
+/*__________ cart _______________________________*/
+
+#cart {
+    display: none;
+    background-color: var(--background-color);
+    border: solid var(--main-color);
+    grid-row: 2;
+    grid-template-columns: auto auto;
+}
+
+#cartbutton {
+    width: 10em;
+    grid-row: 1;
+}
+
+#cart-div {
+    align-self: flex-end;
+    display: grid;
+    position: absolute;
+    justify-items: end;
+    
+}
+
+#cart-rows {
+    grid-column: 1;
+    grid-row: 1/200;
+    margin: 0.5em;
+}
+
+#cart-total {
+    grid-column: 2;
+}
+
+#cart form {
+    grid-column: 2;
+}
+.cart-row {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.dishName {
+    grid-column: 1/ span 2;
+}
+
+.item-price {
+    grid-column: 1/ span 2;
+}
+
+.item-quantity {
+    width: 50%;
+}
+
+#clear {
+    width: 8em;
+}
+
+#purchase {
+    width: 8em;
+    text-align: center;
+}
+
+#cart form {
+    padding: 0;
+    margin: 0;
 }
