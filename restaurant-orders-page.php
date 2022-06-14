@@ -7,4 +7,5 @@
     drawHeader();
     outputRestaurantOrders();
     drawFooter();
+    $_SESSION['errors'] = "";
 ?>

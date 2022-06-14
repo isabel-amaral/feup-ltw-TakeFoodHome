@@ -4,6 +4,7 @@
         if ($_SESSION['username'] === NULL) { ?>
             <form action="../../php/actions/login.php" method="post">
                 <span class="label">Username:</span><input id="username-input" type="text" name="username">
+                <p class="error"><?=$_SESSION['errors'] ?></p>
                 <span class="label">Password:</span><input id="password-input" type="password" name="password">
                 <span id="login-buttons">
                     <a href="register-page.php">Register</a>

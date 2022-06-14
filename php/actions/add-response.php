@@ -18,6 +18,12 @@
     $reviewID = $_GET['reviewID'];
     $ownerID = $_SESSION['userID'];
 
+    if($comment == ""){
+        $_SESSION['errors']= "comment can´t be empty";
+        header('Location: ../../restaurant-page.php?id='.$restaurantID);
+        return;
+    }
+
     addResponseToDatabase($db, $comment, $date, $reviewID, $ownerID);
     header('Location: ../../restaurant-page.php?id=' . $restaurantID);
 ?>

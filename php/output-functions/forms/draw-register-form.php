@@ -4,6 +4,7 @@
             <section id="register">
                 <form action="../../php/actions/signup-user.php" method="post">
                     Username: <input type="text", name="username">
+                    <p class="error"><?=$_SESSION['errors'] ?></p>
                     Name: <input type="text", name="name">
                     Email: <input type="email" , name="email">
                     Phone Number: <input type="number" , name="phone">

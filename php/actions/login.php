@@ -23,8 +23,22 @@
     
         header('Location: ../../index.php');
     }
+    session_start();
+    $_SESSION['errors'] = "";
 
     $username = $_POST['username'];
     $password = sha1($_POST['password']);
+
+    if($username == ""){
+        $_SESSION['errors']= "Username can´t be empty";
+        header('Location: ../../index.php');
+        return;
+    } 
+    if($password == ""){
+        $_SESSION['errors']= "Password can´t be empty";
+        header('Location: ../../index.php');
+        return;
+    } 
+
     initiateSession($username, $password);
 ?>

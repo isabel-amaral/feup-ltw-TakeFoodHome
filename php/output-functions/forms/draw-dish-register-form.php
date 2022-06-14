@@ -8,6 +8,8 @@
         $user_info = getUserbyID($db, $_SESSION['userID']);
         $restaurant_info = getRestaurantInfo($db, $_GET['restaurantID']);
         $ownerID = $restaurant_info['ownerID'];
+
+        
     
         if ($_SESSION['userID'] === NULL) {
             die(header('Location: ../../register-page.php'));        
@@ -18,6 +20,7 @@
             <section id="dishInfo">
                 <form action="../../php/actions/add-dish.php?restaurantID=<?=$_GET['restaurantID']?>" method="post" enctype="multipart/form-data">
                     Name: <input type="text" name="name">
+                    <p class="error"><?=$_SESSION['errors'] ?></p>
                     Description: <input type="text" name="description">
                     Price: <input type="number" name="price" step="0.01">
                     Category: <input type="text" name="category">
