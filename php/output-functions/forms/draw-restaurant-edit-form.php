@@ -8,7 +8,7 @@
         $db = getDatabaseConnection('database/restaurants.db');
         $current_restaurant_info = getRestaurantInfo($db, $restaurantID);
         if ($current_restaurant_info['ownerID'] !== $_SESSION['userID']) {
-            header('Location: restaurant-page.php?id=' . $restaurantID);
+            die(header('Location: restaurant-page.php?id=' . $restaurantID));
         } 
         
         $action_link = "../../php/actions/edit-restaurant-info.php?id=" . $restaurantID ?>

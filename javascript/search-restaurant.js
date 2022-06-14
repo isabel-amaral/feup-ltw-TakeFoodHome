@@ -26,7 +26,7 @@ function processSearchInput() {
                 paragraph.textContent = restaurant.description
                 article.appendChild(paragraph)
                 
-                img.src = "https://picsum.photos/600/300?business"
+                img.src = "../../img/" + restaurant.picture
                 article.appendChild(img)
 
                 section.append(article)

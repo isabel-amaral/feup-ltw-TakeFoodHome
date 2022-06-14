@@ -1,11 +1,5 @@
 <?php
-    function outputRestaurantInfo() { 
-        require_once('database/db-connection.php');
-        require_once('database/data-fetching/restaurants.php');
-        $db = getDatabaseConnection('database/restaurants.db');
-        $restaurant = getRestaurantInfo($db, $_GET['id']); 
-        ?>
-
+    function outputCart() { ?>
         <main id="main-restaurants">
         <?php
             if ($_SESSION['userID'] !== NULL){
@@ -38,33 +32,5 @@
                     </div>
         <?php
             } 
-        ?>
-
-        <!-- TODO: acrescentar mais informação relevante -->
-        
-        <section id="restaurant">
-            <header>
-                <h2><?=$restaurant['name']?></h2>
-            </header>
-            <p><?=$restaurant['description']?></p>
-            <?php if ($restaurant['ownerID'] === $_SESSION['userID']) { ?>
-            <button class="button" type="button" onclick="location.href='../restaurant-info-edit-page.php?id=<?=$restaurant['restaurantID']?>'">
-                Edit info
-            </button>
-            <button class="button" id="add-dish" type="button" onclick="location.href='dish-register-page.php?restaurantID=<?=$_GET['id']?>'">
-                Add Dish
-            </button>
-            <button class="button" id="orders-button" type="button" onclick="location.href='restaurant-orders-page.php?restaurantID=<?=$_GET['id']?>'">
-                See orders
-            </button>
-            <?php
-            } ?>
-            <footer>
-                <p><?=$restaurant['address']?></p>
-                <p><?=$restaurant['email']?></p>
-                <p><?=$restaurant['phoneNumber']?></p>
-            </footer>
-        </section>
-    <?php
     }
 ?>

@@ -118,10 +118,6 @@ main article {
     word-break: break-all;
 }
 
-#restaurants li {
-    padding: 0.3em;
-}
-
 /*__________ retaurant _________________________*/
 
 #main-restaurants {
@@ -149,6 +145,20 @@ main article {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
+}
+
+#add-to-favourites {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 11em;
+}
+
+#add-to-favourites ion-icon {
+    width: 2.5em;
+    height: 2.5em;
 }
 
 #restaurant #edit-restaurant {
@@ -222,7 +232,7 @@ main article {
     font-size: 1.2em;
 }
 
-#category-and-plates article img{
+#category-and-plates article img {
     width: 14em;
 }
 
@@ -234,13 +244,14 @@ main article {
 #item-number {
     display: none;
 }
+
 .dishID {
     display: none;
 }
 
 /*__________ reviews ____________________________*/
 
-#reviews{
+#reviews {
     background-color: var(--background-color);
     color:black;
     padding: 0.5em;
@@ -253,9 +264,29 @@ main article {
     margin: 1em 0em;
 }
 
-.review-response{
+.review-response {
     margin: 0em;
     padding: 0em 1em;
+}
+
+#add-comment {
+    margin-top: 3em;
+}
+
+#add-comment-form {
+    display: grid;
+}
+
+#add-comment-form textarea {
+    width: 75%;
+}
+
+#add-response-form {
+    display: grid;
+}
+
+#add-response-form textarea {
+    width: 75%;
 }
 
 /*__________ form _______________________________*/
@@ -326,6 +357,14 @@ main input{
     background-color: var(--background-color);
     margin: 2em 0em;
     padding: 1em;
+}
+
+#restaurants li {
+    padding: 0.3em;
+}
+
+#favourite-restaurants li {
+    padding: 0.3em
 }
 
 /*__________ footer _____________________________*/

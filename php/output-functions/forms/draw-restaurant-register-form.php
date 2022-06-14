@@ -7,9 +7,9 @@
         $db = getDatabaseConnection('database/restaurants.db');
         $user_info = getUserbyID($db, $_SESSION['userID']);
         if ($_SESSION['userID'] === NULL) {
-            header('Location: ../../register-page.php');
+            die(header('Location: ../../register-page.php'));
         } else if ($user_info['owner'] === 0) {
-            header('Location: ../../user-info-page.php');            
+            die(header('Location: ../../user-info-page.php'));            
         } ?>
 
         <main>

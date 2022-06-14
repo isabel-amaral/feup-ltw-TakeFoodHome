@@ -31,6 +31,7 @@
                     <img src="../../img/<?=$dish['picture'] ?>" alt="dish">
                     <button class="button add">Buy</button>
                     <p class="dishID"><?=$dish['dishID']?></p>
+                    
                     <?php if ($restaurant['ownerID'] === $_SESSION['userID']) { ?>
                         <button class="button" type="button"
                         onclick="location.href='../dish-info-edit-page.php?restaurantID=<?=$_GET['id']?>&dishID=<?=$dish['dishID']?>'">
