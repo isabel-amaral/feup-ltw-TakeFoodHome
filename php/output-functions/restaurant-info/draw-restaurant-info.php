@@ -13,7 +13,7 @@
             </header>
             <p><?=$restaurant['description']?></p>
             <?php if ($restaurant['ownerID'] === $_SESSION['userID']) { ?>
-            <button class="button" type="button" onclick="location.href='../restaurant-info-edit-page.php?id=<?=$restaurant['restaurantID']?>'">
+            <button id="edit-info" class="button" type="button" onclick="location.href='../restaurant-info-edit-page.php?id=<?=$restaurant['restaurantID']?>'">
                 Edit info
             </button>
             <button class="button" id="add-dish" type="button" onclick="location.href='dish-register-page.php?restaurantID=<?=$_GET['id']?>'">

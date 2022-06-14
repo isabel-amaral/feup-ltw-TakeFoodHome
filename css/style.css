@@ -175,6 +175,10 @@ main article {
     grid-row-end: 3;
 }
 
+#restaurant #edit-info{
+    align-self: end;
+}
+
 #restaurant #orders-button {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -247,6 +251,17 @@ main article {
 
 .dishID {
     display: none;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+}
+
+.dish header {
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 /*__________ reviews ____________________________*/
