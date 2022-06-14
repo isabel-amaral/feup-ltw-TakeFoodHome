@@ -593,3 +593,64 @@ footer * {
 }
 
 
+@media (min-width:768px ) and (max-width:1020px){
+    #restaurants img {
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    body {
+        width: 50em;
+    }
+
+    .category {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .category h3 {
+        grid-column: 1/ span 2;
+    }
+
+    .category .dish {
+        width: auto !important;
+    }
+
+    .category .dish * {
+        width: auto !important;
+    }
+
+    .order {
+        width: 40em;
+        justify-content: space-around;
+    }
+
+    .order * {
+        width: 5em;
+        margin: 0 0 0 0 !important;
+    }
+
+    .order p {
+        text-align: center;
+        align-self: center;
+    }
+
+    .item-dish {
+        margin-top: 1em !important;
+    }
+
+    .order input {
+        width: 7em;
+    }
+
+    .order select {
+        width: 7em;
+    }
+
+    .order form {
+        padding-right: 1.5em;
+    }
+}
