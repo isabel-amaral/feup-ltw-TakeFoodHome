@@ -28,7 +28,7 @@
                 <article class="dish">
                     <header>
                         <h4 class="dish-name"><?=$dish['name']?></h4>
-                        <?php if (!checkIfFavouriteREstaurant($db, $_SESSION['userID'], $dish['dishID'])) { ?>
+                        <?php if (!checkIfFavouriteDish($db, $_SESSION['userID'], $dish['dishID'])) { ?>
                             <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/add-to-favourite-dishes.php?restaurantID=<?=$restaurantID?>&dishID=<?=$dish['dishID']?>'">
                                 <ion-icon name="star-outline"></ion-icon>
                             </button>                        
