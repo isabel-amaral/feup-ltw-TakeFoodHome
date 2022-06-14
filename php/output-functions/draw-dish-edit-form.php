@@ -12,9 +12,9 @@
         $ownerID = $restaurant_info['ownerID'];
     
         if ($_SESSION['userID'] === NULL) {
-            header('Location: ../../register-page.php');        
+            die(header('Location: ../../register-page.php'));        
         } else if ($user_info['owner'] === 0 || $user_info['userID'] !== $ownerID) {
-            header('Location: ../../user-info-page.php');
+            die(header('Location: ../../user-info-page.php'));
         } ?>
         <main>
             <section id="dishInfo">

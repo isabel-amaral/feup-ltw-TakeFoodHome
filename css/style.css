@@ -214,7 +214,7 @@ main article {
     margin: 0em;
 }
 
-#category-and-plates article img{
+#category-and-plates article img {
     width: 14em;
 }
 
@@ -235,7 +235,7 @@ main article {
 
 /*__________ reviews ____________________________*/
 
-#reviews{
+#reviews {
     background-color: var(--background-color);
     color:black;
     padding: 0.5em;
@@ -248,9 +248,29 @@ main article {
     margin: 1em 0em;
 }
 
-.review-response{
+.review-response {
     margin: 0em;
     padding: 0em 1em;
+}
+
+#add-comment {
+    margin-top: 3em;
+}
+
+#add-comment-form {
+    display: grid;
+}
+
+#add-comment-form textarea {
+    width: 75%;
+}
+
+#add-response-form {
+    display: grid;
+}
+
+#add-response-form textarea {
+    width: 75%;
 }
 
 /*__________ form _______________________________*/

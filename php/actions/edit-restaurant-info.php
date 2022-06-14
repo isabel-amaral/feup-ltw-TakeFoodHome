@@ -9,7 +9,7 @@
     $db = getDatabaseConnection('../../database/restaurants.db');
     $current_restaurant_info = getRestaurantInfo($db, $restaurantID);
     if ($current_restaurant_info['ownerID'] !== $_SESSION['userID']) {
-        header('Location: restaurant-page.php?id=' . $restaurantID);
+        die(header('Location: restaurant-page.php?id=' . $restaurantID));
     }   
 
     $name = $_POST['name'];
