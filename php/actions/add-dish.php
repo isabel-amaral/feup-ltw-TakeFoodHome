@@ -10,7 +10,8 @@
 
     $db = getDatabaseConnection('../../database/restaurants.db');
     $user_info = getUserbyID($db, $_SESSION['userID']);
-    $restaurant_info = getRestaurantInfo($db, $_GET['restaurantID']);
+    $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['restaurantID']);
+    $restaurant_info = getRestaurantInfo($db, $restaurantID);
     $ownerID = $restaurant_info['ownerID'];
 
     if ($_SESSION['userID'] === NULL) {
@@ -24,7 +25,6 @@
     $price = $_POST['price'];
     $category = preg_replace("/[^a-zA-Z\s]/", '', $_POST['category']);
     $picture = "picture1";
-    $restaurantID = $_GET['restaurantID'];
 
     addDishToDatabase($db, $name, $description, $price, $picture, $category, $restaurantID);
     $dishID = count(getDishes($db));

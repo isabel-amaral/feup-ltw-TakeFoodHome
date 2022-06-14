@@ -4,7 +4,7 @@
         require_once('database/data-fetching/restaurants.php'); 
         
         session_start();
-        $restaurantID = $_GET['id'];
+        $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['id']);
         $db = getDatabaseConnection('database/restaurants.db');
         $current_restaurant_info = getRestaurantInfo($db, $restaurantID);
         if ($current_restaurant_info['ownerID'] !== $_SESSION['userID']) {

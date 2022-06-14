@@ -1,5 +1,6 @@
 <?php
-    function outputCart() { ?>
+    function outputCart() {
+        $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['id']); ?>
         <button class="button" type="button" id="cartbutton">cart</button>
         <section id="cart">
             <div id="cart-rows">
@@ -19,7 +20,7 @@
                 
             ?>
             <form action="php/actions/add-order.php" method="post">
-                <input type="hidden" value="<?=$_GET['id']?>" name="restaurantID" >
+                <input type="hidden" value="<?=$restaurantID?>" name="restaurantID" >
                 <input type="hidden" value="<?=$_SESSION['userID'] ?>"name="userID">
                 <input id="foodList" type="hidden" values="" name="foodList">
                 <input id="foodListNum" type="hidden" values="" name="foodListNum">

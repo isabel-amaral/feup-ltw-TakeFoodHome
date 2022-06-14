@@ -7,6 +7,7 @@
         die(header('Location: ../../register-page.php'));
 
     $db = getDatabaseConnection('../../database/restaurants.db');
-    removeFromFavourites($db, $_SESSION['userID'], $_GET['restaurantID']);
-    header('Location: ../../restaurant-page.php?id=' . $_GET['restaurantID']);
+    $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['restaurantID']);
+    removeFromFavourites($db, $_SESSION['userID'], $restaurantID);
+    header('Location: ../../restaurant-page.php?id=' . $restaurantID);
 ?>

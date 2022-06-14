@@ -3,6 +3,7 @@
     require_once('restaurants.php');
     
     $db = getDatabaseConnection('../restaurants.db');
-    $restaurants = searchRestaurants($db, $_GET['search'] . '%');
+    $search = preg_replace("/[^a-zA-Z\s]/", '', $_GET['search']);
+    $restaurants = searchRestaurants($db, $search . '%');
     echo json_encode($restaurants);
 ?>

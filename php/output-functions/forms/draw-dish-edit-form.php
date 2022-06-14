@@ -7,8 +7,10 @@
 
         $db = getDatabaseConnection('database/restaurants.db');
         $user_info = getUserbyID($db, $_SESSION['userID']);
-        $dish_info = getDishInfo($db, $_GET['dishID']);
-        $restaurant_info = getRestaurantInfo($db, $_GET['restaurantID']);
+        $dishID = preg_replace("/[^0-9\s]/", '', $_GET['dishID']);
+        $dish_info = getDishInfo($db, $dishID);
+        $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['restaurantID']);
+        $restaurant_info = getRestaurantInfo($db, $restaurantID);
         $ownerID = $restaurant_info['ownerID'];
     
         if ($_SESSION['userID'] === NULL) {
@@ -18,7 +20,7 @@
         } ?>
         <main>
             <section id="dishInfo">
-                <form action="../../php/actions/edit-dish-info.php?restaurantID=<?=$_GET['restaurantID']?>&dishID=<?=$_GET['dishID']?>" method="post" enctype="multipart/form-data">
+                <form action="../../php/actions/edit-dish-info.php?restaurantID=<?=$restaurantID?>&dishID=<?=$dishID?>" method="post" enctype="multipart/form-data">
                     Name: <input type="text" name="name" value="<?=$dish_info['name']?>">
                     Description: <input type="text" name="description" value="<?=$dish_info['description']?>">
                     Price: <input type="number" name="price" step="0.01" value="<?=$dish_info['price']?>">

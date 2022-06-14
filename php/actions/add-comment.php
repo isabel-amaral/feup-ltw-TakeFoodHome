@@ -8,7 +8,7 @@
     if ($_SESSION['userID'] === NULL)
         die(header('Location: ../../register-page.php'));
     $db = getDatabaseConnection('../../database/restaurants.db');
-    $restaurantID = $_GET['restaurantID'];
+    $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['restaurantID']);
     $restaurant_info = getRestaurantInfo($db, $restaurantID);
     $ownerID = $restaurant_info['ownerID'];
     if (!checkIfOrderExists($db, $_SESSION['userID'], $restaurantID) || $ownerID === $_SESSION['userID'])

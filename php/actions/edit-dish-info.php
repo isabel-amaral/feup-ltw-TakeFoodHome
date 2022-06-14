@@ -9,8 +9,10 @@
     session_start();
     $db = getDatabaseConnection('../../database/restaurants.db');
     $user_info = getUserbyID($db, $_SESSION['userID']);
-    $dish_info = getDishInfo($db, $_GET['dishID']);
-    $restaurant_info = getRestaurantInfo($db, $_GET['restaurantID']);
+    $dishID = preg_replace("/[^0-9\s]/", '', $_GET['dishID']);
+    $dish_info = getDishInfo($db, $dishID);
+    $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['restaurantID']);
+    $restaurant_info = getRestaurantInfo($db, $restaurantID);
     $ownerID = $restaurant_info['ownerID'];
 
     if ($_SESSION['userID'] === NULL) {
@@ -27,6 +29,6 @@
 
     $picture = insertImage($dish_info);
 
-    updateDishInfo($db, $_GET['dishID'], $name, $description, $price, $category, $picture);
-    header('Location: ../../restaurant-page.php?id=' . $_GET['restaurantID']);
+    updateDishInfo($db, $dishID, $name, $description, $price, $category, $picture);
+    header('Location: ../../restaurant-page.php?id=' . $restaurantID);
 ?>

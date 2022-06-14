@@ -4,8 +4,9 @@
         require_once('database/data-fetching/user.php');
         require_once('database/data-fetching/dishes.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $restaurant = getRestaurantInfo($db, $_GET['id']);
-        $dishes = getRestaurantDishes($db, $_GET['id']); ?>
+        $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['id']);
+        $restaurant = getRestaurantInfo($db, $restaurantID);
+        $dishes = getRestaurantDishes($db, $restaurantID); ?>
 
         <section id="category-and-plates">
             <?php
@@ -34,7 +35,7 @@
                     
                     <?php if ($restaurant['ownerID'] === $_SESSION['userID']) { ?>
                         <button class="button" type="button"
-                        onclick="location.href='../dish-info-edit-page.php?restaurantID=<?=$_GET['id']?>&dishID=<?=$dish['dishID']?>'">
+                        onclick="location.href='../dish-info-edit-page.php?restaurantID=<?=$restaurantID?>&dishID=<?=$dish['dishID']?>'">
                             Edit info
                         </button>
                     <?php

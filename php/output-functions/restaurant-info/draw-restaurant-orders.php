@@ -4,7 +4,8 @@
         require_once('database/data-fetching/restaurant-orders.php');
         require_once('database/data-fetching/dishes.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $orders = getRestaurantOrders($db, $_GET['restaurantID']); ?>
+        $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['restaurantID']);
+        $orders = getRestaurantOrders($db, $restaurantID); ?>
         <main>
             <section id="ordersRestaurant">
                 <h2>Order Number</h2>
@@ -36,7 +37,7 @@
                             <option value="Ready">Ready</option>
                         </select>
                         <input type="hidden" value="<?=$order['orderID']?>" name="orderID">
-                        <input type="hidden" value="<?=$_GET['restaurantID']?>" name="restaurantID">
+                        <input type="hidden" value="<?=$restaurantID?>" name="restaurantID">
                         <input class="button" type="submit" value="Change State">
                     </form>
                 <?php

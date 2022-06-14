@@ -7,7 +7,8 @@
   session_start();
   $db = getDatabaseConnection('../../database/restaurants.db');
   $user_info = getUserbyID($db, $_SESSION['userID']);
-  $restaurant_info = getRestaurantInfo($db, $_GET['restaurantID']);
+  $restaurantID = preg_replace("/[^0-9\s]/", '', $_GET['restaurantID']);
+  $restaurant_info = getRestaurantInfo($db, $restaurantID);
   $ownerID = $restaurant_info['ownerID'];
 
   if ($_SESSION['userID'] === NULL) {
@@ -16,7 +17,8 @@
     header('Location: ../../restaurant-orders-page.php');
   }
 
-  updateRestaurantInfo($db, $_GET['orderID'], $_GET['state']);
-  header('Location: ../../restaurant-orders-page.php?restaurantID=' . $_GET['restaurantID']);
-
+  $orderID = preg_replace("/[^0-9\s]/", '', $_GET['orderID']);
+  $state = preg_replace("/[^a-zA-Z\s]/", '', $_GET['state']);
+  updateRestaurantInfo($db, $orderID, $state);
+  header('Location: ../../restaurant-orders-page.php?restaurantID=' . $restaurantID);
 ?>
