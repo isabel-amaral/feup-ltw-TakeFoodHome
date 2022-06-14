@@ -6,7 +6,7 @@
         $restaurant = getRestaurantInfo($db, $_GET['id']); 
         ?>
 
-
+        <!-- TODO: add different function to draw cart -->
         <button class="button" type="button" id="cartbutton">cart</button>
         <section id="cart">
             <div id="cart-rows">
@@ -50,7 +50,13 @@
                 See orders
             </button>
             <?php
+            } else { ?>
+                <button type="button" class="button" id="add-to-favourites">
+                    <ion-icon name="star-outline"></ion-icon>
+                </button>
+            <?php
             } ?>
+
             <footer>
                 <p><?=$restaurant['address']?></p>
                 <p><?=$restaurant['email']?></p>
