@@ -3,10 +3,29 @@
         require_once('database/db-connection.php');
         require_once('database/data-fetching/favourites.php');
         $db = getDatabaseConnection('database/restaurants.db');
-        $favourites = getAllFavourites($db, $_SESSION['userID']); ?>
+        $favourites = getAllFavouriteRestaurants($db, $_SESSION['userID']); ?>
         <section id="favourite-restaurants">
             <article>
                 <h2>Your Favourite Restaurants</h2>
+                <ul>
+                <?php foreach ($favourites as $favourite) { ?>
+                    <li><a href="../restaurant-page.php?id=<?=$favourite['restaurantID']?>"><?=$favourite['name']?></a></li>
+                <?php
+                } ?>
+                </ul>
+            </article>
+        </section>
+    <?php
+    }
+
+    function outputFavouriteDishes() {
+        require_once('database/db-connection.php');
+        require_once('database/data-fetching/favourites.php');
+        $db = getDatabaseConnection('database/restaurants.db');   
+        $favourites = getAllFavouriteDishes($db, $_SESSION['userID']); ?>
+        <section id="favourite-dishes">
+            <article>
+                <h2>Your Favourite Dishes</h2>
                 <ul>
                 <?php foreach ($favourites as $favourite) { ?>
                     <li><a href="../restaurant-page.php?id=<?=$favourite['restaurantID']?>"><?=$favourite['name']?></a></li>
@@ -61,7 +80,8 @@
 
             <?php
             outputFavouriteRestaurants();
-            if($user['owner'] === 1)
+            outputFavouriteDishes();
+            if ($user['owner'] === 1)
                 outputUserRestaurants();
             ?>
 

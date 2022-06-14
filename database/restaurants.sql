@@ -1,6 +1,7 @@
 PRAGMA foreign_keys = ON;
 
-DROP TABLE IF EXISTS Favourite;
+DROP TABLE IF EXISTS FavouriteRestaurant;
+DROP TABLE IF EXISTS FavouriteDish;
 DROP TABLE if EXISTS DishFoodOrder;
 DROP TABLE if EXISTS ReviewResponse;
 DROP TABLE if EXISTS Review;
@@ -75,10 +76,16 @@ CREATE TABLE DishFoodOrder(
     
 );
 
-CREATE TABLE Favourite(
+CREATE TABLE FavouriteRestaurant(
     userID          INTEGER REFERENCES User(userID),
     restaurantID    INTEGER REFERENCES Restaurant(restaurantID),
     PRIMARY KEY(userID, restaurantID)
+);
+
+CREATE TABLE FavouriteDish(
+    userID          INTEGER REFERENCES User(userID),
+    dishID          INTEGER REFERENCES Dish(dishID),
+    PRIMARY KEY(userID, dishID)
 );
 
 --INSERTS-------------------------------------------------------------

@@ -24,13 +24,13 @@
                 See orders
             </button>
             <?php
-            } else if (!checkIfFavourite($db, $_SESSION['userID'], $restaurantID)) { ?>
-                <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/add-to-favourites.php?restaurantID=<?=$restaurantID?>'">
+            } else if (!checkIfFavouriteRestaurant($db, $_SESSION['userID'], $restaurantID)) { ?>
+                <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/add-to-favourite-restaurants.php?restaurantID=<?=$restaurantID?>'">
                     <ion-icon name="star-outline"></ion-icon>
                 </button>
             <?php
-            } else if (checkIfFavourite($db, $_SESSION['userID'], $restaurantID)) { ?>
-                <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/remove-from-favourites.php?restaurantID=<?=$restaurantID?>'">
+            } else if (checkIfFavouriteREstaurant($db, $_SESSION['userID'], $restaurantID)) { ?>
+                <button type="button" class="button" id="add-to-favourites" onclick="location.href='php/actions/remove-from-favourite-restaurants.php?restaurantID=<?=$restaurantID?>'">
                         <ion-icon name="star"></ion-icon>
                 </button>            
             <?php

@@ -273,6 +273,13 @@ main article {
     height: auto;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dish header .button{
+    width: auto !important;
+    margin-left: 0 !important;
 }
 
 /*__________ reviews ____________________________*/
@@ -448,6 +455,10 @@ main input{
 }
 
 #favourite-restaurants li {
+    padding: 0.3em
+}
+
+#favourite-dishes li {
     padding: 0.3em
 }
 
