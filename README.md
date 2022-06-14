@@ -17,7 +17,7 @@
 - [x] Order Dishes
 - [x] List My Orders
 - [x] Mark Restaurant as Favourite
-- [ ] Mark Dish as Favourite
+- [x] Mark Dish as Favourite
 - [x] Customer Can Leave a Review
 
 ## Credentials
