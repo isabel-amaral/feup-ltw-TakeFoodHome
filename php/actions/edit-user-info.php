@@ -5,11 +5,11 @@
     require_once('login.php');
 
     $db = getDatabaseConnection('../../database/restaurants.db');
-    $username = $_POST['username'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
+    $username = preg_replace("/[^a-zA-Z0-9_-\s]/", '', $_POST['username']);
+    $name = preg_replace("/[^a-zA-Z\s]/", '', $_POST['name']);
+    $email = preg_replace("/[^a-zA-Z0-9@._-\s]/", '', $_POST['email']);
     $phone = $_POST['phone'];
-    $address = $_POST['address'];
+    $address = preg_replace("/[^a-zA-Z0-9\s]/", '', $_POST['address']);
 
     session_start();
     $current_user_info = getUserbyID($db, $_SESSION['userID']);

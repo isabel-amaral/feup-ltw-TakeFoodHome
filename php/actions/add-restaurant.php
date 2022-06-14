@@ -15,15 +15,15 @@
         die(header('Location: ../../user-info-page.php'));    
     }
 
-    $name = $_POST['name'];
-    $description = $_POST['description'];
-    $category = $_POST['category'];
-    $email = $_POST['email'];
+    $name = preg_replace("/[^a-zA-Z\s]/", '', $_POST['name']);
+    $description = preg_replace("/[^a-zA-Z,.?!\s]/", '', $_POST['description']);
+    $category = preg_replace("/[^a-zA-Z\s]/", '', $_POST['category']);
+    $email = preg_replace("/[^a-zA-Z0-9@._-\s]/", '', $_POST['email']);
     $phone = $_POST['phone'];
-    $address = $_POST['address'];
+    $address = preg_replace("/[^a-zA-Z0-9\s]/", '', $_POST['address']);
     $picture = "picture1";
 
-    addRestaurantToDatabase($db, $name, $description, $category, $email, $phone, $address, $_SESSION['userID'],$picture);
+    addRestaurantToDatabase($db, $name, $description, $category, $email, $phone, $address, $_SESSION['userID'], $picture);
     $restaurantID = count(getAllRestaurants($db));
     $restaurant_info = getRestaurantInfo($db, $restaurantID);
     $picture = insertImageRestaurant($restaurant_info);

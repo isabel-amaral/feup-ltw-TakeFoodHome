@@ -19,15 +19,15 @@
         die(header('Location: ../../user-info-page.php'));
     }
 
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+    $name = preg_replace("/[^a-zA-Z\s]/", '', $_POST['name']);
+    $description = preg_replace("/[^a-zA-Z,.?!\s]/", '', $_POST['description']);
     $price = $_POST['price'];
-    $category = $_POST['category'];
+    $category = preg_replace("/[^a-zA-Z\s]/", '', $_POST['category']);
     $picture = "picture1";
     $restaurantID = $_GET['restaurantID'];
 
     addDishToDatabase($db, $name, $description, $price, $picture, $category, $restaurantID);
-    $dishID =count(getDishes($db));
+    $dishID = count(getDishes($db));
     $dish_info = getDishInfo($db, $dishID);
     $picture = insertImage($dish_info);
     updateDishInfo($db, $dishID, $name, $description, $price, $category, $picture);

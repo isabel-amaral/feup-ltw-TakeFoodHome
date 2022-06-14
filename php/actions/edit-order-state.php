@@ -16,7 +16,7 @@
     header('Location: ../../restaurant-orders-page.php');
   }
 
-  updateRestaurantInfo($db,$_GET['orderID'],$_GET['state']);
+  updateRestaurantInfo($db, $_GET['orderID'], $_GET['state']);
   header('Location: ../../restaurant-orders-page.php?restaurantID=' . $_GET['restaurantID']);
 
 ?>

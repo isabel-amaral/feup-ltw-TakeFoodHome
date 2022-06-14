@@ -13,7 +13,7 @@
     if ($ownerID !== $_SESSION['userID'])
         die(header('Location: ../../restaurant-page.php?id=' . $restaurantID));
 
-    $comment = $_POST['response'];
+    $comment = preg_replace("/[^a-zA-Z09,.?!\s]/", '', $_POST['response']);
     $date = date('Y-m-d');
     $reviewID = $_GET['reviewID'];
     $ownerID = $_SESSION['userID'];

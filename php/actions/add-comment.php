@@ -14,7 +14,7 @@
     if (!checkIfOrderExists($db, $_SESSION['userID'], $restaurantID) || $ownerID === $_SESSION['userID'])
         die(header('Location: ../../restaurant-page.php?id=' . $restaurantID));
 
-    $comment = $_POST['comment'];
+    $comment = preg_replace("/[^a-zA-Z0-9,.?!\s]/", '', $_POST['comment']);
     $date = date('Y-m-d');
     $customerID = $_SESSION['userID'];
 

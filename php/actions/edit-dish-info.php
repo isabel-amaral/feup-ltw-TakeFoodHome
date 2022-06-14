@@ -19,10 +19,10 @@
         die(header('Location: ../../user-info-page.php'));
     }
 
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+    $name = preg_replace("/[^a-zA-Z\s]/", '', $_POST['name']);
+    $description = preg_replace("/[^a-zA-Z,.?!\s]/", '', $_POST['description']);
     $price = $_POST['price'];
-    $category = $_POST['category'];
+    $category = preg_replace("/[^a-zA-Z\s]/", '', $_POST['category']);
     $picture = $_POST['picture'];
 
     $picture = insertImage($dish_info);

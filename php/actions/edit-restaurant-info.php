@@ -12,12 +12,12 @@
         die(header('Location: restaurant-page.php?id=' . $restaurantID));
     }   
 
-    $name = $_POST['name'];
-    $description = $_POST['description'];
-    $category = $_POST['category'];
-    $email = $_POST['email'];
+    $name = preg_replace("/[^a-zA-Z\s]/", '', $_POST['name']);
+    $description = preg_replace("/[^a-zA-Z,.?!\s]/", '', $_POST['description']);
+    $category = preg_replace("/[^a-zA-Z\s]/", '', $_POST['category']);
+    $email = preg_replace("/[^a-zA-Z0-9@._-\s]/", '', $_POST['email']);
     $phone = $_POST['phone'];
-    $address = $_POST['address'];
+    $address = preg_replace("/[^a-zA-Z0-9\s]/", '', $_POST['address']);
     $picture = insertImageRestaurant($current_restaurant_info);
 
     updateRestaurantInfo($db, $restaurantID, $name, $description, $category, $email, $phone, $address,$picture);
