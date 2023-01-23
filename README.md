@@ -10,7 +10,12 @@
 
 ### Project Description
 
-The goal of this project was to create a website where restaurants can list and offer their menus for take-away.
+The goal of this project was to create a website where restaurants can list and offer their menus for take-away. To create this application, students should:
+
+- create a **SQLite** database
+- create documents using **HTML** and **CSS** representing the application's web pages
+- use **PHP** to generate those web pages after retrieving/changing data from the database
+- use **Javascript** to enhance the user experience
 
 ### Instructions to Run the Project
 
